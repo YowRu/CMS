@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="js/loading.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/rangepicker_single.css">
+  <link rel="stylesheet" href="css/sweetalert2.css">
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
+  <link rel="stylesheet" href="css/playList.css">
+  <title>刊播列表</title>
+</head>
+<body>
+  <header></header>
+  <div id="main">
+    <div class="content">
+      <div class="title"></div>
+      <div class="contentBG">
+        <form class="searchBar" name="searchBar">
+          <div class="filter">
+            <div class="flex keyWords">
+              <input type="text" placeholder="輸入關鍵字" class="keyWords">
+            </div>
+            <div class="flex state">
+              <label for="state">狀態 :</label>
+              <select name="" id="state">
+                <option value="all">全部</option>
+                <option value="" class="prepare">準備</option>
+                <option value="" class="endplay">結束</option>
+                <option value="" class="playing">刊播</option>
+              </select>
+            </div>
+          </div>
+          <div class="btn search"><input type="submit" value="查詢" /></div>
+        </form>
+        <div class="textInfo">
+          <img src="img/table/textInfo.svg" alt="">
+          <div class="info">點選紫色字體可進行排序</div>
+        </div>
+        <div class="table-responsive playList">
+          <table class="head_bg playList">
+            <tr>
+              <td class="check"><img src="img/table/close.svg" alt="" class="detailClose" onclick="detail(this)"></td>
+              <td>ID</td>
+              <td>刊播名稱</td>
+              <td>縮圖</td>
+              <td class="sort">狀態</td>
+              <td class="sort">起訖日</td>
+              <td class="sort">週期</td>
+              <td>時段</td>
+              <td>刊播人</td>
+              <td>操作</td>
+            </tr>
+          </table>
+          <div class="tableWp marginTop">
+            <table class="mainTable playList" cellspacing="0" id="playList">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>刊播編號</th>
+                  <th class="scroll">刊播名稱</th>
+                  <th>縮圖</th>
+                  <th class="sort">狀態</th>
+                  <th class="sort">起訖日</th>
+                  <th class="sort">週期</th>
+                  <th>時段</th>
+                  <th>刊播人</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="check">
+                    <img src="img/table/close.svg" alt="" class="detailClose" onclick="detail(this)">
+                  </td>
+                  <td class="small">A123456789</td>
+                  <td class="scroll">刊播名稱</td>
+                  <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
+                  <td class="prepare">準備</td>
+                  <td class="small">23.06.06<br>|<br>24.06.06</td>
+                  <td>每天</td>
+                  <td class="column small">00:00<br>|<br>23:59</td>
+                  <td class="small">AAAAA公司</td>
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <span class="flex">
+                        <i class="edit"><img src="img/table/edit.svg" alt="" class="edit" onClick="edit()">編輯</i>
+                        <i class="replace"><img src="img/table/replace.svg" alt="" class="replace"
+                            onClick="replace()">替換</i>
+                        <i class="clone"><img src="img/table/clone.svg" alt="" class="clone" onClick="clone()">複製</i>
+                        <i class="push"><img src="img/table/push.svg" alt="" class="push" onClick="push()">推播</i>
+                      </span>
+                      <span class="flex">
+                        <i class="stop"><img src="img/table/stop.svg" alt="" class="stop" onclick="stop()">停播</i>
+                        <i class="play"><img src="img/table/play.svg" alt="" class="play">播放</i>
+                        <i class="delet"><img src="img/table/delet.svg" alt="" class="delet" onclick="delet()">刪除</i>
+                      </span>
+                    </p>
+                  </td>
+                </tr>
+                <tr class="detail">
+                  <td colspan="10">
+                    <table class="detailContent">
+                      <tr>
+                        <th></th>
+                        <th>設備名稱</th>
+                        <th class="num">mac address</th>
+                        <th>播放次數</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>uhioho1</td>
+                        <td class="num">A123456789</td>
+                        <td>6</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>uhioho1</td>
+                        <td class="num">A123456789</td>
+                        <td>6</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>uhioho1</td>
+                        <td class="num">A123456789</td>
+                        <td>6</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="check">
+                    <img src="img/table/close.svg" alt="" class="detailClose" onclick="detail(this)">
+                  </td>
+                  <td class="small">B123456789</td>
+                  <td class="scroll">刊播名稱</td>
+                  <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
+                  <td class="endplay">結束</td>
+                  <td class="small">23.06.06<br>|<br>24.06.06</td>
+                  <td>二、四</td>
+                  <td class="column small">00:00<br>|<br>23:59</td>
+                  <td class="small">BBBBBB公司</td>
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <span class="flex">
+                        <i class="edit"><img src="img/table/edit.svg" alt="" class="edit" onClick="edit()">編輯</i>
+                        <i class="replace"><img src="img/table/replace.svg" alt="" class="replace"
+                            onClick="replace()">替換</i>
+                        <i class="clone"><img src="img/table/clone.svg" alt="" class="clone" onClick="clone()">複製</i>
+                        <i class="push"><img src="img/table/push.svg" alt="" class="push" onClick="push()">推播</i>
+                      </span>
+                      <span class="flex">
+                        <i class="stop"><img src="img/table/stop.svg" alt="" class="stop" onclick="stop()">停播</i>
+                        <i class="play"><img src="img/table/play.svg" alt="" class="play">播放</i>
+                        <i class="delet"><img src="img/table/delet.svg" alt="" class="delet" onclick="delet()">刪除</i>
+                      </span>
+                    </p>
+                  </td>
+                </tr>
+                <tr class="detail">
+                  <td colspan="10">
+                    <table class="detailContent">
+                      <tr>
+                        <th></th>
+                        <th>設備名稱</th>
+                        <th class="num">mac address</th>
+                        <th>播放次數</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>uhioho1</td>
+                        <td class="num">A123456789</td>
+                        <td>6</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="check">
+                    <img src="img/table/close.svg" alt="" class="detailClose" onclick="detail(this)">
+                  </td>
+                  <td class="small">A123456789</td>
+                  <td class="scroll">刊播名稱</td>
+                  <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
+                  <td class="playing">刊播</td>
+                  <td class="small">23.07.06<br>|<br>24.12.21</td>
+                  <td>週間</td>
+                  <td class="column small">00:00<br>|<br>23:59</td>
+                  <td class="small">CCCCCC公司</td>
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <span class="flex">
+                        <i class="edit"><img src="img/table/edit.svg" alt="" class="edit" onClick="edit()">編輯</i>
+                        <i class="replace"><img src="img/table/replace.svg" alt="" class="replace"
+                            onClick="replace()">替換</i>
+                        <i class="clone"><img src="img/table/clone.svg" alt="" class="clone" onClick="clone()">複製</i>
+                        <i class="push"><img src="img/table/push.svg" alt="" class="push" onClick="push()">推播</i>
+                      </span>
+                      <span class="flex">
+                        <i class="stop"><img src="img/table/stop.svg" alt="" class="stop" onclick="stop()">停播</i>
+                        <i class="play"><img src="img/table/play.svg" alt="" class="play">播放</i>
+                        <i class="delet"><img src="img/table/delet.svg" alt="" class="delet" onclick="delet()">刪除</i>
+                      </span>
+                    </p>
+                  </td>
+                </tr>
+                <tr class="detail">
+                  <td colspan="10">
+                    <table class="detailContent">
+                      <tr>
+                        <th></th>
+                        <th>設備名稱</th>
+                        <th class="num">mac address</th>
+                        <th>播放次數</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>uhioho1</td>
+                        <td class="num">A123456789</td>
+                        <td>6</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="popup_bg edit">
+          <div class="popupWP edit small">
+            <div class="titleWP">
+              <p class="title">素材名稱</p>
+              <p class="close">×</p>
+            </div>
+            <div class="swalWP">
+              <p>確認編輯素材嗎 ?</p>
+              <div class=" btnWP">
+                <div class="btn edite_confirm small">確認</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup_bg clone">
+          <div class="popupWP clone big">
+            <div class="titleWP">
+              <p class="title">新增素材</p>
+              <p class="close">×</p>
+            </div>
+            <div class="swalWP">
+              <div class="searchBar" name="searchBar">
+                <div class="filter">
+                  <div class="flex keyWords">
+                    <input type="text" placeholder="輸入關鍵字" class="keyWords">
+                  </div>
+                  <div class="flex type">
+                    <label for="type">格式 :</label>
+                    <select name="type" id="type">
+                      <option value="all">全部</option>
+                      <option value="img">圖片</option>
+                      <option value="video">影片</option>
+                    </select>
+                  </div>
+                  <div class="flex second">
+                    <label for="second">秒數 :</label>
+                    <select name="second" id="second">
+                      <option value="all">全部</option>
+                      <option value="30">30</option>
+                      <option value="25">25</option>
+                      <option value="20">20</option>
+                      <option value="15">15</option>
+                      <option value="10">10</option>
+                    </select>
+                  </div>
+                  <div class="flex mediadate_clone date">
+                    <label for="mediadate_clone">審核 :</label>
+                    <input type="text" class="datepicker" id="mediadate_clone">
+                  </div>
+                </div>
+                <div class="btn search"><input type="submit" value="查詢" /></div>
+              </div>
+              <div class="textInfo">
+                <img src="img/table/textInfo.svg" alt="">
+                <div class="info">點選紫色字體可進行排序</div>
+              </div>
+              <div class="selectContent">
+                <div class="table-responsive clone">
+                  <table class="head_bg clone">
+                    <tr>
+                      <td class="check"><input type="checkbox"></td>
+                      <td>ID</td>
+                      <td>縮圖</td>
+                      <td>檔名</td>
+                      <td class="sort">秒數</td>
+                      <td class="sort">審核日</td>
+                    </tr>
+                  </table>
+                  <div class="tableWp marginTop">
+                    <table cellspacing="0" class="mainTable clone">
+                      <thead>
+                        <tr>
+                          <th class=""><input type="checkbox"></th>
+                          <th>ID</th>
+                          <th>縮圖</th>
+                          <th>檔名</th>
+                          <th class="sort">秒數</th>
+                          <th class="sort">審核日</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="check">
+                            <input type="checkbox" name="mediaCheck">
+                          </td>
+                          <td>A123456789</td>
+                          <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
+                          <td class="name">機場宣導</td>
+                          <td>15</td>
+                          <td>23.06.18</td>
+                        </tr>
+                        <tr>
+                          <td class="check">
+                            <input type="checkbox" name="mediaCheck">
+                          </td>
+                          <td>A123456789</td>
+                          <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
+                          <td class="name">機場宣導</td>
+                          <td>15</td>
+                          <td>23.06.18</td>
+                        </tr>
+                        <tr>
+                          <td class="check">
+                            <input type="checkbox" name="mediaCheck">
+                          </td>
+                          <td>A123456789</td>
+                          <td class="image"><img src="img/media/mediaImg.svg" alt=""></td>
+                          <td class="name">機場宣導</td>
+                          <td>15</td>
+                          <td>23.06.18</td>
+                        </tr>
+                        <tr>
+                          <td class="check">
+                            <input type="checkbox" name="mediaCheck">
+                          </td>
+                          <td>A123456789</td>
+                          <td class="image"><img src="img/media/mediaImg.svg" alt=""></td>
+                          <td class="name">機場宣導</td>
+                          <td>15</td>
+                          <td>23.06.18</td>
+                        </tr>
+                        <tr>
+                          <td class="check">
+                            <input type="checkbox" name="mediaCheck">
+                          </td>
+                          <td>A123456789</td>
+                          <td class="image"><img src="img/media/mediaImg.svg" alt=""></td>
+                          <td class="name">機場宣導</td>
+                          <td>15</td>
+                          <td>23.06.18</td>
+                        </tr>
+                        <tr>
+                          <td class="check">
+                            <input type="checkbox" name="mediaCheck">
+                          </td>
+                          <td>A123456789</td>
+                          <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
+                          <td class="name">機場宣導</td>
+                          <td>15</td>
+                          <td>23.06.18</td>
+                        </tr>
+                        <tr>
+                          <td class="check">
+                            <input type="checkbox" name="mediaCheck">
+                          </td>
+                          <td>A123456789</td>
+                          <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
+                          <td class="name">機場宣導</td>
+                          <td>15</td>
+                          <td>23.06.18</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class=" btnWP">
+                  <div class="btn clone_confirm small">確認</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup_bg replace">
+          <div class="popupWP replace big">
+            <div class="titleWP">
+              <p class="title">替換素材</p>
+              <p class="close">×</p>
+            </div>
+            <div class="swalWP">
+              <div class="searchBar" name="searchBar">
+                <div class="filter">
+                  <div class="flex keyWords">
+                    <input type="text" placeholder="輸入關鍵字" class="keyWords">
+                  </div>
+                  <div class="flex type">
+                    <label for="type">格式 :</label>
+                    <select name="type" id="replace_type">
+                      <option value="all">全部</option>
+                      <option value="img">圖片</option>
+                      <option value="video">影片</option>
+                    </select>
+                  </div>
+                  <div class="flex second">
+                    <label for="second">秒數 :</label>
+                    <select name="second" id="replace_second">
+                      <option value="all">全部</option>
+                      <option value="30">30</option>
+                      <option value="25">25</option>
+                      <option value="20">20</option>
+                      <option value="15">15</option>
+                      <option value="10">10</option>
+                    </select>
+                  </div>
+                  <div class="flex mediadate_replace date">
+                    <label for="mediadate_replace">審核 :</label>
+                    <input type="text" class="datepicker" id="mediadate_replace">
+                  </div>
+                </div>
+                <div class="btn search"><input type="submit" value="查詢" /></div>
+              </div>
+              <div class="textInfo">
+                <img src="img/table/textInfo.svg" alt="">
+                <div class="info">點選紫色字體可進行排序</div>
+              </div>
+              <div class="selectContent">
+                <div class="table-responsive replace">
+                  <table class="head_bg replace">
+                    <tr>
+                      <td class="check"> <input type="radio" name="mediaRadio" class="option-input"></td>
+                      <td>縮圖</td>
+                      <td>檔名</td>
+                      <td class="sort">秒數</td>
+                      <td class="sort">審核日</td>
+                    </tr>
+                  </table>
+                  <div class="tableWp marginTop">
+                    <table cellspacing="0" class="mainTable replace">
+                      <thead>
+                        <tr>
+                          <th class="check"></th>
+                          <th>縮圖</th>
+                          <th>檔名</th>
+                          <th class="sort">秒數</th>
+                          <th class="sort">審核日</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="check">
+                            <input type="radio" name="mediaRadio" class="option-input">
+                          </td>
+                          <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
+                          <td class="name">機場宣導</td>
+                          <td>15</td>
+                          <td>23.06.18</td>
+                        </tr>
+                        <tr>
+                          <td class="check">
+                            <input type="radio" name="mediaRadio" class="option-input">
+                          </td>
+                          <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
+                          <td class="name">機場宣導</td>
+                          <td>15</td>
+                          <td>23.06.18</td>
+                        </tr>
+                        <tr>
+                          <td class="check">
+                            <input type="radio" name="mediaRadio" class="option-input">
+                          </td>
+                          <td class="image"><img src="img/media/mediaImg.svg" alt=""></td>
+                          <td class="name">機場宣導</td>
+                          <td>15</td>
+                          <td>23.06.18</td>
+                        </tr>
+                        <tr>
+                          <td class="check">
+                            <input type="radio" name="mediaRadio" class="option-input">
+                          </td>
+                          <td class="image"><img src="img/media/mediaImg.svg" alt=""></td>
+                          <td class="name">機場宣導</td>
+                          <td>15</td>
+                          <td>23.06.18</td>
+                        </tr>
+                        <tr>
+                          <td class="check">
+                            <input type="radio" name="mediaRadio" class="option-input">
+                          </td>
+                          <td class="image"><img src="img/media/mediaImg.svg" alt=""></td>
+                          <td class="name">機場宣導</td>
+                          <td>15</td>
+                          <td>23.06.18</td>
+                        </tr>
+                        <tr>
+                          <td class="check">
+                            <input type="radio" name="mediaRadio" class="option-input">
+                          </td>
+                          <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
+                          <td class="name">機場宣導</td>
+                          <td>15</td>
+                          <td>23.06.18</td>
+                        </tr>
+                        <tr>
+                          <td class="check">
+                            <input type="radio" name="mediaRadio" class="option-input">
+                          </td>
+                          <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
+                          <td class="name">機場宣導</td>
+                          <td>15</td>
+                          <td>23.06.18</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class=" btnWP">
+                  <div class="btn replace_confirm small">確認</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup_bg delet">
+          <div class="popupWP delet small">
+            <div class="titleWP">
+              <p class="title">素材編號</p>
+              <p class="close">×</p>
+            </div>
+            <div class="swalWP">
+              <p>確認刪除此素材嗎 ?</p>
+              <div class=" btnWP">
+                <div class="btn delete_confirm small">確認</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup_bg stop">
+          <div class="popupWP stop small">
+            <div class="titleWP">
+              <p class="title">素材編號</p>
+              <p class="close">×</p>
+            </div>
+            <div class="swalWP">
+              <p>確認暫停此素材嗎 ?</p>
+              <div class=" btnWP">
+                <div class="btn stop_confirm small">確認</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup_bg replaceDetail">
+          <div class="popupWP replace big">
+            <div class="titleWP">
+              <p class="title">替換素材</p>
+              <p class="close">×</p>
+            </div>
+            <div class="swalWP">
+              <div class="selectContent">
+                <div class="flex img">
+                  <img src="img/media/detail_Img.svg" class="show detail" alt="">
+                </div>
+                <div class="flex name">
+                  <p>檔名</p><span class="fontLevel_3">檔案的名稱可能會很長（？</span>
+                </div>
+                <div class="flex">
+                  <p>秒數</p><span class="mac fontLevel_3">15</span>
+                </div>
+                <div class="flex">
+                  <p>審核日</p><span class="mac fontLevel_3">23.06.18</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup_bg cloneDetail">
+          <div class="popupWP clone big">
+            <div class="titleWP">
+              <p class="title">複製素材</p>
+              <p class="close">×</p>
+            </div>
+            <div class="swalWP">
+              <div class="selectContent">
+                <div class="flex name">
+                  <p>ID</p><span class="fontLevel_3">A123456789</span>
+                </div>
+                <div class="flex img">
+                  <img src="img/media/detail_Img.svg" class="show detail" alt="">
+                </div>
+                <div class="flex name">
+                  <p>檔名</p><span class="fontLevel_3">檔案的名稱可能會很長（？</span>
+                </div>
+                <div class="flex">
+                  <p>秒數</p><span class="mac fontLevel_3">15</span>
+                </div>
+                <div class="flex">
+                  <p>審核日</p><span class="mac fontLevel_3">23.06.18</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sideNo">7</div>
+  <script src="js/textInfo.js"></script>
+  <script src="js/table.js"></script>
+  <script src="js/datePicker.js"></script>
+  <script>
+    //get date time
+    let dayNow = new Date();
+    let day = dayNow.getDate();
+    let month = dayNow.getMonth();
+    let year = dayNow.getFullYear();
+
+    //RWD popup tr detail
+
+    $('.popupWP table tr').click(function () {
+      if ($(window).width() < 600) {
+        if($(this).parents('table.mainTable').hasClass('replace')){
+          $('.replaceDetail').fadeIn().css({ 'display': 'flex' });
+        }else{
+          $('.cloneDetail').fadeIn().css({ 'display': 'flex' });
+        }
+        $('body').addClass('overflow');
+      }
+    });
+
+    //edit
+    function edit() {
+      $('.popup_bg.edit').fadeIn().css({ 'display': 'flex' });
+      $('body').addClass('overflow');
+    };
+    $('.popup_bg.edit .edite_confirm').click(function () {
+      //到刊播
+      window.location = "https://yowru.github.io/CMS/playStep1.html";
+    });
+    $('.popup_bg.clone .clone_confirm, .popup_bg.replace .replace_confirm').click(function () {
+      //到清單列表
+      if ($(this).parent('.btnWP').siblings('').find('input').filter(':checked').length > 0) {
+        window.location = "https://yowru.github.io/CMS/playList.html";
+      } else {
+        Swal.fire('尚未選擇', '', 'info');
+      }
+
+    });
+
+    function push() {
+      Swal.fire('已送出', '', 'success');
+    };
+
+    function clone() {
+      $('.popup_bg.clone').fadeIn().css({ 'display': 'flex' });
+      $('body').addClass('overflow');
+    };
+
+    function replace() {
+      $('.popup_bg.replace').fadeIn().css({ 'display': 'flex' });
+      $('body').addClass('overflow');
+    };
+
+    //delet
+    function delet() {
+      $('.popup_bg.delet').fadeIn().css({ 'display': 'flex' });
+      $('body').addClass('overflow');
+    };
+
+    //delete_btn
+    $('.delete_confirm').click(function () {
+      Swal.fire('確認刪除', '', 'success');
+      $('.popup_bg').fadeOut();
+    });
+
+    //stop
+    function stop() {
+      $('.popup_bg.stop').fadeIn().css({ 'display': 'flex' });
+      $('body').addClass('overflow');
+    };
+
+    //stop_btn
+    $('.stop_confirm').click(function () {
+      Swal.fire('確認暫停', '', 'success');
+      $('.popup_bg').fadeOut();
+    });
+    //detail
+    function detail(obj) {
+      if ($(obj).hasClass('detailClose')) {
+        $(obj).prop({ 'src': 'img/table/open.svg', 'class': 'detailOpen' });
+      } else {
+        $(obj).prop({ 'src': 'img/table/close.svg', 'class': 'detailClose' });
+      }
+      $(obj).parents('tr').next('.detail').slideToggle();
+    }
+    //close
+    $('.popup_bg .titleWP .close').click(function () {
+      $('.popup_bg').fadeOut();
+      window.location.replace(location.href);
+    });
+  </script>
+</body>
+
+</html>

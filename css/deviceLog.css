@@ -1,0 +1,121 @@
+.swal2-modal input[type=text]:not(.browser-default) {
+  width: 50%;
+  height: auto;
+  border-bottom: 0;
+  font-size: 0.85rem;
+  text-align: right;
+  margin-bottom: 0;
+}
+
+.popupWP .flex .datepicker-date-display span.year-text {
+  font-size: 2rem;
+  color: #fffffff2;
+  text-align: left;
+}
+
+.popupWP .flex .datepicker-date-display span.date-text {
+  color: #fff;
+  font-size: 2.4rem;
+  text-align: left;
+}
+
+.popupWP div.flex.contractWP {
+  border: 0;
+  padding: 0;
+  width: 160px;
+}
+
+.flex.macAddress {
+  padding-left: 18px;
+  font-size: 1.3rem;
+}
+
+.flex.macAddress span {
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+.flex.macAddress span:after {
+  content: '(mac address)';
+  font-size: 0.9rem;
+}
+
+.scrap {
+  color: #a6a5a5;
+  font-weight: lighter;
+}
+
+.popupWP {
+  height: 60vh;
+}
+
+.btnImg {
+  display: table-cell;
+}
+
+.head_bg td,
+.mainTable td {
+  width: 14%;
+}
+
+.head_bg td:nth-child(2),
+.mainTable td:nth-child(2),
+.head_bg td:nth-child(7),
+.mainTable td:nth-child(7) {
+  width: 10%;
+}
+
+.head_bg td:nth-child(3),
+.mainTable td:nth-child(3) {
+  width: 20%;
+}
+
+.head_bg td:nth-child(4),
+.mainTable td:nth-child(4) {
+  width: 18%;
+}
+
+table td, table th {
+  border: 0;
+}
+
+/*popup*/
+.popupWP .flex {
+  border: 0;
+}
+
+.popupWP .popup {
+  border-bottom: 2px dotted #e2e2e2;
+}
+
+@media (max-width:800px) {
+
+  .head_bg td:nth-child(1),
+  .mainTable td:nth-child(1) {
+    display: none;
+  }
+}
+
+@media (max-width:700px) {
+
+  .head_bg td:nth-child(6),
+  .mainTable td:nth-child(6) {
+    display: none;
+  }
+}
+
+@media (max-width:550px) {
+
+  .head_bg td:nth-child(4),
+  .mainTable td:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width:375px) {
+
+  .head_bg td:nth-child(5),
+  .mainTable td:nth-child(5) {
+    display: none;
+  }
+}

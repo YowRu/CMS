@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/loading.js"></script>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/sweetalert2.css">
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
+  <link rel="stylesheet" href="css/mediaApply.css">
+  <link rel="stylesheet" href="css/login.css" type="text/css">
+  <title>忘記密碼</title>
+</head>
+<body>
+  <div id="main">
+    <div class="middle">
+      <div class="left"></div>
+      <div class="right">
+        <div class="top">
+          <img src="img/index/user.svg" alt="">
+          <p class="title">手機驗證</p>
+        </div>
+          <p class="account">
+            <input type="text" class="account" placeholder="請輸入手機或電子信箱">
+          </p>
+          <p class="flex validate">
+            <input type="text" placeholder="驗證碼" class="validate" name="validate">
+            <a class="get">獲取驗證</a>
+          </p>
+          <div class="btn purple">立即驗證</div>
+          <div class="flex end">
+            <span>記起密碼?</span>
+            <a href="index.html">立即登入</a>
+          </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function () {
+      let H = $(window).height();
+      let W = $(window).width();
+
+      if ($(window).width() < 600) {
+        let H = $(window).height();
+        $('body').height(H - 10);
+      }
+
+      $('input.account').change(function(){
+        if ($('input.account').val() === '') {
+          $('p.password').addClass('show');
+        }else if (!$('input.account').val().match(/[0-9]/) && !$('input.account').val().match(/[a-zA-Z]/)) {
+          $('p.account').addClass('text');
+        }else if( $('input.account').val().match(/[a-zA-Z]/) && !$('input.account').val().match(/(\w)+[@]{1}(\S)+[.]{1}(\D)+/) ){
+          $('p.account').addClass('email');
+        }else if( $('input.account').val().match(/[0-9]/) && !$('input.account').val().match(/09\d{8}/)  ){
+          $('p.account').addClass('num');
+        }else{
+          $('p.account').removeClass('show text email num');
+        }
+      });
+
+      $('input.validate').change(function () {
+        if ($('input.validate').val() !== '') {
+          $('p.validate').removeClass('show');
+        } else {
+          $('p.validate').addClass('show');
+        }
+      });
+      $('i.fa-eye-slash').click(function(){
+        $(this).hide();
+        $(this).siblings('i.fa-eye').show();
+        $(this).siblings('input').attr('type','text');
+      });
+
+      $('i.fa-eye').click(function(){
+        $(this).hide();
+        $(this).siblings('i.fa-eye-slash').show();
+        $(this).siblings('input').attr('type','password');
+      });
+      function verify() {
+        if ($('input.account').val() === '') {
+          $('p.account').addClass('show');
+        } else if (!$('input.account').val().match(/[0-9]/) && !$('input.account').val().match(/[a-zA-Z]/)) {
+          $('.account').addClass('text');
+        }else if( $('input.account').val().match(/[a-zA-Z]/) && !$('input.account').val().match(/(\w)+[@]{1}(\S)+[.]{1}(\D)+/) ){
+          $('.account').addClass('email');
+        }else if( $('input.account').val().match(/[0-9]/) && !$('input.account').val().match(/09\d{8}/) ){
+          $('.account').addClass('num');
+        } else if ($('input.validate').val() === '') {
+          $('p.validate').addClass('show');
+        } else if ($('input.account').val() !== '' && $('input.validate').val() !== '') {
+          window.location = "https://yowru.github.io/CMS/index.html";
+        } 
+      }
+
+      $(document).keyup(function (event) {
+        if (event.which === 13) {
+          verify();
+        }
+      });
+
+      $('.btn.purple').click(function () {
+        verify();
+      });
+
+
+    });
+  </script>
+</body>
+
+</html>

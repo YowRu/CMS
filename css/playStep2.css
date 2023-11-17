@@ -1,0 +1,88 @@
+/* step2 */
+.step2 td img,
+.step4 td img {
+  width: 90px;
+  height: 50px;
+  object-fit: cover;
+  margin: 5px auto;
+}
+
+.step2 .head_bg span {
+  width: 20%;
+}
+
+.step2 .head_bg td.check {
+  opacity: 0;
+}
+
+
+.step2 .head_bg td,
+.step2 .mainTable td {
+  width: 25%;
+}
+
+.step2 .head_bg td:nth-child(1),
+.step2 .mainTable td:nth-child(1) {
+  width: 10%;
+}
+
+.step2 .head_bg td:nth-child(4),
+.step2 .mainTable td:nth-child(4) {
+  width: 15%;
+}
+
+@media(max-width:780px) {
+
+  .step2 .searchBar .flex.type {
+    display: none;
+  }
+}
+
+@media(max-width:656px) {
+  .step2 .searchBar .flex.second {
+    display: none;
+  }
+}
+
+@media(max-width:515px) {
+  .step2 .searchBar .flex.mediadate {
+    display: none;
+  }
+
+  .step2 .searchBar.top {
+    flex-direction: column-reverse;
+  }
+
+  .step2 .searchBar {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media(max-width:500px) {
+
+  .step2 table th:nth-child(5),
+  .step2 table td:nth-child(5),
+  .step2 .head_bg td:nth-child(5) {
+    display: none;
+  }
+
+  .step2 .searchBar.top .flex {
+    width: 80%;
+  }
+
+  .step2 .flexrow #mediaName {
+    width: 70%;
+  }
+}
+
+@media(max-width:414px) {
+  .step2 .searchBar.top .flex {
+    width: 98%;
+  }
+
+  .step2 table td:nth-child(2),
+  .step2 .head_bg td:nth-child(2) {
+    display: none;
+  }
+}

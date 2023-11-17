@@ -1,0 +1,138 @@
+#container1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  margin-top: 1rem;
+}
+
+#main .contentBG p {
+  text-align: center;
+  font-size: 1.35rem;
+  margin-top: 10px;
+}
+
+text.highcharts-credits {
+  display: none;
+}
+
+text.highcharts-title tspan {
+  font-size: 1.35rem;
+}
+
+#container1 text[text-anchor="start"] tspan {
+  font-size: .955rem;
+}
+
+.chart1 .highcharts-pie-series .highcharts-point {
+  stroke: #fff;
+  stroke-width: 8px;
+}
+
+.highcharts-container {
+  position: relative;
+}
+
+rect.highcharts-background {
+  fill: transparent;
+}
+
+#main .searchBar {
+  position: relative;
+}
+
+.tableWP tr {
+  height: 40px;
+}
+
+.head_bg td,
+table td {
+  width: 25%;
+}
+
+.head_bg td:nth-child(3),
+table td:nth-child(3) {
+  width: 35%;
+}
+
+.head_bg td:nth-child(4),
+table td:nth-child(4) {
+  width: 15%;
+}
+
+.tableContent.connection .head_bg td:nth-child(1),
+.tableContent.connection table td:nth-child(1),
+.tableContent.connection .head_bg td:nth-child(3),
+.tableContent.connection table td:nth-child(3) {
+  width: 25%;
+}
+
+.tableContent.connection .head_bg td:nth-child(2),
+.tableContent.connection table td:nth-child(2) {
+  width: 35%;
+}
+
+
+.bown {
+  position: relative;
+  margin-top: 40px;
+}
+
+.detail {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  height: 14px;
+  line-height: 14px;
+  font-size: 0.9rem;
+  border: 1px solid #6B56EC;
+  color: #6B56EC;
+  padding: 6px 12px;
+  border-radius: 2px;
+  transition: all 0.5s;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.detail:hover {
+  color: #fff;
+  background-color: #6B56EC;
+}
+
+.tableContent {
+  position: relative;
+}
+
+
+.tableContent .tableWP {
+  overflow: auto;
+  height: 200px;
+  width: 100%;
+}
+
+
+.tableContent table {
+  width: 100%;
+  margin-top: 0;
+}
+
+
+.tableContent table th {
+  width: 100px;
+  height: 0;
+  padding: 0;
+}
+
+@media (max-width:500px) {
+  .head_bg td {
+    line-height: normal;
+  }
+}
+
+@media (max-width:450px) {
+  .detail {
+    right: 0;
+  }
+}

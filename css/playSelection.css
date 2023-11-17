@@ -1,0 +1,1182 @@
+.stepFlex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  margin-top: 20px;
+}
+
+.stepFlex::before {
+  content: '';
+  display: block;
+  width: 80%;
+  position: absolute;
+  left: 10%;
+  top: 54%;
+  border: 1px dashed #E1E1E2;
+  z-index: 1;
+}
+
+.stepFlex::after {
+  content: '';
+  display: block;
+  width: 25%;
+  position: absolute;
+  left: 10%;
+  top: 54%;
+  border: 1px dashed #dac1fc;
+  z-index: 2;
+  opacity: 0;
+}
+
+
+.stepFlex.step2::after {
+  opacity: 1;
+}
+
+.stepFlex.step3::after {
+  width: 50%;
+  opacity: 1;
+}
+
+.stepFlex.step4::after {
+  width: 75%;
+  opacity: 1;
+}
+
+.stepFlex li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  position: relative;
+  z-index: 3;
+}
+
+.stepFlex li span {
+  margin-top: 4px;
+  color: #E1E1E2;
+  font-size: 0.9rem;
+}
+
+.stepFlex li.now span {
+  color: #8045ed;
+  font-size: 1rem;
+  /* font-weight: 600; */
+}
+
+.circle {
+  font-size: .8rem;
+  text-align: center;
+  background-color: transparent;
+  border: 2px solid #E1E1E2;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  color: #E1E1E2;
+}
+
+.stepFlex li.now .circle {
+  border: 0;
+  background: radial-gradient(ellipse at center, rgb(192, 154, 244) 1%, rgb(123, 69, 205) 100%);
+  color: #651de9;
+  color: #fff;
+}
+
+.stepFlex li.confirm .circle {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7c4bc1+1,7b52dd+100 */
+  background: radial-gradient(ellipse at center, rgb(214, 197, 238) 1%, #ac86e1 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  border: 1px solid #5b0eeb;
+  border: 0;
+  color: transparent;
+}
+
+.stepFlex li.confirm .circle:before {
+  content: ' ✓';
+  display: block;
+  width: 28px;
+  height: 28px;
+  color: #fff;
+  text-align: right;
+  line-height: 28px;
+  padding-left: 11px;
+  box-sizing: border-box;
+}
+
+.stepFlex li.confirm span {
+  /* color: #8a5be2; */
+  color: #ac86e1;
+}
+
+.stepContent,
+.stepContent.step1 {
+  margin-top: 24px;
+}
+
+
+/*datepicker*/
+.mobile .flex {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.dateMobile {
+  display: block;
+}
+
+.mobile_datepicker {
+  border: 1px solid #ddd;
+}
+
+.datepicker-date-display .date-text {
+  color: #fff;
+  font-size: 2.2rem;
+}
+
+.datepicker-date-display .year-text {
+  font-size: 2rem;
+  color: #fffffff2;
+}
+
+.stepContent table th,
+.stepContent table td {
+  border-bottom: 0;
+}
+
+select.datepicker-select {
+  display: none;
+}
+
+/*form*/
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.dateWP,
+.timeWP {
+  border: 1px solid #E1E1E2;
+  margin: 10px;
+  padding: 6px 15px;
+}
+
+.dateWP .date p,
+.timeWP .time p {
+  margin-right: 10px;
+}
+
+.dateWP .date span,
+.timeWP .time span {
+  color: #999;
+}
+
+.dateWP .date span.after,
+.timeWP .time span.after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dateWP .date span.after:after,
+.timeWP .time span.after:after {
+  content: '-';
+  width: 10px;
+  text-align: center;
+  display: block;
+  margin: 0 5px;
+  color: #2F3034;
+}
+
+input.datepicker:not([type]),
+input.datepicker[type=text]:not(.browser-default),
+input.datepicker[type=password]:not(.browser-default),
+input.datepicker[type=email]:not(.browser-default),
+input.datepicker[type=url]:not(.browser-default),
+input.datepicker[type=time]:not(.browser-default),
+input.datepicker[type=date]:not(.browser-default),
+input.datepicker[type=datetime]:not(.browser-default),
+input.datepicker[type=datetime-local]:not(.browser-default),
+input.datepicker[type=tel]:not(.browser-default),
+input.datepicker[type=number]:not(.browser-default),
+input.datepicker[type=search]:not(.browser-default),
+textarea.materialize-textarea {
+  cursor: pointer;
+  font-size: 1rem;
+  color: #2F3034;
+  font-weight: normal;
+  border-bottom: 0;
+}
+
+.searchBar input.datepicker:not([type]),
+.searchBar input.datepicker[type=text]:not(.browser-default),
+.searchBar input.datepicker[type=password]:not(.browser-default),
+.searchBar input.datepicker[type=email]:not(.browser-default),
+.searchBar input.datepicker[type=url]:not(.browser-default),
+.searchBar input.datepicker[type=time]:not(.browser-default),
+.searchBar input.datepicker[type=date]:not(.browser-default),
+.searchBar input.datepicker[type=datetime]:not(.browser-default),
+.searchBar input.datepicker[type=datetime-local]:not(.browser-default),
+.searchBar input.datepicker[type=tel]:not(.browser-default),
+.searchBar input.datepicker[type=number]:not(.browser-default),
+.searchBar input.datepicker[type=search]:not(.browser-default),
+.searchBar textarea.materialize-textarea {
+  font-size: 0.9rem;
+  width: 74px;
+}
+
+
+/*datetime color*/
+.datepicker-table {
+  border-collapse: separate;
+}
+
+.datepicker-date-display,
+.timepicker-digital-display {
+  background-color: #5861E2;
+}
+
+.datepicker-canvas line,
+.timepicker-canvas line {
+  stroke: #5861E2;
+}
+
+.datepicker-canvas-bearing,
+.timepicker-canvas-bearing {
+  fill: #5861E2;
+}
+
+.datepicker-canvas-bg,
+.timepicker-canvas-bg {
+  fill: #8087e5;
+}
+
+.datepicker-table td.is-today {
+  color: #5861E2;
+  border: 1px solid #5861E2;
+  border-radius: 50%;
+}
+
+.datepicker-table td.is-selected {
+  background-color: transparent;
+}
+
+.datepicker-table td.is-selected button {
+  color: #fff;
+  background-color: #5861E2;
+  border-radius: 50%;
+}
+
+.btn {
+  color: #fff;
+  background: radial-gradient(ellipse at center, #a4aaffcd 1%, #b5b9fb 100%);
+  width: 77px;
+  cursor: pointer;
+}
+
+.modal-content.datepicker-container {
+  overflow: hidden;
+}
+
+.datepicker-modal input.select-dropdown.dropdown-trigger {
+  height: auto;
+  width: 70px;
+  line-height: 3rem;
+}
+
+.datepicker-cancel,
+.datepicker-clear,
+.datepicker-today,
+.datepicker-done,
+.timepicker-close {
+  color: #5861E2;
+  transition: all .3s;
+}
+
+.datepicker-cancel:hover,
+.datepicker-clear:hover,
+.datepicker-today:hover,
+.datepicker-done:hover,
+.timepicker-close:hover {
+  color: #5861E2;
+}
+
+.btn-flat:focus {
+  background-color: #d3d5f9;
+}
+
+.timepicker-tick.active,
+.timepicker-tick:hover {
+  background-color: #8087e556;
+}
+
+input:not([type]):focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=url]:not(.browser-default):focus:not([readonly]),
+input[type=time]:not(.browser-default):focus:not([readonly]),
+input[type=date]:not(.browser-default):focus:not([readonly]),
+input[type=datetime]:not(.browser-default):focus:not([readonly]),
+input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+input[type=tel]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly]),
+input[type=search]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #5861E2;
+  -webkit-box-shadow: 0 1px 0 0 #5861E2;
+  box-shadow: 0 1px 0 0 #5861E2;
+}
+
+/*datetime end*/
+.searchBar .flex label,
+.searchBar .flex input {
+  height: 22px;
+  line-height: 22px;
+  border: 0;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  width: auto;
+}
+
+.searchBar.top {
+  margin-bottom: 12px;
+}
+
+.step4 .searchBar.top {
+  justify-content: flex-end;
+}
+
+
+.btn {
+  color: #fff;
+  background: radial-gradient(ellipse at center, #9299f3 1%, #5861E2 100%);
+  width: 77px;
+  cursor: pointer;
+}
+
+.btn.add {
+  position: absolute;
+  width: 56px;
+  right: 20px;
+  border: 1px solid #5861E2;
+  color: #5861E2;
+  background: transparent;
+}
+
+.popupWP .btn.notagree {
+  background: #CA3B32;
+  opacity: 0.35;
+}
+
+.btn.back1 {
+  margin-right: 10px;
+}
+
+.btn.search {
+  background: #5861E2;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.btn:hover {
+  border: 0;
+  background: #5861E2;
+  box-shadow: none;
+}
+
+.search:hover {
+  border: 1px solid #5861E2;
+  box-sizing: border-box;
+}
+
+.btn.add:hover {
+  background: #5861E2;
+  color: #fff;
+}
+
+.btn.back1 {
+  margin-right: 12px;
+}
+
+
+.btn.border.pre {
+  border: 1px solid #5861E2;
+  color: #5861E2;
+  background: transparent;
+}
+
+.btn.border.pre:hover {
+  background: #868efc;
+  border: 1px solid transparent;
+  box-shadow: none;
+  /*datetime 套件*/
+  color: #fff;
+  margin-right: 12px;
+}
+
+.stepBtn {
+  box-sizing: border-box;
+}
+
+.stepBtn:hover {
+  background: #868efc;
+  border: 0;
+}
+
+section.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0;
+  box-shadow: none;
+  position: relative;
+  margin-top: 14px;
+}
+
+section.flex.fixedHeight {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+section.flex .title {
+  border: 0;
+  font-size: 1.1rem;
+  color: #2F3034;
+  margin-bottom: 8px;
+  padding: 0;
+  background-color: transparent;
+}
+
+section.flex .title p {
+  color: #6D6E71;
+  font-size: .9rem;
+}
+
+.stepContent .pagination {
+  position: relative;
+  bottom: 3px;
+  right: 0;
+  margin-top: 8px;
+}
+
+section.flex .listWP {
+  width: 44%;
+  border: 1px solid #E1E1E2;
+  padding: 16px 20px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  margin: 0;
+  position: relative;
+}
+
+.popup_bg .swalWP {
+  overflow: visible;
+}
+
+.popup_bg .popupWP.big .swalWP {
+  padding: 80px 20px 10px;
+  box-sizing: border-box;
+}
+
+[type="checkbox"]+span:not(.lever) {
+  padding-left: 23px;
+}
+
+.step4 [type="checkbox"]+span:not(.lever) {
+  padding-left: 0;
+}
+
+.step1 [type="checkbox"]+span:not(.lever) {
+  padding-left: 2px;
+}
+
+/*step3*/
+
+.popupWP .flex.img {
+  justify-content: center;
+}
+
+.step3 .head_bg td,
+.step3 .mainTable td {
+  width: 25%;
+}
+
+.step3 .head_bg td:nth-child(1),
+.step3 .mainTable td:nth-child(1) {
+  width: 10%;
+}
+
+.step3 .head_bg td:nth-child(2),
+.step3 .mainTable td:nth-child(2) {
+  width: 40%;
+}
+
+/*step4*/
+.btnImg {
+  border-radius: 2px;
+}
+
+.btnImg img {
+  width: 18px;
+  height: 18px;
+}
+
+.btnImg i:nth-child(1) {
+  margin-right: 0;
+  flex-direction: row;
+  width: 51px;
+  justify-content: space-evenly;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.step4 .head_bg td {
+  color: #999;
+}
+
+.step4 .head_bg td:nth-child(3),
+.step4 .mainTable td:nth-child(3) {
+  width: 20%;
+}
+
+.step4 .head_bg td:nth-child(1),
+.step4 .mainTable td:nth-child(1) {
+  width: 55%;
+}
+
+.step4 .head_bg td:nth-child(2),
+.step4 .mainTable td:nth-child(2) {
+  width: 25%;
+}
+
+.step4 .table-responsive .tableWp {
+  min-height: 1 00px;
+  overflow: scroll;
+}
+
+.step4 .flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.step4 .flexrow {
+  align-items: flex-start;
+  position: relative;
+}
+
+.step4 .flexrow.column {
+  flex-direction: column;
+  border: 1px solid #E1E1E2;
+  border-radius: 10px;
+}
+
+.step4 .flexrow.column .section {
+  width: 100%;
+}
+
+.step4 .flexrow.margin60 {
+  margin-bottom: 60px;
+}
+
+.step4 .flexrow .flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.step4 .flexrow .flex.start .small {
+  width: 22px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.step4 .flexrow .flex .mediaImg_check {
+  width: 160px;
+  height: 134px;
+  margin-right: 20px;
+}
+
+.step4 .flexrow .flex p {
+  font-size: 1rem;
+  font-weight: 100;
+  color: #2F3034;
+}
+
+.step4 .flexrow .flex span {
+  font-size: 0.95rem;
+  color: #6D6E71;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 145px;
+  display: inline-block;
+}
+
+.step4 .flexrow .flex span.title {
+  color: #999;
+  background-color: transparent;
+  padding: 0;
+  margin-right: 5px;
+  font-size: 0.9rem;
+  width: 66px;
+}
+
+.step4 .flexrow .top {
+  width: 48%;
+  border-radius: 10px;
+  border: 1px solid #E1E1E2;
+}
+
+.textImg {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.textImg p.imgWp {
+  border: 1px solid #E1E1E2;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.textImg p.imgWp img {
+  width: 18px;
+  height: 18px;
+}
+
+.step4 .accordion {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.step4 .flexrow .flex.section {
+  display: flex;
+  padding: 18px 12px;
+  justify-content: space-between;
+}
+
+.step4 .flexrow .info {
+  width: 60%;
+}
+
+.step4 .flexrow .flex.start {
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid #E1E1E2;
+  padding: 10px 12px;
+  box-sizing: border-box;
+}
+
+.step4 .titleWP {
+  border-bottom: 1px solid #eeeeee;
+  padding: 8px 12px;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.step4 .titleWP.last {
+  border-top: 1px solid #eee;
+}
+
+.step4 .contentInfo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 12px;
+  color: #6D6E71;
+}
+
+.step4 .contentInfo .till {
+  margin: 0 5px;
+}
+
+.step4 #playSelection_device th {
+  width: 16.6%;
+}
+
+.step4 table {
+  width: 100%;
+}
+
+
+
+section.flex .listWP .btn {
+  width: 100px;
+  box-shadow: none;
+}
+
+section.flex .listWP .btn.addAll {
+  background-color: #5861E2;
+  border: 1px solid #5861E2;
+  color: #fff;
+}
+
+section.flex .listWP .btn.addAll:hover {
+  background-color: transparent;
+  color: #5861E2;
+}
+
+section.flex .listWP .btn.addAll:hover {
+  background-color: transparent;
+  color: #5861E2;
+}
+
+section.flex .listWP .btn.deleteAll {
+  background-color: #fff;
+  color: #D95685;
+  border: 1px solid #D95685;
+}
+
+section.flex .listWP .btn.deleteAll:hover {
+  background-color: #D95685;
+  color: #fff;
+}
+
+section.flex .listWP .btn.deleteAll:hover {
+  background-color: #D95685;
+  color: #fff;
+}
+
+.flex.paginationWP {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.imgWP {
+  position: absolute;
+  width: 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  left: 48%;
+}
+
+.imgWP.mobile {
+  display: none;
+}
+
+.imgWP img {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 16px 0;
+}
+
+section.flex .listWP .list input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+}
+
+[type="checkbox"]+span:not(.lever):before,
+[type="checkbox"]:not(.filled-in)+span:not(.lever):after {
+  border: 1px solid #C7C7C7;
+}
+
+.step4 [type="checkbox"]+span:not(.lever):before,
+.step4 [type="checkbox"]:not(.filled-in)+span:not(.lever):after {
+  display: none;
+}
+
+.step4 label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+/*step5*/
+.flexrow,
+.dateWP,
+.dateWP .date,
+.timeWP,
+.timeWP .time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dateWP,
+.timeWP {
+  border: 1px solid #E1E1E2;
+  margin-right: 10px;
+  padding: 6px 15px;
+  width: 240px;
+}
+
+.step4 .dateWP,
+.step4 .timeWP {
+  width: 250px;
+  margin: 10px 0;
+  border: 0;
+}
+
+.step4 .btn.border.yellow {
+  width: auto;
+  margin: 0 auto;
+  height: 28px;
+  line-height: 28px;
+  font-size: 0.8rem;
+  padding: 0 5px;
+}
+
+.dateWP .date p,
+.timeWP .time p {
+  margin-right: 10px;
+}
+
+.dateWP .date span,
+.timeWP .time span {
+  color: #999;
+  width: 80px;
+}
+
+.dateWP .date span.after,
+.timeWP .time span.after {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 93px;
+}
+
+.dateWP .date span.after:after,
+.timeWP .time span.after:after {
+  content: '-';
+  width: 10px;
+  text-align: center;
+  display: block;
+  margin: 0 5px;
+  color: #2F3034;
+}
+
+
+[type="radio"].option-input {
+  pointer-events: initial;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  height: 22px;
+  width: 22px;
+  transition: all 0.15s ease-out 0s;
+  border: 1px solid #C7C7C7;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border-radius: 50%;
+  opacity: 1;
+  margin: 0 auto;
+}
+
+[type="radio"].option-input:checked {
+  position: relative;
+}
+
+[type="radio"].option-input:checked::before {
+  width: 12px;
+  height: 12px;
+  display: flex;
+  border-radius: 50%;
+  content: '';
+  font-size: 1rem;
+  font-weight: bold;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background: #6B56EC;
+}
+
+[type="radio"].option-input:checked::after {
+  border: 1px solid #6B56EC;
+  width: 22px;
+  height: 22px;
+  background: transparent;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+
+[type="radio"].option-input.radio::after {
+  border-radius: 50%;
+}
+
+.timepicker-span-hours,
+.timepicker-span-minutes,
+.timepicker-display-column {
+  font-size: 4rem;
+}
+
+.timepicker-span-am-pm .am-btn,
+.timepicker-span-am-pm .pm-btn {
+  font-size: 1.3rem;
+}
+
+@media(max-width:1180px) {
+  #main .contentBG {
+    overflow: scroll;
+  }
+
+}
+
+@media(max-width:1150px) {
+  #main .content {
+    padding-right: 20px;
+    padding-left: 184px;
+  }
+
+  .imgWP {
+    left: 47.5%;
+  }
+
+  .step {
+    width: 98%;
+  }
+}
+
+@media(max-width:1010px) {
+  #main .content {
+    padding-left: 164px;
+  }
+}
+
+@media(max-width:1000px) {
+
+  .stepContent .bg .flexrow .wrapper {
+    margin: 10px auto;
+  }
+
+  #main .content {
+    padding-left: 159px;
+  }
+}
+
+
+@media(max-width:970px) {
+  #main .contentBG {
+    padding: 14px;
+  }
+
+  #main .content {
+    padding-left: 173px;
+    padding-right: 12px;
+  }
+
+  .daterangepicker {
+    width: 98%;
+  }
+}
+
+
+
+@media(max-width:900px) {
+  #main .content {
+    padding: 0 20px;
+  }
+}
+
+
+@media (max-width:800px) {
+  .datepicker-date-display .date-text {
+    font-size: 2rem;
+  }
+}
+
+@media(max-width:780px) {
+  #main .contentBG.column {
+    height: auto;
+  }
+
+  .imgWP img {
+    width: 30px;
+    height: 30px;
+  }
+
+}
+
+@media (max-width:770px) {
+
+  .daterangepicker {
+    width: 100%;
+  }
+
+  .step4 .flexrow .flex span {
+    width: 200px;
+  }
+}
+
+@media(max-width:750px) {
+
+  .step1 .flexrow .flex span.wp span:nth-child(1) {
+    width: 35%;
+  }
+
+  .step1 .flexrow .flex span.wp span:nth-child(2),
+  .step1 .flexrow .flex span.wp span:nth-child(2).time {
+    width: 120px;
+  }
+
+  .step1 .flexrow .cycle {
+    flex-wrap: wrap;
+  }
+
+  .step1 .flexrow .cycle p {
+    margin: 2px;
+  }
+
+  .imgWP {
+    left: 47%;
+  }
+
+  .dateWP,
+  .timeWP {
+    width: auto;
+    margin-right: 5px;
+    padding: 6px 5px;
+  }
+
+  .step5 .tabContentWP .btn.border.yellow.relative {
+    padding: 0 5px;
+  }
+
+
+}
+
+@media(max-width:750px) {
+  .imgWP {
+    left: 47%;
+  }
+
+  .dateWP,
+  .timeWP {
+    width: auto;
+    margin-right: 5px;
+    padding: 6px 5px;
+  }
+}
+
+@media(max-width:656px) {
+  .flex.paginationWP {
+    flex-direction: column;
+  }
+
+  .daterangepicker {
+    background-color: transparent;
+  }
+}
+
+@media(max-width:600px) {
+  .stepFlex {
+    justify-content: space-between;
+  }
+
+  .timeWP {
+    margin-right: 0;
+  }
+
+  .tab2 .table-responsive th:nth-child(1),
+  .tab2 .table-responsive table td:nth-child(1),
+  .tab2 .table-responsive .head_bg span:nth-child(1) {
+    display: none;
+  }
+
+}
+
+@media(max-width:550px) {
+  #main .content {
+    padding: 0 16px 20px;
+  }
+
+  .tab2 .table-responsive th:nth-child(6),
+  .tab2 .table-responsive table td:nth-child(6),
+  .tab2 .table-responsive .head_bg span:nth-child(6) {
+    display: none;
+  }
+
+}
+
+@media(max-width:530px) {
+  .stepContent .bg {
+    height: 50vh;
+    margin-top: 20px;
+  }
+
+  .stepContent .bg .flexrow .wrapper {
+    flex-direction: column;
+  }
+
+  .stepContent .bg .flexrow .wrapper>div {
+    margin: 0 auto 10px;
+  }
+
+  .stepFlex {
+    justify-content: center;
+  }
+
+  .stepFlex li,
+  .stepFlex::before,
+  .stepFlex::after {
+    display: none;
+  }
+
+  .stepFlex li.now {
+    display: flex;
+  }
+
+  .tab3 .table-responsive th:nth-child(4),
+  .tab3 .table-responsive table td:nth-child(4),
+  .tab3 .table-responsive .head_bg span:nth-child(4) {
+    display: none;
+  }
+}
+
+@media(max-width:515px) {
+
+  .btn.add {
+    font-size: 0.85rem;
+    width: 52px;
+  }
+
+  .searchBar.top .flex {
+    align-self: flex-start;
+  }
+}
+
+@media(max-width:480px) {
+
+  .accordion label .icon {
+    margin-right: 8px;
+  }
+
+  #main .contentBG.column {
+    height: 110vh;
+  }
+
+}

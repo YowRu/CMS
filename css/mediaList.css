@@ -1,0 +1,122 @@
+.head_bg td,
+table td {
+  width: 8%;
+}
+
+.head_bg td:nth-child(3),
+table td:nth-child(3),
+.head_bg td:nth-child(4),
+table td:nth-child(4){
+  width: 14%;
+}
+
+.head_bg td:nth-child(2),
+table td:nth-child(2),
+.head_bg td:nth-child(6),
+table td:nth-child(6){
+  width: 20%;
+}
+
+.head_bg td:nth-child(5),
+table td:nth-child(5) ,
+.head_bg td:nth-child(7),
+table td:nth-child(7){
+  width: 12%;
+}
+
+@media(max-width:740px) {
+  .searchBar .flex.type {
+    display: none;
+  }
+}
+
+@media(max-width:700px) {
+
+  .searchBar .flex.second,
+  .table-responsive table th:nth-child(4),
+  .table-responsive table td:nth-child(4),
+  .table-responsive .head_bg span:nth-child(4) {
+    display: none;
+  }
+
+  .table-responsive .head_bg span {
+    padding-left: 15px;
+  }
+}
+
+@media(max-width:650px) {
+
+  .table-responsive table th:nth-child(5),
+  .table-responsive table td:nth-child(5),
+  .table-responsive .head_bg span:nth-child(5) {
+    display: none;
+  }
+}
+
+@media(max-width:570px) {
+
+  .table-responsive table th:nth-child(6),
+  .table-responsive table td:nth-child(6),
+  .table-responsive .head_bg span:nth-child(6) {
+    display: none;
+  }
+}
+
+@media(max-width:520px) {
+
+  .searchBar .flex.date,
+  .table-responsive table th:nth-child(3),
+  .table-responsive table td:nth-child(3),
+  .table-responsive .head_bg span:nth-child(3) {
+    display: none;
+  }
+
+  .batchCheck {
+    padding: 6.5px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+@media(max-width:500px) {
+
+  .searchBar .flex.date {
+    display: none;
+  }
+
+  .table-responsive .head_bg span {
+    padding-left: 2px;
+  }
+}
+
+@media (max-width:450px) {
+
+  .table-responsive table th:nth-child(3),
+  .table-responsive table td:nth-child(3),
+  .table-responsive .head_bg span:nth-child(3) {
+    display: none;
+  }
+
+  .popupWP .popup {
+    padding: 20px;
+  }
+}
+
+@media (max-width:414px) {
+  .btnImg {
+    flex-direction: column;
+  }
+
+  .btnImg i:nth-child(1) {
+    margin: 0;
+  }
+
+  .popupWP .flex {
+    height: 40px;
+  }
+}
+
+@media (max-width:350px) {
+  .popupWP .popup {
+    padding: 20px 14px;
+  }
+}

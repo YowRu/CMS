@@ -1,0 +1,99 @@
+.table-responsive {
+    margin-top: 68px;
+}
+
+.head_bg td,
+table td {
+  width: 14%;
+}
+
+.head_bg td:nth-child(7),
+table td:nth-child(7),
+.head_bg td:nth-child(4),
+table td:nth-child(4),
+.head_bg td:nth-child(8),
+table td:nth-child(8){
+  width: 12%;
+}
+
+.head_bg td:nth-child(1),
+table td:nth-child(1){
+  width: 8%
+}
+
+@media(max-width:1190px) {
+
+  .searchBar .flex.second,
+  .table-responsive table th:nth-child(4),
+  .table-responsive table td:nth-child(4),
+  .table-responsive .head_bg span:nth-child(4) {
+    display: none;
+  }
+}
+
+@media(max-width:1000px) {
+
+  .searchBar .flex.type,
+  .table-responsive table th:nth-child(7),
+  .table-responsive table td:nth-child(7),
+  .table-responsive .head_bg span:nth-child(7) {
+    display: none;
+  }
+
+}
+
+@media(max-width:740px) {
+
+  .searchBar .flex.date.check,
+  .table-responsive table th:nth-child(6),
+  .table-responsive table td:nth-child(6),
+  .table-responsive .head_bg span:nth-child(6) {
+    display: none;
+  }
+
+  #checkDate1,
+  #checkDate2 {
+    width: 70px;
+  }
+}
+
+@media(max-width:600px) {
+
+  .searchBar .flex.date {
+    display: none;
+  }
+}
+
+@media(max-width:550px) {
+
+  .table-responsive table th:nth-child(5),
+  .table-responsive table td:nth-child(5),
+  .table-responsive .head_bg span:nth-child(5) {
+    display: none;
+  }
+}
+
+@media (max-width:450px) {
+  .popupWP .popup {
+    padding: 20px;
+  }
+}
+
+@media(max-width:430px) {
+
+  .table-responsive table th:nth-child(3),
+  .table-responsive table td:nth-child(3),
+  .table-responsive .head_bg span:nth-child(3) {
+    display: none;
+  }
+
+  .popupWP .flex {
+    height: 40px;
+  }
+}
+
+@media (max-width:350px) {
+  .popupWP .popup {
+    padding: 20px 14px;
+  }
+}

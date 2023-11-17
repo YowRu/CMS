@@ -1,0 +1,270 @@
+/*tr backgroundColor*/
+table tbody tr:nth-child(even) {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+1,fdfbff+31,fdfbff+69,ffffff+100 */
+  background: linear-gradient(to right, #ffffff 1%, #fdfbff 31%, #fdfbff 69%, #ffffff 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+}
+
+table tbody tr:nth-child(odd),
+table.head_bg tbody tr:nth-child(odd) {
+  background: transparent;
+}
+
+.popupWP .filter .flex.date {
+  width: 180px;
+}
+
+.popupWP .filter .flex.date label {
+  width: 38px;
+}
+
+.head_bg.clone td,
+.mainTable.clone td {
+  width: 20%;
+}
+
+.head_bg.playList td,
+.mainTable.playList td,
+.head_bg.clone td:nth-child(1),
+.mainTable.clone td:nth-child(1),
+.head_bg.clone td:nth-child(5),
+.mainTable.clone td:nth-child(5) {
+  width: 10%;
+}
+
+.head_bg.playList td:nth-child(1),
+.mainTable.playList td:nth-child(1) {
+  width: 3%;
+}
+
+.head_bg.playList td:nth-child(2),
+.mainTable.playList td:nth-child(2),
+.head_bg.playList td:nth-child(3),
+.mainTable.playList td:nth-child(3),
+.head_bg.playList td:nth-child(9),
+.mainTable.playList td:nth-child(9) {
+  width: 11%;
+}
+
+.head_bg.playList td:nth-child(4),
+.mainTable.playList td:nth-child(4),
+.head_bg.playList td:nth-child(8),
+.mainTable.playList td:nth-child(8) {
+  width: 9%;
+}
+
+.head_bg.playList td:nth-child(5),
+.mainTable.playList td:nth-child(5),
+.head_bg.playList td:nth-child(7),
+.mainTable.playList td:nth-child(7) {
+  width: 8%;
+}
+
+/*replace*/
+.head_bg.replace td,
+.mainTable.replace td {
+  width: 23%;
+}
+
+.head_bg.replace td:nth-child(1) input {
+  opacity: 0;
+}
+
+.head_bg.replace td:nth-child(1),
+.mainTable.replace td:nth-child(1) {
+  width: 8%;
+}
+
+
+.btnImg {
+  align-items: flex-start;
+}
+
+.popupWP .selectContent>img {
+  width: 68px;
+  height: auto;
+
+}
+
+
+.popup_bg .swalWP {
+  overflow: visible;
+}
+
+.popup_bg .popupWP.big .swalWP {
+  padding: 80px 20px 10px;
+  box-sizing: border-box;
+}
+
+.popup_bg .popupWP.big .swalWP .searchBar .flex {
+  margin-bottom: 0;
+  height: 36px;
+}
+
+.flex.mediadate_clone label,
+.flex.mediadate_replace label {
+  width: 54px;
+}
+
+.popupWP .textInfo span {
+  color: #5861E2;
+}
+
+.popupWP .textInfo img,
+.popupWP .selectContent img {
+  display: block;
+  width: 18px;
+  height: auto;
+}
+
+.popupWP .selectContent img {
+  width: 68px;
+  display: block;
+  margin: 0 auto;
+}
+
+.popupWP .selectContent img.detail {
+  height: 280px;
+  width: 100%;
+}
+
+.selectContent .table-responsive {
+  margin-top: 20px;
+}
+
+.popup_bg .popupWP.big .btnWP {
+  margin-top: 30px;
+}
+
+
+
+
+@media(max-width:1400px) {
+
+  .mainTable.playList .detailContent td:nth-child(9),
+  .mainTable.playList .detailContent th:nth-child(9),
+  .mainTable.playList .detailContent td:nth-child(10),
+  .mainTable.playList .detailContent th:nth-child(10) {
+    display: none;
+  }
+}
+
+@media(max-width:1020px) {
+
+  .mainTable.playList .detailContent td:nth-child(8),
+  .mainTable.playList .detailContent th:nth-child(8),
+  .mainTable.playList .detailContent td:nth-child(7),
+  .mainTable.playList .detailContent th:nth-child(7) {
+    display: none;
+  }
+}
+
+@media(max-width:1000px) {
+
+  .mainTable.playList td:nth-child(4),
+  .head_bg.playList td:nth-child(4) {
+    display: none;
+  }
+
+  .mainTable.playList .detailContent td:nth-child(4) {
+    display: table-cell;
+  }
+}
+
+@media(max-width:950px) {
+
+  .mainTable.playList td:nth-child(2),
+  .head_bg.playList td:nth-child(2),
+  .mainTable.playList .detailContent td:nth-child(6),
+  .mainTable.playList .detailContent th:nth-child(6) {
+    display: none;
+  }
+
+  .mainTable.playList .detailContent td:nth-child(2) {
+    display: table-cell;
+  }
+
+}
+
+@media(max-width:710px) {
+
+  .popup_bg.repalce .popupWP.big .swalWP .searchBar .flex.type,
+  .popupWP .flex.type,
+  .mainTable.playList td:nth-child(8),
+  .head_bg.playList td:nth-child(8) {
+    display: none;
+  }
+
+  .btnImg img {
+    width: 22px;
+    height: 22px;
+  }
+
+}
+
+@media(max-width:680px) {
+
+  .mainTable.playList td:nth-child(9),
+  .head_bg.playList td:nth-child(9) {
+    display: none;
+  }
+}
+
+@media(max-width:650px) {
+
+  .head_bg.clone td:nth-child(5),
+  .mainTable.clone td:nth-child(5),
+  .mainTable.playList td:nth-child(7),
+  .head_bg.playList td:nth-child(7) {
+    display: none;
+  }
+}
+
+@media (max-width:570px) {
+
+  .popup_bg .popupWP.big .swalWP .searchBar .flex.second {
+    display: none;
+  }
+}
+
+@media(max-width:515px) {
+
+  .mainTable.playList td:nth-child(6),
+  .head_bg.playList td:nth-child(6),
+  .mainTable.playList .detailContent td:nth-child(5),
+  .mainTable.playList .detailContent th:nth-child(5) {
+    display: none;
+  }
+
+  .btnImg img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media(max-width:500px) {
+
+  .popupWP .flex.second,
+  .head_bg.clone td:nth-child(3),
+  .mainTable.clone td:nth-child(3),
+  .mainTable.playList td:nth-child(9),
+  .head_bg.playList td:nth-child(9),
+  .mainTable.replace td:nth-child(4),
+  .head_bg.replace td:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width:414px) {
+
+  .popupWP .flex.date,
+  .mainTable.replace td:nth-child(2),
+  .head_bg.replace td:nth-child(2),
+  .head_bg.clone td:nth-child(2),
+  .mainTable.clone td:nth-child(2),
+  .mainTable.playList .detailContent td:nth-child(1),
+  .mainTable.playList .detailContent th:nth-child(1) {
+    display: none;
+  }
+}

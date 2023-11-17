@@ -1,0 +1,407 @@
+.head_bg td,
+.mainTable .main>td {
+  width: 10%;
+}
+
+.head_bg td:nth-child(2),
+.mainTable .main>td:nth-child(2),
+.head_bg td:nth-child(4),
+.mainTable .main>td:nth-child(4),
+.head_bg td:nth-child(5),
+.mainTable .main>td:nth-child(5) {
+  width: 14%;
+}
+
+.head_bg td:nth-child(1),
+.mainTable .main>td:nth-child(1) {
+  width: 5%;
+}
+
+.head_bg td:nth-child(3),
+.mainTable .main>td:nth-child(3) {
+  width: 25%;
+}
+
+.head_bg td:nth-child(6),
+.mainTable .main>td:nth-child(6),
+.head_bg td:nth-child(7),
+.mainTable .main>td:nth-child(7) {
+  width: 9%;
+}
+
+/*detail*/
+.detailClose {
+  cursor: pointer;
+}
+
+.detailContent th:nth-child(3),
+.detailContent td:nth-child(3),
+.detailContent th:nth-child(7),
+.detailContent td:nth-child(7) {
+  width: 14%;
+}
+
+.detailContent th:nth-child(4),
+.detailContent td:nth-child(4) {
+  width: 8%;
+}
+
+.detailContent th:nth-child(1),
+.detailContent td:nth-child(1),
+.detailContent th:nth-child(2),
+.detailContent td:nth-child(2) .detailContent th:nth-child(5),
+.detailContent td:nth-child(5),
+.detailContent th:nth-child(6),
+.detailContent td:nth-child(6) {
+  width: 17%;
+}
+
+.btnImg .flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+}
+
+.btnImg {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100px;
+}
+
+.btnImg i:nth-child(1) {
+  margin-right: 0;
+}
+
+/*online*/
+.online {
+  color: transparent;
+  position: relative;
+}
+
+.online.N::before,
+.online.Y::before {
+  content: '✘';
+  font-size: xx-small;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#afafaa+2,31331f+99 */
+  background: radial-gradient(ellipse at center, #d1d1d1 2%, #7e7e7e 99%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+
+}
+
+.online.Y::before {
+  content: '✓';
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#65c746+2,47b126+51 */
+  background: radial-gradient(ellipse at center, #65c746 2%, #47b126 51%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+}
+
+/*tr backgroundColor*/
+table tbody tr:nth-child(even){
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+1,fdfbff+31,fdfbff+69,ffffff+100 */
+  background: linear-gradient(to right,  #ffffff 1%,#fdfbff 31%,#fdfbff 69%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  
+  }
+  table tbody tr:nth-child(odd),
+  table.head_bg tbody tr:nth-child(odd){
+    background: transparent;
+  }
+
+
+/*teb*/
+.popupWP.width600.edit .titleWP {
+  background-color: #ededed;
+}
+
+.popup_bg .edit .tabs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: transparent;
+  padding: 0 2px;
+}
+
+.popup_bg .edit .tabs li {
+  padding: 0 12px;
+  height: 44px;
+  line-height: 44px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-top: 4px;
+}
+
+.popup_bg .edit .tabs li.active {
+  background-color: #fff;
+}
+
+.popup_bg .edit .tabs li a {
+  color: #bbb;
+}
+
+.popup_bg .edit .tabs li.active a {
+  color: #2F3034;
+}
+
+.edit_popup.flex>div.info {
+  width: 100%;
+}
+
+.edit_popup.flex .addressWP,
+.add_popup .flex .addressWP,
+.add_popup .flex .screenWP,
+.edit_popup.flex .closeTime {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add_popup .flex .screenWP input {
+  width: 40px;
+  text-align: center;
+  color: #2F3034;
+}
+
+.add_popup .flex input.datepicker,
+.edit_popup .flex input.datepicker {
+  width: 100px;
+  text-align: center;
+}
+
+.edit_popup .flex input.datepicker {
+  width: 155px;
+  font-size: 0.85rem;
+}
+
+.multiselect {
+  width: 100px;
+  height: 24px;
+  position: relative;
+}
+
+.multiselect [type="radio"]:checked,
+.multiselect [type="radio"]:not(:checked) {
+  opacity: 1;
+  pointer-events: initial;
+  width: 13px;
+}
+
+.selectBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkboxes {
+  display: none;
+  border: 0;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  z-index: 2;
+  width: 116px;
+  height: 142px;
+  overflow-y: scroll;
+  border: 1px solid #E1E1E2;
+  background-color: #fff;
+  padding-top: 10px;
+}
+
+#checkboxes .flex {
+  height: 32px;
+  border: 0;
+  margin-bottom: 7px;
+  width: 100%;
+  border-radius: 2px;
+  padding: 12px 15px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#checkboxes label {
+  display: block;
+  margin-right: 10px;
+  width: 13px;
+}
+
+#checkboxes label:hover {
+  background-color: #b7a9ff;
+}
+
+#checkboxes img {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+
+/*popup*/
+.popupWP div.flex.height100 {
+  height: 100px;
+}
+
+.popupWP div.flex.height90 {
+  height: 90px;
+}
+
+.popupWP.width600 .popup {
+  border: 0;
+  align-items: flex-start;
+  padding: 30px 20px;
+  margin-bottom: -16px;
+}
+
+.popupWP .setting .flex.start {
+  justify-content: flex-start;
+  width: auto;
+  margin-bottom: 0;
+  padding-right: 0;
+  border: 0;
+}
+
+.popupWP .setting .flex.start span {
+  margin: 0 5px;
+}
+
+#contract_end,
+#contract_start {
+  width: 74px;
+  text-align: center;
+  height: auto;
+  border-bottom: 0;
+  margin-bottom: 0;
+  font-size: 0.85rem;
+}
+
+.contractWP {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contractWP p {
+  margin: 0 5px;
+}
+
+.popup_bg .edit .swalWP {
+  overflow: visible;
+}
+
+/*detailList*/
+.popup_bg .swalWP {
+  height: 98vh;
+}
+
+@media(max-width:770px) {
+
+  .mainTable .main>td:nth-child(3),
+  .head_bg td:nth-child(3),
+  .detailContent th:nth-child(4),
+  .detailContent td:nth-child(4) {
+    display: none;
+  }
+
+  .btnImg {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btnImg .flex {
+    margin-right: 0;
+  }
+
+}
+
+@media(max-width:600px) {
+
+  .searchBar .flex.screen,
+  .mainTable .main>td:nth-child(5),
+  .head_bg td:nth-child(5),
+  .detailContent th:nth-child(3),
+  .detailContent td:nth-child(3) {
+    display: none;
+  }
+
+  /*popup*/
+  .popupWP {
+    height: 82vh;
+    overflow: scroll;
+  }
+
+  .edit_popup.flex {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .edit_popup.flex>div {
+    width: 100%;
+  }
+
+  .popup_bg .swalWP {
+    height: 100vh;
+    padding-bottom: 0;
+  }
+}
+
+@media(max-width:550px) {
+
+  .mainTable .main>td:nth-child(2),
+  .head_bg td:nth-child(2) {
+    display: none;
+  }
+}
+
+@media(max-width:515px) {
+
+  .detailContent th:nth-child(5),
+  .detailContent td:nth-child(5) {
+    display: none;
+  }
+
+  .popup_bg .edit .tabs li.active a,
+  .popup_bg .edit .tabs li a {
+    font-size: 0.9rem;
+  }
+}
+
+@media(max-width:414px) {
+
+  .detailContent th:nth-child(6),
+  .detailContent td:nth-child(6) {
+    display: none;
+  }
+
+  .popup_bg .edit .tabs li.active a,
+  .popup_bg .edit .tabs li a {
+    font-size: 0.85rem;
+  }
+}

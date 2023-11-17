@@ -1,0 +1,23 @@
+@media(max-width:656px) {
+
+  .step3 .mainTable td:nth-child(4),
+  .step3 .head_bg td:nth-child(4) {
+    display: none;
+  }
+}
+
+@media(max-width:480px) {
+  .step3 .searchBar .flex.screen {
+    display: none;
+  }
+
+}
+
+@media(max-width:414px) {
+
+  .step3 .mainTable td:nth-child(2),
+  .step3 .head_bg td:nth-child(2) {
+    display: none;
+  }
+
+}

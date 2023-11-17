@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="js/loading.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script src="js/rangepicker.js" class="rangeDateTime"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/rangepicker.css" class="rangeDateTime">
+  <link rel="stylesheet" href="css/sweetalert2.css">
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
+  <link rel="stylesheet" href="css/playSelection.css">
+  <link rel="stylesheet" href="css/playStep1.css">
+  <title>媒體刊播</title>
+
+<body>
+  <header></header>
+  <div id="main">
+    <div class="content">
+      <div class="title"></div>
+      <div class="contentBG ">
+        <ul class="stepFlex">
+          <li class="now">
+            <div class="circle">01</div>
+            <span>刊播時間</span>
+          </li>
+          <li>
+            <div class="circle">02</div>
+            <span>刊播素材</span>
+          </li>
+          <li>
+            <div class="circle">03</div>
+            <span>刊播設備</span>
+          </li>
+          <li>
+            <div class="circle">04</div>
+            <span>刊播內容</span>
+          </li>
+        </ul>
+        <div class="stepContent step1">
+          <div class="step step1">
+            <div class="flexrow">
+              <div class="datePicker"><input type="text" name="datetimes" id="rangeDateTime" /></div>
+            </div>
+            <div class="hasInfo">
+              <input type="text" class="startDate" value="" />
+              <input type="text" class="endDate" value="" />
+              <input type="text" class="startTime" value="" />
+              <input type="text" class="endTime" value="" />
+              <input type="text" class="cycle" value="">
+            </div>
+            <div class="submitInfo">
+              <input type="text" class="startDate">
+              <input type="text" class="endDate">
+              <input type="text" class="startTime">
+              <input type="text" class="endTime">
+              <input type="text" class="cycle">
+            </div>
+            <div id="mobileStart" class="dateSelected"></div>
+            <div id="mobileend" class="dateSelected"></div>
+            <div class="mobile">
+              <div class="accordion">
+                <label for="tab1" class="tab1">
+                  <div class="flex">
+                    <img src="img/media/calendar_plus.svg" alt="" class="icon">
+                    <span>起始日</span>
+                  </div>
+                  <div class="right">
+                    <div class="text start"><span class="year"></span>.<span class="month"></span>.<span
+                        class="day"></span></div>
+                    <img src="img/media/up_white.svg" alt="" class="arrowUp"><img src="img/media/down_white.svg" alt=""
+                      class="arrowDown">
+                  </div>
+                </label>
+                <div class="tabContentWP tab tab1">
+                  <input type="radio" name="tab" id="tab1">
+                  <div class="tab1 tabContent">
+                    <input type="text" class="mobile_datepicker" name="mobile_datepicker" id="mobile_start" value="">
+                    <div class="startTime">
+                      <p class="monthDay"><span class="month"></span>.<span class="day"></span></p>
+                      <p class="yearWeek"><span class="year"></span><span class="week">Wed</span></p>
+                    </div>
+                  </div>
+                </div>
+                <label for="tab2" class="tab2">
+                  <div class="flex">
+                    <img src="img/media/calendar_white.svg" alt="" class="icon">
+                    <span>結束日</span>
+                  </div>
+                  <div class="right">
+                    <div class="text end"><span class="year"></span>.<span class="month"></span>.<span
+                        class="day"></span>
+                    </div>
+                    <img src="img/media/up_white.svg" alt="" class="arrowUp"><img src="img/media/down_white.svg" alt=""
+                      class="arrowDown">
+                  </div>
+                </label>
+                <div class="tabContentWP tab tab2">
+                  <input type="radio" name="tab" id="tab2">
+                  <div class="tab2 tabContent">
+                    <input type="text" class="mobile_datepicker" name="mobile_datepicker" id="mobile_end" value="">
+                    <div class="endTime">
+                      <p class="monthDay"><span class="month"></span>.<span class="day"></span></p>
+                      <p class="yearWeek"><span class="year"></span><span class="week">Wed</span></p>
+                    </div>
+                  </div>
+                </div>
+                <label for="tab3" class="tab3">
+                  <div class="flex">
+                    <img src="img/media/hourglass_white.svg" alt="" class="icon">
+                    <span>週期</span>
+                  </div>
+                  <div class="right">
+                    <div class="text cycle">每天</div>
+                    <img src="img/media/up_white.svg" alt="" class="arrowUp"><img src="img/media/down_white.svg" alt=""
+                      class="arrowDown">
+                  </div>
+                </label>
+                <div class="tabContentWP tab tab3">
+                  <input type="radio" name="tab" id="tab3">
+                  <div class="tabContent">
+                    <div class="cycle">
+                      <div><label for="Sun_m"><input type="checkbox" checked="checked" id="Sun_m" name="week"
+                            value="0" /><span>週日</span></label></div>
+                      <div><label for="Mon_m"><input type="checkbox" checked="checked" id="Mon_m" name="week"
+                            value="1" /><span>週一</span></label></div>
+                      <div><label for="Tue_m"><input type="checkbox" checked="checked" id="Tue_m" name="week"
+                            value="2" /><span>週二</span></label></div>
+                      <div><label for="Wed_m"><input type="checkbox" checked="checked" id="Wed_m" name="week"
+                            value="3" /><span>週三</span></label></div>
+                      <div><label for="Thu_m"><input type="checkbox" checked="checked" id="Thu_m" name="week"
+                            value="4" /><span>週四</span></label></div>
+                      <div><label for="Fri_m"><input type="checkbox" checked="checked" id="Fri_m" name="week"
+                            value="5" /><span>週五</span></label></div>
+                      <div><label for="Sat_m"><input type="checkbox" checked="checked" id="Sat_m" name="week"
+                            value="6" /><span>週六</span></label></div>
+                    </div>
+                  </div>
+                </div>
+                <label for="tab4" class="tab4">
+                  <div class="flex">
+                    <img src="img/media/clock_white.svg" alt="" class="icon">
+                    <span>時段</span>
+                  </div>
+                  <div class="right">
+                    <div class="text time">全天</div>
+                    <img src="img/media/up_white.svg" alt="" class="arrowUp"><img src="img/media/down_white.svg" alt=""
+                      class="arrowDown">
+                  </div>
+                </label>
+                <div class="tabContentWP tab tab4">
+                  <input type="radio" name="tab" id="tab4">
+                  <div class="tabContent">
+                    <div class="timeWP">
+                      <div class="time start">
+                        <img src="img/clock.svg" alt="">
+                        <div class="selectWp">
+                          <select name="" id="startHour_M" class="hourselect">
+                            <option value="0">00</option>
+                            <option value="1">01</option>
+                            <option value="2">02</option>
+                            <option value="3">03</option>
+                            <option value="4">04</option>
+                            <option value="5">05</option>
+                            <option value="6">06</option>
+                            <option value="7">07</option>
+                            <option value="8">08</option>
+                            <option value="9">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                          </select>:
+                          <select name="" id="startMinute_M" class="minuteselect">
+                            <option value="0">00</option>
+                            <option value="5">05</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55">55</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="time end">
+                        <img src="img/clock.svg" alt="">
+                        <div class="selectWp">
+                          <select name="" id="endHour_M" class="hourselect">
+                            <option value="0">00</option>
+                            <option value="1">01</option>
+                            <option value="2">02</option>
+                            <option value="3">03</option>
+                            <option value="4">04</option>
+                            <option value="5">05</option>
+                            <option value="6">06</option>
+                            <option value="7">07</option>
+                            <option value="8">08</option>
+                            <option value="9">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                          </select>:
+                          <select name="" id="endMinute_M" class="minuteselect">
+                            <option value="0">00</option>
+                            <option value="5">05</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55">55</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <label for="allDay" class="allDay">
+                      <span>全天</span>
+                      <input type="checkbox" id="allDay" checked />
+                    </label>
+                  </div>
+                </div>
+                <div class="buttonWp">
+                  <button class="submitBtn btn"  type="submit">下一步</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sideNo">5</div>
+  <script src="js/table.js"></script>
+  <script>
+
+    $(document).ready(function () {
+
+      let bg_height = $('#main .contentBG').height();
+      bg_width = $('#main .contentBG').outerWidth();
+      pickerWidth = $('.daterangepicker').outerWidth();
+      y = $('.accordion .text.start .year').text();
+      m = $('.accordion .text.start .month').text();
+      d = $('.accordion .text.start .day').text();
+      //RWD range dateTimePicker
+      if ($(window).width() <= 500) {
+
+        $('.daterangepicker').hide();
+        $('script.rangeDateTime').remove();
+        $('head').append('<script src="js/rangepickerAll.js" />');//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js
+        $('link.rangeDateTime').attr('href', 'css/rangepicker_single.css');
+        $('.mobile').show();
+        $('#rangeDateTime').remove();
+
+        $('#mobile_start').daterangepicker({
+          drops: 'down',
+          opens: 'center',
+          singleDatePicker: true,
+          showDropdowns: true,
+          timePicker: false,
+          autoUpdateInput: true,
+          locale: {
+            format: 'YYYY.MM.DD'
+          }
+        }, startMobile);
+
+
+        //mobileStart change mobile_end minDate change
+        $('#mobileStart').on('DOMSubtreeModified', function () {
+
+          $('#mobile_end').daterangepicker({
+            drops: 'down',
+            opens: 'center',
+            minDate: $('#mobileStart').text() ? new Date($('#mobileStart').text()) : new Date(),
+            singleDatePicker: true,
+            showDropdowns: true,
+            timePicker: false,
+            autoUpdateInput: true,
+            locale: {
+              format: 'YYYY.MM.DD'
+            }
+          }, endMobile);
+
+        });
+
+        $('#mobile_end').daterangepicker({
+          drops: 'down',
+          opens: 'center',
+          minDate: $('#mobileStart').text() ? new Date($('#mobileStart').text()) : new Date(),
+          singleDatePicker: true,
+          showDropdowns: true,
+          timePicker: false,
+          autoUpdateInput: true,
+          locale: {
+            format: 'YYYY.MM.DD'
+          }
+        }, endMobile);
+
+
+        function startMobile(start, end, label) {
+          $('.step1 .submitInfo .startDate').attr('value', start.format('YYYY.MM.DD'));
+          $('#mobileStart').text(start.format('MM/DD/YYYY'));
+          $('.submitInfo .startDate').val(start.format('YYYY.MM.DD'));
+          $('.accordion .text.start .year').text(start.format('YYYY'));
+          $('.accordion .text.start .month').text(start.format('MM'));
+          $('.accordion .text.start .day').text(start.format('DD'));
+          console.log($('#mobileStart').text());
+        }
+        function endMobile(start, end, label) {
+          $('.step1 .submitInfo .endDate').attr('value', start.format('YYYY.MM.DD'));
+        }
+      } else {
+        // >500 range picker
+        $('#rangeDateTime').daterangepicker({
+          drops: 'down',
+          opens: 'center',
+          minDate: new Date(),
+          timePicker: true,
+          timePicker24Hour: true,
+          startDate: moment(),
+          endDate: moment(),
+          locale: {
+            format: 'YYYY.MM.DD hh:mm A'
+          }
+        });
+
+        document.getElementById('rangeDateTime').dispatchEvent(new MouseEvent("click"));//auto popup
+
+        $('.daterangepicker').show();
+        $('script.rangeDateTime').attr('src', 'js/rangepicker.js');
+
+        $('link.rangeDateTime').attr('href', 'css/rangepicker.css');
+        $('.mobile').hide();
+
+        if (1100 < $(window).width()) {
+          console.log('1100 <');
+          $('.daterangepicker').css({ 'top': 20, 'left': (bg_width - pickerWidth) / 2 });
+
+        } else if ($(window).width() <= 900) {
+          console.log('<= 900');
+          $('.daterangepicker').css({ 'top': 20, 'left': 0 });
+        } else if ($(window).width() <= 1100) {
+          console.log('900 < & < 1100');
+          $('.daterangepicker').css({ 'top': 20, 'left': (bg_width - pickerWidth) / 2 - 14 });
+        }
+
+      }//RWD dateTimePicker end
+
+      const hourMinute = function () {
+        //Hour option
+        for (let i = 0; i < 24; i++) {
+          if (i < 10) {
+            $("#startHour, #endHour").append(new Option(`0${i}`, i));
+          } else {
+            $("#startHour, #endHour").append(new Option(i, i));
+          }
+        }
+
+        //minute option 
+        for (let i = 0; i < 12; i++) {
+          let text = $('.drp-calendar select.minuteselect option').eq(i).val();
+          if (text < 10) {
+            $("#startMinute, #endMinute").append(new Option(`0${text}`, text));
+          } else {
+            $("#startMinute, #endMinute").append(new Option(text, text));
+          }
+        }
+      }
+
+      const disableHM = function () {
+        //Hour start disable
+        let startH = new Date().getHours();
+
+        $('#startHour option').eq(startH).attr('selected', 'selected');
+        for (let i = 0; i < startH; i++) {
+          $('#startHour option').eq(i).attr('disabled', 'disabled');
+        }
+
+        //Hour end disable
+        let endH = $('.drp-calendar.right select.hourselect').val();
+        $('#endHour option').eq(endH).attr('selected', 'selected');
+        for (let i = 0; i < endH; i++) {
+          $('#endHour option').eq(i).attr('disabled', 'disabled');
+        }
+
+        //minute start disable
+        let startM = $('.drp-calendar.left select.minuteselect').val();
+        disabledNUM = 0;
+
+        for (let i = 0; i < 12; i++) {
+          let text = $('.drp-calendar.left select.minuteselect option').eq(i).val();
+          if (text === startM) {
+            disabledNUM = i;
+          }
+        }
+
+        $('#startMinute option').eq(disabledNUM).attr('selected', 'selected');
+        for (let i = 0; i < disabledNUM; i++) {
+          $('#startMinute option').eq(i).attr('disabled', 'disabled');
+        }
+
+        //minute end disable
+        let endM = $('.drp-calendar.right select.minuteselect').val();
+        disabledendM = 0;
+
+        for (let i = 0; i < 12; i++) {
+          let text = $('.drp-calendar select.minuteselect option').eq(i).val();
+          if (text === endM) {
+            disabledendM = i;
+          }
+        }
+
+        $('#endMinute option').eq(disabledendM).attr('selected', 'selected');
+        for (let i = 0; i < disabledendM; i++) {
+          $('#endMinute option').eq(i).attr('disabled', 'disabled');
+        }
+      }
+
+      hourMinute();
+      // disableHM();
+      const defaultDT = function () {
+        //show date time text
+        let dayNow = new Date();
+        let day = (dayNow.getDate() < 10 ? '0' : '') + dayNow.getDate();
+        let month = dayNow.getMonth();
+        let year = dayNow.getFullYear();
+        let hour = (dayNow.getHours() < 10 ? '0' : '') + dayNow.getHours();
+        let minutes = (dayNow.getMinutes() < 10 ? '0' : '') + dayNow.getMinutes();
+
+        //default date & time
+        $('.startTime .year, .endTime .year, .accordion .text.start .year, .accordion .text.end .year').text(year);
+        $('.startTime .monthDay .month, .endTime .monthDay .month, .accordion .text.start .month, .accordion .text.end .month').text(`${month + 1}`);
+        $('.startTime .monthDay .day, .endTime .monthDay .day, .accordion .text.start .day, .accordion .text.end .day').text(day);
+        $('.step1 .submitInfo .startDate,.step1 .submitInfo .endDate').attr('value', `${year}/${month + 1}/${day}`);
+
+
+        //week text
+        let startWeekTEXT = $('.startTime .week').text(new Date().getDay());
+        endWeekTEXT = $('.endTime .week').text(new Date().getDay());
+
+        switch (startWeekTEXT[0].innerText) {
+          case '0':
+            $('.startTime .week').text('Sun');
+            break;
+          case '1':
+            $('.startTime .week').text('Mon');
+            break;
+          case '2':
+            $('.startTime .week').text('Tue');
+            break;
+          case '3':
+            $('.startTime .week').text('Wed');
+            break;
+          case '4':
+            $('.startTime .week').text('Thu');
+            break;
+          case '5':
+            $('.startTime .week').text('Fri');
+            break;
+          case '6':
+            $('.startTime .week').text('Sat');
+            break;
+        }
+        switch (endWeekTEXT[0].innerText) {
+          case '0':
+            $('.endTime .week').text('Sun');
+            break;
+          case '1':
+            $('.endTime .week').text('Mon');
+            break;
+          case '2':
+            $('.endTime .week').text('Tue');
+            break;
+          case '3':
+            $('.endTime .week').text('Wed');
+            break;
+          case '4':
+            $('.endTime .week').text('Thu');
+            break;
+          case '5':
+            $('.endTime .week').text('Fri');
+            break;
+          case '6':
+            $('.endTime .week').text('Sat');
+            break;
+        }
+
+      }
+
+
+      $('input[type="checkbox"]:checked').parent('label').addClass('checked');
+      $('input[type="checkbox"]:not(:checked)').parent('label').removeClass('checked');
+
+
+      //td width
+      let tdWidth = $('.table-condensed td').width();
+      $('.table-condensed td').outerHeight(tdWidth - 2);
+
+
+      //allDay
+      if ($('.step1 .hasInfo .startDate').val() !== '') {
+        let startTimeText = $('.hasInfo .startTime').val(),
+          endTimeText = $('.hasInfo .endTime').val(),
+          startDateText = $('.hasInfo .startDate').val(),
+          endDateText = $('.hasInfo .endDate').val(),
+          cycleText = $('.hasInfo .cycle').val();
+
+        $('#rangeDateTime').daterangepicker({
+          startDate: startDateText,
+          endDate: endDateText,
+          minDate: new Date(),
+          timePicker: true,
+          timePicker24Hour: true,
+          locale: {
+            format: 'YYYY.MM.DD hh:mm'
+          }
+        });
+        document.getElementById('rangeDateTime').dispatchEvent(new MouseEvent("click"));//auto popup
+
+        //hourMinute
+        hourMinute();
+
+        if (startTimeText !== '全天') {
+
+          $('#allDay').prop('checked', false);
+          $('.daterangepicker select.hourselect, .daterangepicker select.minuteselect, .selectWp select').attr('disabled', '');
+          $('.daterangepicker select.hourselect, .daterangepicker select.minuteselect,.daterangepicker .calendar-time, .selectWp, .time img').removeClass('disabled');
+          $('#startHour, #startMinute, #endHour, #endMinute').prop("disabled", false);
+
+          //hourMinute
+          let SHour = startTimeText.split(':')[0],
+            SMinute = startTimeText.split(':')[1],
+            EHour = endTimeText.split(':')[0],
+            EMinute = endTimeText.split(':')[1],
+            SMinute_eq, EMinute_eq;
+
+          $('#startHour option').eq(SHour).attr('selected', 'selected');
+          $('#endHour option').eq(EHour).attr('selected', 'selected');
+
+          //SMinute eq
+          for (i = 0; i < $('#startMinute option').length; i++) {
+            if ($('#startMinute option').eq(i).val() === SMinute) {
+              SMinute_eq = i;
+            }
+          }
+          //EMinute eq
+          for (i = 0; i < $('#endMinute option').length; i++) {
+            if ($('#endMinute option').eq(i).val() === EMinute) {
+              EMinute_eq = i;
+            }
+          }
+
+
+
+        } else if (startTimeText === '全天') {
+
+          $('.daterangepicker select.hourselect, .daterangepicker select.minuteselect, .selectWp select').attr('disabled', 'disabled');
+          $('.daterangepicker select.hourselect, .daterangepicker select.minuteselect,.daterangepicker .calendar-time, .selectWp, .time img').addClass('disabled');
+          $('.step1 .submitInfo .startTime, .step1 .submitInfo .endTime').attr('value', '全天');
+
+        }
+
+        $('.startTime .year').text(startDateText.split('/')[0]);
+        $('.startTime .monthDay .month').text(startDateText.split('/')[1]);
+        $('.startTime .monthDay .day').text(startDateText.split('/')[2]);
+
+        $('.endTime .year').text(endDateText.split('/')[0]);
+        $('.endTime .monthDay .month').text(endDateText.split('/')[1]);
+        $('.endTime .monthDay .day').text(endDateText.split('/')[2]);
+
+        //week
+        let startWeekTEXT = $('.startTime .week').text(new Date(startDateText).getDay()),
+          endWeekTEXT = $('.endTime .week').text(new Date(endDateText).getDay());
+        switch (Number(endWeekTEXT[0].innerText)) {
+          case 7:
+            $('.endTime .week').text('Sun');
+            break;
+          case 1:
+            $('.endTime .week').text('Mon');
+            break;
+          case 2:
+            $('.endTime .week').text('Tue');
+            break;
+          case 3:
+            $(' .endTime .week').text('Wed');
+            break;
+          case 4:
+            $('.endTime .week').text('Thu');
+            break;
+          case 5:
+            $('.endTime .week').text('Fri');
+            break;
+          case 6:
+            $('.endTime .week').text('Sat');
+            break;
+        }
+        switch (Number(startWeekTEXT[0].innerText)) {
+          case 7:
+            $('.startTime .week').text('Sun');
+            break;
+          case 1:
+            $('.startTime .week').text('Mon');
+            break;
+          case 2:
+            $('.startTime .week').text('Tue');
+            break;
+          case 3:
+            $('.startTime .week').text('Wed');
+            break;
+          case 4:
+            $('.startTime .week').text('Thu');
+            break;
+          case 5:
+            $('.startTime .week').text('Fri');
+            break;
+          case 6:
+            $('.startTime .week').text('Sat');
+            break;
+        }
+
+        //cycle
+        let n = cycleText.split(',');
+        $('.cycle input').prop('checked', false);
+
+        for (i = 0; i < n.length; i++) {
+          $('.cycle>div').eq(n[i]).find('input').prop('checked', 'checked');
+        }
+
+      } else {
+        defaultDT();
+        $('.daterangepicker select.hourselect, .daterangepicker select.minuteselect, .selectWp select').attr('disabled', 'disabled');
+        $('.daterangepicker select.hourselect, .daterangepicker select.minuteselect,.daterangepicker .calendar-time, .selectWp, .time img').addClass('disabled');
+        $('.step1 .submitInfo .startTime, .step1 .submitInfo .endTime').attr('value', '全天');
+        //cycle
+        $('.step1 .submitInfo .cycle').attr('value', '0,1,2,3,4,5,6');
+      }
+
+      $('#allDay').change(function () {
+        if ($('#allDay').prop('checked')) {
+          $('.daterangepicker select.hourselect, .daterangepicker select.minuteselect, .selectWp select').attr('disabled', 'disabled');
+          $('.daterangepicker select.hourselect, .daterangepicker select.minuteselect,.daterangepicker .calendar-time, .selectWp, .time img').addClass('disabled');
+          $('.step1 .submitInfo .startTime, .step1 .submitInfo .endTime').attr('value', '全天');
+
+        } else {
+          //時間不能選擇
+          $('.daterangepicker select.hourselect, .daterangepicker select.minuteselect, .selectWp select').attr('disabled', false);
+          $('.daterangepicker select.hourselect, .daterangepicker select.minuteselect,.daterangepicker .calendar-time, .selectWp, .time img').removeClass('disabled');
+
+          //fetch new date time
+          if ($('.drp-selected').css('display') == 'none') {
+
+            $('.step1 .submitInfo .startTime').attr('value', ($('#startHour').val() < 10 ? '0' + $('#startHour').val() : $('#startHour').val()) + ':' + ($('#startMinute').val() < 10 ? '0' + $('#startMinute').val() : $('#startMinute').val()));
+            $('.step1 .submitInfo .endTime').attr('value', ($('#endHour').val() < 10 ? '0' + $('#endHour').val() : $('#endHour').val()) + ':' + ($('#endMinute').val() < 10 ? '0' + $('#endMinute').val() : $('#endMinute').val()));
+          }
+        }
+      });
+
+      //Hour change
+      $('#startHour').change(function () {
+        $('.step1 .submitInfo .startTime').attr('value', ($(this).val() < 10 ? '0' + $(this).val() : $(this).val()) + ':' + ($('#startMinute').val() < 10 ? '0' + $('#startMinute').val() : $('#startMinute').val()));
+        //startHour < endHour
+        for (i = 0; i < $('#startHour').val(); i++) {
+          $('#endHour option').eq(i).attr('disabled', true);
+        }
+        $('#endHour option').eq($('#startHour').val()).attr('selected', 'selected');
+        $('.step1 .submitInfo .endTime').attr('value', ($('#endHour').val() < 10 ? '0' + $('#endHour').val() : $('#endHour').val()) + ':' + ($('#startMinute').val() < 10 ? '0' + $('#startMinute').val() : $('#startMinute').val()))
+
+      });
+      $('#startHour_M').change(function () {
+        $('.step1 .submitInfo .startTime').attr('value', ($(this).val() < 10 ? '0' + $(this).val() : $(this).val()) + ':' + ($('#startMinute_M').val() < 10 ? '0' + $('#startMinute_M').val() : $('#startMinute_M').val()));
+        //startHour < endHour
+        for (i = 0; i < $('#startHour_M').val(); i++) {
+          $('#endHour_M option').eq(i).attr('disabled', true);
+        }
+        $('#endHour_M option').eq($('#startHour_M').val()).attr('selected', 'selected');
+        $('.step1 .submitInfo .endTime').attr('value', ($('#endHour_M').val() < 10 ? '0' + $('#endHour_M').val() : $('#endHour_M').val()) + ':' + ($('#startMinute_M').val() < 10 ? '0' + $('#startMinute_M').val() : $('#startMinute_M').val()))
+
+      });
+
+      $('#endHour').change(function () {
+        $('.step1 .submitInfo .endTime').attr('value', ($(this).val() < 10 ? '0' + $(this).val() : $(this).val()) + ':' + ($('#endMinute').val() < 10 ? '0' + $('#endMinute').val() : $('#endMinute').val()));
+        if ($('#endHour').val() == $('#startHour').val()) {
+          //startMinute < endMinute
+          let num, newNUM;
+          for (i = 0; i < $('#startMinute option').length; i++) {
+            if ($('#startMinute').val() == $('#startMinute option').eq(i).val()) {
+              num = i;
+            }
+          }
+          for (i = 0; i < num; i++) {
+            $('#endMinute option').eq(i).attr('disabled', true);
+          }
+          $('#endMinute option').eq(num).attr('selected', 'selected');
+          $('#endMinute').val($('#startMinute').val());
+
+          $('.step1 .submitInfo .endTime').attr('value', $('.step1 .submitInfo .startTime').val());
+        } else {
+          $('#endMinute option').each(function () {
+            $(this).attr('disabled', false);
+          })
+        }
+      });
+
+      $('#endHour_M').change(function () {
+        $('.step1 .submitInfo .endTime').attr('value', ($(this).val() < 10 ? '0' + $(this).val() : $(this).val()) + ':' + ($('#endMinute_M').val() < 10 ? '0' + $('#endMinute_M').val() : $('#endMinute_M').val()));
+        if ($('#endHour_M').val() == $('#startHour_M').val()) {
+          //startMinute < endMinute
+          let num, newNUM;
+          for (i = 0; i < $('#startMinute_M option').length; i++) {
+            if ($('#startMinute_M').val() == $('#startMinute_M option').eq(i).val()) {
+              num = i;
+            }
+          }
+          for (i = 0; i < num; i++) {
+            $('#endMinute_M option').eq(i).attr('disabled', true);
+          }
+          $('#endMinute_M option').eq(num).attr('selected', 'selected');
+          $('#endMinute_M').val($('#startMinute_M').val());
+
+          $('.step1 .submitInfo .endTime').attr('value', $('.step1 .submitInfo .startTime').val());
+        } else {
+          $('#endMinute_M option').each(function () {
+            $(this).attr('disabled', false);
+          })
+        }
+      });
+
+      //Minute change
+      $('#startMinute').change(function () {
+        $('.step1 .submitInfo .startTime, .step1 .submitInfo .endTime').attr('value', ($('#startHour').val() < 10 ? '0' + $('#startHour').val() : $('#startHour').val()) + ':' + ($(this).val() < 10 ? '0' + $(this).val() : $(this).val()));
+
+        //startMinute < endMinute
+        if ($('#startHour').val() === $('#endHour').val()) {
+          let num;
+          for (i = 0; i < $('#startMinute option').length; i++) {
+            if ($('#startMinute').val() == $('#startMinute option').eq(i).val()) {
+              num = i;
+            }
+          }
+
+          for (i = 0; i < num; i++) {
+            $('#endMinute option').eq(i).attr('disabled', true);
+          }
+          $('#endMinute option').eq(num).attr('selected', 'selected');
+        }
+
+      });
+
+      $('#startMinute_M').change(function () {
+        $('.step1 .submitInfo .startTime, .step1 .submitInfo .endTime').attr('value', ($('#startHour_M').val() < 10 ? '0' + $('#startHour_M').val() : $('#startHour_M').val()) + ':' + ($(this).val() < 10 ? '0' + $(this).val() : $(this).val()));
+
+        //startMinute < endMinute
+        if ($('#startHour_M').val() === $('#endHour_M').val()) {
+          let num;
+          for (i = 0; i < $('#startMinute_M option').length; i++) {
+            if ($('#startMinute_M').val() == $('#startMinute_M option').eq(i).val()) {
+              num = i;
+            }
+          }
+
+          for (i = 0; i < num; i++) {
+            $('#endMinute_M option').eq(i).attr('disabled', true);
+          }
+          $('#endMinute_M option').eq(num).attr('selected', 'selected');
+        }
+
+      });
+
+      $('#endMinute').change(function () {
+        $('.step1 .submitInfo .endTime').attr('value', ($('#endHour').val() < 10 ? '0' + $('#endHour').val() : $('#endHour').val()) + ':' + ($(this).val() < 10 ? '0' + $(this).val() : $(this).val()));
+      });
+
+      $('#endMinute_M').change(function () {
+        $('.step1 .submitInfo .endTime').attr('value', ($('#endHour_M').val() < 10 ? '0' + $('#endHour_M').val() : $('#endHour_M').val()) + ':' + ($(this).val() < 10 ? '0' + $(this).val() : $(this).val()));
+      });
+
+      //cycle
+      let cycleText = [];
+      $(".cycle input[type='checkbox']").change(function () {
+
+        if ($(".cycle input[type='checkbox']:checked").length < 1) {
+          $('.submitBtn').removeClass('confirm');
+        } else if ($(".cycle input[type='checkbox']:checked").length > 0 && $('span.end.time').text() !== '') {
+          $('.submitBtn').addClass('confirm');
+        }
+        cycleText = [];
+        $(".cycle input[type='checkbox']:checked").each(function () {
+          cycleText.push($(this).val());
+        });
+        $('.step1 .submitInfo .cycle').attr('value', cycleText);
+      });
+
+
+
+      //submitBtn
+      $('.submitBtn').click(function () {
+        if ($(".cycle input[type='checkbox']:checked").length > 0) {
+          window.location = "https://yowru.github.io/CMS/playStep2.html";
+        } else {
+          Swal.fire('週一至週日，至少擇一', '', 'info');
+        }
+      });
+
+    });
+
+  </script>
+</body>
+
+</html>

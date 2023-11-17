@@ -1,0 +1,81 @@
+
+@media(max-width:600px) {
+    .table-responsive {
+        margin-top: 60px;
+    }
+}
+
+@media (max-width:515px) {
+    .table-responsive .head_bg span {
+        font-size: 0.9rem;
+    }
+
+    .btn.add,
+    .searchBar input[type="submit"] {
+        font-size: 0.85rem;
+        width: 52px;
+    }
+
+    .searchBar .flex.keyWords input {
+        font-size: 0.85rem;
+    }
+}
+
+@media(max-width:414px) {
+
+    table th,
+    table td,
+    .table-responsive .head_bg span {
+        font-size: 0.85rem;
+    }
+
+    table td.img img {
+        width: 52px;
+    }
+
+    .btnImg img {
+        width: 22px;
+    }
+
+    .searchBar input[type="submit"] {
+        width: 45px;
+    }
+
+    .searchBar .flex label,
+    .searchBar .flex input,
+    .searchBar .flex select {
+        font-size: 0.85rem;
+    }
+
+    .searchBar .flex {
+        padding: 6px 4px;
+    }
+}
+
+@media(max-width:375px) {
+    table td {
+        font-size: 12px;
+    }
+
+    .searchBar .flex {
+        padding: 6px;
+        margin-right: 8px;
+    }
+
+    .searchBar .flex label,
+    .searchBar select,
+    .searchBar input.datepicker[type=text]:not(.browser-default),
+    .tableContent .head_bg span, 
+    .searchBar .flex label, 
+    .searchBar .flex input,
+     .searchBar .flex select {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width:350px) {
+    .searchBar .flex {
+        margin-right: 0;
+        padding: 6px 2px;
+    }
+}

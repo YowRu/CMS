@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+
+    <title>Document</title>
+</head>
+<style>
+    .tabContent {
+    display: none;
+    min-height: 300px;
+    background-color: bisque;
+}
+ label {
+    cursor: pointer;
+    background-color: #5861E2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 20px;
+    box-sizing: content-box;
+    margin-bottom: 8px;
+    margin-right: 0;
+    width: 200px;
+    height: 44px;
+}
+</style>
+<body>
+
+    <label for="tab1" class="tab1"></label>
+    <div class="tabContentWP tab tab1">
+        <div class="tabContent">
+            <input type="radio" name="tab" id="tab1">
+            <input id="dateRange1" class="form-control" type="text" name="daterange" value="11/17/2023" />
+        </div>
+    </div>
+    <label for="tab2" class="tab2"></label>
+    <div class="tabContentWP tab tab2">
+        <div class="tabContent">
+            <input type="radio" name="tab" id="tab2">
+            <input id="dateRange2" class="form-control" type="text" name="daterange" value="11/17/2023" />
+        </div>
+
+    </div>
+
+
+    <script>
+
+        $(function () {
+            $('#dateRange1').daterangepicker({
+                singleDatePicker: true,
+                showDropdowns: true,
+                drops: 'down',
+                opens: 'center',
+            }, onSelect);
+
+            document.getElementById('dateRange1').dispatchEvent(new MouseEvent("click"));//auto popup
+
+            $('#dateRange2').daterangepicker({
+                drops: 'down',
+                opens: 'center',
+                singleDatePicker: true,
+                showDropdowns: true,
+            }, onSelect);
+        });
+
+
+        function onSelect(start, end, label) {
+            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+        }
+    </script>
+
+</body>
+
+</html>

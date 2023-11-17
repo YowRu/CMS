@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="js/loading.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/sweetalert2.css">
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
+  <link rel="stylesheet" href="css/deviceLog.css">
+  <title>設備歷程</title>
+</head>
+<body>
+  <header></header>
+  <div id="main">
+    <div class="content">
+      <div class="title_breadCrumbs"> 
+        <a href="deviceList.html">設備控管</a>
+        <span> > 設備歷程</span>
+      </div>
+      <div class="contentBG">
+        <div class="flex macAddress">設備名稱 <span>mac位址</span></div>
+        <div class="textInfo">
+          <img src="img/table/textInfo.svg" alt=""><div class="info">點選紫色字體可進行排序</div>
+        </div>
+        <div class="table-responsive">
+          <table class="head_bg">
+            <tr>
+              <td>地址</td>
+              <td class="sort">狀態</td>
+              <td>公司</td>
+              <td class="sort">合約起始</td>
+              <td class="sort">合約結束</td>
+              <td class="sort">登錄日</td>
+              <td>操作</td>
+            </tr>
+          </table>
+          <div class="tableWp marginTop">
+            <table cellspacing="0" id="deviceList" class="mainTable">
+              <thead>
+                <tr>
+                  <th>地址</th>
+                  <th class="sort">狀態</th>
+                  <th>公司</th>
+                  <th class="sort">合約起始</th>
+                  <th class="sort">合約結束</th>
+                  <th class="sort">登錄日</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>地址名稱</td>
+                  <td>出租</td>
+                  <td class="company">公司名稱AAAAAA</td>
+                  <td>23.06.26</td>
+                  <td>23.10.26</td>
+                  <td>23.06.26</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" class="view" onclick="view()">
+                  </td>
+                </tr>
+                <tr>
+                  <td>地址名稱</td>
+                  <td>出租</td>
+                  <td class="company">--</td>
+                  <td>--</td>
+                  <td>--</td>
+                  <td>--</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" class="view" onclick="view()">
+                  </td>
+                </tr>
+                <tr>
+                  <td>地址名稱</td>
+                  <td>售出</td>
+                  <td class="company">公司名稱AAAAAA</td>
+                  <td>--</td>
+                  <td>--</td>
+                  <td>23.07.01</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" class="view" onclick="view()">
+                  </td>
+                </tr>
+                <tr>
+                  <td>地址名稱</td>
+                  <td class="scrap">報廢</td>
+                  <td class="company">--</td>
+                  <td>--</td>
+                  <td>--</td>
+                  <td>23.07.01</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" class="view" onclick="view()">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="popup_bg view">
+          <div class="popupWP view">
+            <div class="titleWP">
+              <p class="title">設備名稱</p>
+              <p class="close">×</p>
+            </div>
+            <div class="swalWP">
+              <div class="view_popup popup">
+                <div class="flex city">
+                  <p>地址</p>
+                  <span class=" fontLevel_3">台北市大安區愛國東路</span>
+                </div>
+                <div class="flex screen">
+                  <p>狀態</p>
+                  <span class=" fontLevel_3">出租</span>
+                </div>
+                <div class="flex lens">
+                  <p>公司</p>
+                  <span class=" fontLevel_3">公司名稱AAAAAA</span>
+                </div>
+                <div class="flex state">
+                  <p>合約起始</p>
+                  <span class=" fontLevel_3">2023.10.01</span>
+                </div>
+                <div class="flex company">
+                  <p>合約結束</p>
+                  <span class=" fontLevel_3">2024.09.01</span>
+                </div>
+                <div class="flex tag">
+                  <p>登錄日</p>
+                  <span class=" fontLevel_3">2023.09.15</span>
+                </div>
+              </div>
+              <div class="view_popup popup">
+                <div class="flex city">
+                  <p>地址</p>
+                  <span class=" fontLevel_3">台北市大安區愛國東路</span>
+                </div>
+                <div class="flex screen">
+                  <p>狀態</p>
+                  <span class=" fontLevel_3">出租</span>
+                </div>
+                <div class="flex lens">
+                  <p>公司</p>
+                  <span class=" fontLevel_3">公司名稱AAAAAA</span>
+                </div>
+                <div class="flex state">
+                  <p>合約起始</p>
+                  <span class=" fontLevel_3">2023.10.01</span>
+                </div>
+                <div class="flex company">
+                  <p>合約結束</p>
+                  <span class=" fontLevel_3">2024.09.01</span>
+                </div>
+                <div class="flex tag">
+                  <p>登錄日</p>
+                  <span class=" fontLevel_3">2023.09.15</span>
+                </div>
+              </div>
+              <div class="view_popup popup">
+                <div class="flex city">
+                  <p>地址</p>
+                  <span class=" fontLevel_3">台北市大安區愛國東路</span>
+                </div>
+                <div class="flex screen">
+                  <p>狀態</p>
+                  <span class=" fontLevel_3">出租</span>
+                </div>
+                <div class="flex lens">
+                  <p>公司</p>
+                  <span class=" fontLevel_3">公司名稱AAAAAA</span>
+                </div>
+                <div class="flex state">
+                  <p>合約起始</p>
+                  <span class=" fontLevel_3">2023.10.01</span>
+                </div>
+                <div class="flex company">
+                  <p>合約結束</p>
+                  <span class=" fontLevel_3">2024.09.01</span>
+                </div>
+                <div class="flex tag">
+                  <p>登錄日</p>
+                  <span class=" fontLevel_3">2023.09.15</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sideNo">4</div>
+  <script src="js/textInfo.js"></script>
+  <script>
+
+   
+
+    //view 
+    function view() {
+      $('.popup_bg.view').fadeIn().css({ 'display': 'flex' });
+      $('body').addClass('overflow');
+    }
+
+    //close
+    $('.popup_bg .titleWP .close').click(function () {
+      $('.popup_bg').fadeOut();
+      $('video').trigger('pause');
+      window.location.replace(location.href);
+    });
+
+
+  </script>
+
+</body>
+
+</html>
