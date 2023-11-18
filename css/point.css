@@ -201,7 +201,7 @@ textarea {
 #tab2 .searchBar .btn.report,
 #tab3 .searchBar .btn.report {
   width: 100px;
-  background-color: transparent;
+  background: transparent;
   border: 1px solid #d3d5f9;
   color: #5861E2;
   border-radius: 4px;

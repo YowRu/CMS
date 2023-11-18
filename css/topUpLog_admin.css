@@ -1,0 +1,23 @@
+.head_bg td, .mainTable td,
+.head_bg td:nth-child(3), .mainTable td:nth-child(3) {
+  width: 7%;
+}
+
+.head_bg td:nth-child(4), .mainTable td:nth-child(4),
+.head_bg td:nth-child(5), .mainTable td:nth-child(5),
+.head_bg td:nth-child(6), .mainTable td:nth-child(6),
+.head_bg td:nth-child(7), .mainTable td:nth-child(7) {
+  width: 10%;
+}
+
+.head_bg td:nth-child(2), .mainTable td:nth-child(2) {
+  width: 20%;
+}
+
+.head_bg td:nth-child(9), .mainTable td:nth-child(9) {
+  width: 12%;
+}
+
+.btnImg {
+  display: table-cell;
+}
