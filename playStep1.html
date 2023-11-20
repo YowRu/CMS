@@ -369,15 +369,13 @@
         $('.mobile').hide();
 
         if (1100 < $(window).width()) {
-          console.log('1100 <');
-          $('.daterangepicker').css({ 'top': 20, 'left': (bg_width - pickerWidth) / 2 });
-
+          $('.daterangepicker').css({ 'top': 20, 'left': (bg_width - 770) / 2 });
         } else if ($(window).width() <= 900) {
-          console.log('<= 900');
           $('.daterangepicker').css({ 'top': 20, 'left': 0 });
+        }else if ($(window).width() <= 970) {
+          $('.daterangepicker').css({ 'top': 20, 'left': (bg_width - 704) / 2 });
         } else if ($(window).width() <= 1100) {
-          console.log('900 < & < 1100');
-          $('.daterangepicker').css({ 'top': 20, 'left': (bg_width - pickerWidth) / 2 - 14 });
+          $('.daterangepicker').css({ 'top': 20, 'left': (bg_width - 770) / 2 - 14 });
         }
 
       }//RWD dateTimePicker end
