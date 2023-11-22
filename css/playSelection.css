@@ -1,3 +1,7 @@
+.step {
+  width: 98%;
+}
+
 .stepFlex {
   display: flex;
   justify-content: space-around;
