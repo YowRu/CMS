@@ -214,12 +214,14 @@
   </div>
   <div class="sideNo">5</div>
   <script src="js/textInfo.js"></script>
-  <script src="js/table.js"></script>
   <script src="js/datePicker.js"></script>
   <script>
 
     $(document).ready(function () {
       let W = $(window).width();
+
+      //
+      $('#main .contentBG').innerHeight($('.stepContent').outerHeight()+$('.stepFlex').outerHeight()+120);
 
       //RWD popup tr detail
       $('.mainTable tr').click(function () {

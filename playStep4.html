@@ -164,6 +164,7 @@
 
     $(document).ready(function () {
       let W = $(window).width();
+      $('#main .contentBG').innerHeight($('.stepContent').outerHeight()+$('.stepFlex').outerHeight()+120);
       //RWD
       if (W < 501) {
         $('.btn.back1.border.yellow').text('返回');

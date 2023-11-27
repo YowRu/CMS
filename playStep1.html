@@ -272,12 +272,17 @@
 
     $(document).ready(function () {
 
-      let bg_height = $('#main .contentBG').height();
-      bg_width = $('#main .contentBG').outerWidth();
+     
+      let bg_width = $('#main .contentBG').outerWidth();
       pickerWidth = $('.daterangepicker').outerWidth();
       y = $('.accordion .text.start .year').text();
       m = $('.accordion .text.start .month').text();
       d = $('.accordion .text.start .day').text();
+
+      //
+   
+        
+
       //RWD range dateTimePicker
       if ($(window).width() <= 500) {
 
@@ -377,6 +382,9 @@
         } else if ($(window).width() <= 1100) {
           $('.daterangepicker').css({ 'top': 20, 'left': (bg_width - 770) / 2 - 14 });
         }
+
+        $('#main .contentBG').innerHeight($('.daterangepicker').outerHeight()+$('.stepFlex').outerHeight()+120);
+
 
       }//RWD dateTimePicker end
 

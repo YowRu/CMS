@@ -595,6 +595,8 @@ header .side a.current img.active {
 
 .searchBar .flex.keyWords {
   width: 114px;
+  height: 36px;
+  box-sizing: border-box;
 }
 
 #tab2 .searchBar,
@@ -663,7 +665,7 @@ select {
 
 /*btn*/
 .btn {
-  width: 56px;
+  width: 60px;
   height: 36px;
   line-height: 36px;
   color: #fff;
@@ -697,6 +699,7 @@ select {
   border: 1px solid #5861E2;
   color: #5861E2;
   background-color: transparent;
+  box-sizing: border-box;
 }
 
 .btn.search {
@@ -721,6 +724,7 @@ select {
   background-color: #5861E2;
   border: 1px solid #5861E2;
   position: relative;
+  box-sizing: border-box;
 }
 
 .search:hover {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +17,7 @@
   <link rel="stylesheet" href="css/chart.css">
   <title>數據中心</title>
 </head>
+
 <body>
   <header></header>
   <div id="main">
@@ -65,31 +67,31 @@
                 <tr>
                   <td class="mac">001A3FF14CC6</td>
                   <td>設備名稱</td>
-                  <td >台北市松山區南京東路四段2號</td>
+                  <td>台北市松山區南京東路四段2號</td>
                   <td>82%</td>
                 </tr>
                 <tr>
                   <td class="mac">001A3FF14CC6</td>
                   <td>設備名稱</td>
-                  <td >台北市松山區南京東路四段2號</td>
+                  <td>台北市松山區南京東路四段2號</td>
                   <td>82%</td>
                 </tr>
                 <tr>
                   <td class="mac">001A3FF14CC6</td>
                   <td>設備名稱</td>
-                  <td >台北市松山區南京東路四段2號</td>
+                  <td>台北市松山區南京東路四段2號</td>
                   <td>87%</td>
                 </tr>
                 <tr>
                   <td class="mac">001A3FF14CC6</td>
                   <td>設備名稱</td>
-                  <td >台北市松山區南京東路四段2號</td>
+                  <td>台北市松山區南京東路四段2號</td>
                   <td>97%</td>
                 </tr>
                 <tr>
                   <td class="mac">001A3FF14CC6</td>
                   <td>設備名稱</td>
-                  <td >台北市松山區南京東路四段2號</td>
+                  <td>台北市松山區南京東路四段2號</td>
                   <td>77%</td>
                 </tr>
               </tbody>
@@ -139,9 +141,9 @@
           pointStart: '00'
         },
         responsive: {
-        rules: [{
+          rules: [{
             condition: {
-                maxWidth: 1200
+              maxWidth: 1200
             },
           }]
         },
@@ -191,12 +193,16 @@
         }],
       });
       
+      
       if (W < 1600) {
-        chart1.setSize(W * 0.8, null)
+        chart1.setSize(W * 0.8, ($('#main .contentBG').height() - 142) / 2)
+        $('.tableContent .tableWP').height(($('#main .contentBG').height() - 230) / 2);
       } else if (W < 900) {
-        chart1.cc(W * 0.9, null);
+        chart1.cc(W * 0.9, ($('#main .contentBG').height() - 142) / 2);
+        $('.tableContent .tableWP').height(($('#main .contentBG').height() - 230) / 2);
       } else if (W < 501) {
         chart1.cc(W * 0.9, 400);
+        $('.tableContent .tableWP').height($('#main .contentBG').height() - 510);
       }
 
     });

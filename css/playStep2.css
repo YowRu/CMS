@@ -1,10 +1,10 @@
 /* step2 */
 .step2 td img,
 .step4 td img {
-  width: 90px;
+  width: auto;
   height: 50px;
   object-fit: cover;
-  margin: 5px auto;
+  margin: 2px auto;
 }
 
 .step2 .head_bg span {
