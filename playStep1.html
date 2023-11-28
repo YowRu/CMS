@@ -126,7 +126,7 @@
                 <div class="tabContentWP tab tab3">
                   <input type="radio" name="tab" id="tab3">
                   <div class="tabContent">
-                    <div class="cycle">
+                    <div class="cycleMobile">
                       <div><label for="Sun_m"><input type="checkbox" checked="checked" id="Sun_m" name="week"
                             value="0" /><span>週日</span></label></div>
                       <div><label for="Mon_m"><input type="checkbox" checked="checked" id="Mon_m" name="week"
@@ -830,6 +830,21 @@
           cycleText.push($(this).val());
         });
         $('.step1 .submitInfo .cycle').attr('value', cycleText);
+      });
+
+      let cycleMobile = [];
+      $(".cycleMobile input[type='checkbox']").change(function () {
+
+        if ($(".cycleMobile input[type='checkbox']:checked").length < 1) {
+          $('.submitBtn').removeClass('confirm');
+        } else if ($(".cycleMobile input[type='checkbox']:checked").length > 0 && $('span.end.time').text() !== '') {
+          $('.submitBtn').addClass('confirm');
+        }
+        cycleMobile = [];
+        $(".cycleMobile input[type='checkbox']:checked").each(function () {
+          cycleMobile.push($(this).val());
+        });
+        $('.step1 .submitInfo .cycle').attr('value', cycleMobile);
       });
 
 

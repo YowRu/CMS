@@ -296,6 +296,11 @@ label.allDay span {
     margin-right: 0;
 }
 
+.accordion label.checked {
+    background-color: transparent;
+    justify-content: flex-start;
+}
+
 .accordion .cycle label {
     background-color: transparent;
 }
@@ -699,6 +704,7 @@ input[type="radio"]:checked+.tabContent {
     .step1 [type="checkbox"]+span,
     .step1 [type="checkbox"]:checked+span {
         width: 68px;
+        margin-left: 12px;
     }
 }
 
