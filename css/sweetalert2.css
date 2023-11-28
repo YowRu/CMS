@@ -574,7 +574,8 @@ div:where(.swal2-container) button:where(.swal2-close):focus {
 }
 
 div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel,
-div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm ,
+div:where(.swal2-container) button:where(.swal2-styled).swal2-deny{
   border-radius: 2px;
   font-size: 0.9rem;
 }
@@ -586,7 +587,12 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel.able {
 div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
   background-color: #5861E2;
 }
-
+div:where(.swal2-container) button:where(.swal2-styled).swal2-deny{
+  background-color: #3CBC26;
+}
+div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel{
+  background-color: #EFBCB9;
+}
 .swal2-modal .swal2-close:hover {
   color: #2F3034;
 }

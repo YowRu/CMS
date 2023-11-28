@@ -23,18 +23,40 @@ $('.mainTable input[type="checkbox"]').change(function () {
 });
 
 $('.batch').click(function () {
-  if ($(this).hasClass('able')) {
+  if ($(this).hasClass('able') && $(this).hasClass('playCheck')) {
     Swal.fire({
       target: document.getElementById('main'),
-      title: '<p class="title">批量刪除</p>',
-      html: '<div>確認刪除所有素材嗎 ?</div>',
+      title: '<p class="title">批量同意</p>',
+      html: '<div>確認同意所有刊播嗎 ?</div>',
       showCancelButton: true,
+      showConfirmButton: false,
       showCloseButton: true,
-      confirmButtonText: '確認',
+      showDenyButton: true,
       cancelButtonText: '取消',
+      denyButtonText: `確認`,
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire('已刪除', '', 'success')
+        Swal.fire('已同意', '', 'success')
+      }
+      function reflash() {
+        window.location.replace(location.href);
+      }
+      setTimeout(reflash, 2000);
+    });
+  }else{
+    Swal.fire({
+      target: document.getElementById('main'),
+      title: '<p class="title">批量同意</p>',
+      html: '<div>確認同意所有素材嗎 ?</div>',
+      showCancelButton: true,
+      showConfirmButton: false,
+      showCloseButton: true,
+      showDenyButton: true,
+      cancelButtonText: '取消',
+      denyButtonText: `確認`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire('已同意', '', 'success')
       }
       function reflash() {
         window.location.replace(location.href);

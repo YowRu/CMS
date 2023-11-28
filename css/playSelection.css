@@ -528,6 +528,8 @@ section.flex .listWP {
 /*step4*/
 .btnImg {
   border-radius: 2px;
+  border:1px solid #c2c5f7;
+  background-color: #f0f0fb;
 }
 
 .btnImg img {
