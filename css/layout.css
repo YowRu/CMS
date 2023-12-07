@@ -1042,6 +1042,7 @@ p.previous {
   margin-bottom: 3px;
   color: #5861E2;
   width: 25px;
+  cursor: pointer;
 }
 
 .btnImg i.delet {

@@ -16,7 +16,6 @@
   <link rel="stylesheet" href="css/playCheck.css">
   <title>刊播審核</title>
 </head>
-
 <body>
   <header></header>
   <div id="main">
@@ -41,8 +40,7 @@
           <div class="btn search"><input type="submit" value="查詢" /></div>
         </form>
         <div class="textInfo">
-          <img src="img/table/textInfo.svg" alt="">
-          <div class="info">點選紫色字體可進行排序</div>
+          <img src="img/table/textInfo.svg" alt=""><div class="info">點選紫色字體可進行排序</div>
         </div>
         <div class="table-responsive">
           <table class="head_bg">
@@ -79,7 +77,7 @@
                     <input type="checkbox">
                   </td>
                   <td class="small">A123456789</td>
-                  <td class="scroll">刊播名稱</td>
+                  <td class="scroll" >刊播名稱</td>
                   <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
                   <td>23.06.06</td>
                   <td>24.06.06</td>
@@ -92,7 +90,7 @@
                     <input type="checkbox">
                   </td>
                   <td class="small">A123456789</td>
-                  <td class="scroll">刊播名稱</td>
+                  <td class="scroll" >刊播名稱</td>
                   <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
                   <td>23.06.06</td>
                   <td>24.06.06</td>
@@ -105,7 +103,7 @@
                     <input type="checkbox">
                   </td>
                   <td class="small">A123456789</td>
-                  <td class="scroll">刊播名稱</td>
+                  <td class="scroll" >刊播名稱</td>
                   <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
                   <td>23.06.06</td>
                   <td>24.06.06</td>
@@ -118,6 +116,7 @@
           </div>
         </div>
         <div class="batch batchCheck playCheck">批量同意</div>
+        
         <div class="popup_bg check">
           <div class="popupWP check">
             <div class="titleWP">
@@ -141,7 +140,7 @@
                 </div>
                 <div class="flex">
                   <p>時段</p><span>00:00 - 23:59</span>
-                </div>
+                </div> 
                 <div class="flex size">
                   <p>刊播人</p><span>刊播人名稱呈現在這裡</span>
                 </div>
@@ -157,57 +156,14 @@
             </div>
           </div>
         </div>
-        <div class="popup_bg delet">
-          <div class="popupWP delet small">
-            <div class="titleWP">
-              <p class="title">批量同意</p>
-              <p class="close">×</p>
-            </div>
-            <div class="swalWP">
-              <p>確認同意所有刊播嗎 ?</p>
-              <div class=" btnWP">
-                <div class="btn delete_confirm small">確認</div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
   <div class="sideNo">6</div>
   <script src="js/textInfo.js"></script>
   <script src="js/table.js"></script>
+  <script src="js/batch.js"></script>
   <script>
-    //checkbox ALL
-    $('.table-responsive .head_bg td input[type="checkbox"]').click(function () {
-      let num = $(this).parents('.table-responsive').find('.mainTable td input[type="checkbox"]:checked').length;
-      if (num == $('.mainTable td input[type="checkbox"]').length) {
-        $('.mainTable td input[type="checkbox"]').prop('checked', false);
-        $('.batch').removeClass('able');
-      } else {
-        $('.mainTable td input[type="checkbox"]').prop('checked', true);
-        $('.batch').addClass('able');
-      }
-    });
-
-    //batch
-    $('.mainTable input[type="checkbox"]').change(function () {
-      if ($('.mainTable input[type="checkbox"]:checked').length > 1) {
-        $('.batch').addClass('able');
-        if ($('.mainTable input[type="checkbox"]:checked').length !== $('.mainTable input[type="checkbox"]').length) {
-          $('.head_bg td input[type="checkbox"]').prop('checked', false);
-        }
-      } else {
-        $('.batch').removeClass('able');
-      }
-    });
-
-    $('.batch').click(function () {
-      if ($(this).hasClass('able')) {
-        $('.popup_bg.delet').fadeIn().css({ 'display': 'flex' });
-        $('body').addClass('overflow');
-      }
-    });
     //pop
     $('td').click(function () {
       if (!$(this).hasClass('check')) {
@@ -253,7 +209,7 @@
         Swal.fire('已退回', '', 'success');
         $('.popup_bg').fadeOut();
       }
-
+      
     });
   </script>
 </body>

@@ -1,4 +1,4 @@
-//checkbox ALL
+//checkbox ALL btn 
 $('.table-responsive .head_bg td input[type="checkbox"]').click(function () {
   let num = $(this).parents('.table-responsive').find('.mainTable td input[type="checkbox"]:checked').length;
   if (num == $('.mainTable td input[type="checkbox"]').length) {
@@ -7,6 +7,15 @@ $('.table-responsive .head_bg td input[type="checkbox"]').click(function () {
   } else {
     $('.mainTable td input[type="checkbox"]').prop('checked', true);
     $('.batch').addClass('able');
+  }
+});
+
+//auto click checkbox
+$('.mainTable td input[type="checkbox"]').click(function () {
+  let num = $(this).parents('.table-responsive').find('.mainTable td input[type="checkbox"]:checked').length;
+ 
+  if (num == $(this).parents('.table-responsive').find('.mainTable td input[type="checkbox"]').length) {
+    $(this).parents('.table-responsive').find('input[type="checkbox"]').prop('checked', true);
   }
 });
 

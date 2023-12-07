@@ -1,5 +1,5 @@
 .table-responsive {
-    margin-top: 68px;
+  margin-top: 68px;
 }
 
 .head_bg td,
@@ -12,13 +12,17 @@ table td:nth-child(7),
 .head_bg td:nth-child(4),
 table td:nth-child(4),
 .head_bg td:nth-child(8),
-table td:nth-child(8){
+table td:nth-child(8) {
   width: 12%;
 }
 
 .head_bg td:nth-child(1),
-table td:nth-child(1){
+table td:nth-child(1) {
   width: 8%
+}
+
+.btnImg i:nth-child(1) {
+  margin-right: 0;
 }
 
 @media(max-width:1190px) {

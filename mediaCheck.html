@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +18,6 @@
   <link rel="stylesheet" href="css/mediaCheck.css">
   <title>素材審核</title>
 </head>
-
 <body>
   <header></header>
   <div id="main">
@@ -58,8 +56,7 @@
           <div class="btn search"><input type="submit" value="查詢" /></div>
         </form>
         <div class="textInfo">
-          <img src="img/table/textInfo.svg" alt="">
-          <div class="info">點選紫色字體可進行排序</div>
+          <img src="img/table/textInfo.svg" alt=""><div class="info">點選紫色字體可進行排序</div>
         </div>
         <div class="table-responsive">
           <table class="head_bg">
@@ -144,7 +141,7 @@
                 </div>
                 <div class="flex size">
                   <p>尺寸</p><span>400x600</span>
-                </div>
+                </div> 
                 <div class="flex size">
                   <p>墊檔</p><span><input type="checkbox" checked disabled="disabled"></span>
                 </div>
@@ -163,20 +160,6 @@
             </div>
           </div>
         </div>
-        <div class="popup_bg delet">
-          <div class="popupWP delet small">
-            <div class="titleWP">
-              <p class="title">批量同意</p>
-              <p class="close">×</p>
-            </div>
-            <div class="swalWP">
-              <p>確認同意所有素材嗎 ?</p>
-              <div class=" btnWP">
-                <div class="btn delete_confirm small">確認</div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -184,37 +167,8 @@
   <script src="js/textInfo.js"></script>
   <script src="js/table.js"></script>
   <script src="js/datePicker.js"></script>
+  <script src="js/batch.js"></script>
   <script>
-    //checkbox ALL
-    $('.table-responsive .head_bg td input[type="checkbox"]').click(function () {
-      let num = $(this).parents('.table-responsive').find('.mainTable td input[type="checkbox"]:checked').length;
-      if (num == $('.mainTable td input[type="checkbox"]').length) {
-        $('.mainTable td input[type="checkbox"]').prop('checked', false);
-        $('.batch').removeClass('able');
-      } else {
-        $('.mainTable td input[type="checkbox"]').prop('checked', true);
-        $('.batch').addClass('able');
-      }
-    });
-
-    //batch
-    $('.mainTable input[type="checkbox"]').change(function () {
-      if ($('.mainTable input[type="checkbox"]:checked').length > 1) {
-        $('.batch').addClass('able');
-        if ($('.mainTable input[type="checkbox"]:checked').length !== $('.mainTable input[type="checkbox"]').length) {
-          $('.head_bg td input[type="checkbox"]').prop('checked', false);
-        }
-      } else {
-        $('.batch').removeClass('able');
-      }
-    });
-
-    $('.batch').click(function () {
-      if ($(this).hasClass('able')) {
-        $('.popup_bg.delet').fadeIn().css({ 'display': 'flex' });
-        $('body').addClass('overflow');
-      }
-    });
     //pop
     $('td').click(function () {
       if (!$(this).hasClass('check')) {
@@ -260,7 +214,7 @@
         Swal.fire('已退回', '', 'success');
         $('.popup_bg').fadeOut();
       }
-
+      
     });
   </script>
 </body>

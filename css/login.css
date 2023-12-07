@@ -171,6 +171,7 @@ p.title {
   font-size: 1.5rem;
   color: #AB31CD;
   text-align: center;
+  background-color: transparent;
 }
 
 .popup_bg p.title {

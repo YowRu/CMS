@@ -671,6 +671,7 @@
   <script src="js/textInfo.js"></script>
   <script src="js/table.js"></script>
   <script src="js/datePicker.js"></script>
+  <script src="js/batch.js"></script>
   <script>
     //get date time
     let dayNow = new Date();
@@ -679,7 +680,6 @@
     let year = dayNow.getFullYear();
 
     //RWD popup tr detail
-
     $('.popupWP table tr').click(function () {
       if ($(window).width() < 600) {
         if($(this).parents('table.mainTable').hasClass('replace')){

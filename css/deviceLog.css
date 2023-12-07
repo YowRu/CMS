@@ -49,8 +49,8 @@
   height: 60vh;
 }
 
-.btnImg {
-  display: table-cell;
+.btnImg i:nth-child(1) {
+  margin-right: 0;
 }
 
 .head_bg td,
