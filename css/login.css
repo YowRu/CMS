@@ -75,9 +75,17 @@ header .btnWP {
   margin-bottom: 40px;
 }
 
+.right .top.hint:after {
+  content: '帳號或密碼錯誤';
+  color: #ef0e0e;
+  font-size: 2rem;
+}
+
 .right .top img {
   width: 129px;
   height: 129px;
+  margin: 0 auto;
+  display: block;
 }
 
 .right .flex {
