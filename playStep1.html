@@ -585,14 +585,18 @@
               SMinute_eq = i;
             }
           }
+
           //EMinute eq
           for (i = 0; i < $('#endMinute option').length; i++) {
             if ($('#endMinute option').eq(i).val() === EMinute) {
               EMinute_eq = i;
             }
           }
-
-
+         
+          // $('#startMinute').val(SMinute).change();
+          // $('#endMinute').val(EMinute).change();
+          $('#startMinute option').eq(SMinute_eq).attr('selected', 'selected');
+          $('#endMinute option').eq(EMinute_eq).attr('selected', 'selected');
 
         } else if (startTimeText === '全天') {
 
@@ -662,10 +666,12 @@
 
         //cycle
         let n = cycleText.split(',');
+        let nArrayNew = n.filter(el => el);
         $('.cycle input').prop('checked', false);
 
-        for (i = 0; i < n.length; i++) {
-          $('.cycle>div').eq(n[i]).find('input').prop('checked', 'checked');
+        for (i = 0; i < nArrayNew.length; i++) {
+          $('.cycle>div').eq(nArrayNew[i]).find('input').prop('checked', 'checked');
+         
         }
 
       } else {

@@ -71,10 +71,6 @@ header .btnWP {
   width: 100%;
 }
 
-.right .top {
-  margin-bottom: 40px;
-}
-
 .right .top.hint:after {
   content: '帳號或密碼錯誤';
   color: #ef0e0e;
@@ -87,7 +83,9 @@ header .btnWP {
   margin: 0 auto;
   display: block;
 }
-
+.right .top img.none{
+  display: none;
+}
 .right .flex {
   display: flex;
   justify-content: space-between;
@@ -96,6 +94,20 @@ header .btnWP {
   width: 100%;
   margin-bottom: 23px;
   position: relative;
+}
+
+.right .flex.comfirmCode {
+  margin-bottom: 0;
+}
+
+.right .flex input.comfirmCode {
+  width: 100%;
+}
+
+.right .flex a.comfirmCode {
+  position: absolute;
+  right: 15px;
+  top: 12px;
 }
 
 .right .flex.validate {
