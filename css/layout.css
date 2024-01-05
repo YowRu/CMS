@@ -692,7 +692,7 @@ select {
   color: #fff;
 }
 
-.btnWP {
+#main .btnWP {
   display: flex;
   justify-content: flex-end;
   align-items: center;
