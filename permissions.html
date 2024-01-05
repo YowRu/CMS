@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="js/loading.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/rangepicker_single.css">
+  <link rel="stylesheet" href="css/sweetalert2.css">
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
+  <link rel="stylesheet" href="css/switch.css">
+  <link rel="stylesheet" href="css/permissions.css">
+  <title>角色權限</title>
+</head>
+<body>
+  <header></header>
+  <div id="main">
+    <div class="content">
+      <div class="title"></div>
+      <div class="contentBG">
+        <form class="searchBar" name="searchBar">
+          <div class="filter">
+            <div class="flex keyWords">
+              <input type="text" placeholder="輸入關鍵字" class="keyWords">
+            </div>
+            <div class="flex status">
+              <label for="status">狀態 :</label>
+              <select name="" id="status">
+                <option value="all">全部</option>
+                <option value="" class="on">啟用</option>
+                <option value="" class="off">停用</option>
+              </select>
+            </div>
+          </div>
+          <div class="btn search"><input type="submit" value="查詢" /></div>
+        </form>
+        <div class="textInfo">
+          <img src="img/table/textInfo.svg" alt="">
+          <div class="info">點選紫色字體可進行排序</div>
+        </div>
+        <div class="btnWP">
+          <div class="btn " onclick="add()">新增</div>
+          <div class="btn " onclick="setting()">設定</div>
+        </div>
+        
+        <div class="table-responsive permissions">
+          <table class="head_bg permissions">
+            <tr>
+              <td>ID</td>
+              <td>統編/公司</td>
+              <td>人員/信箱</td>
+              <td class="sort">角色</td>
+              <td class="sort">註冊日</td>
+              <td class="sort">狀態</td>
+              <!-- <td>操作</td> -->
+            </tr>
+          </table>
+          <div class="tableWp marginTop">
+            <table class="mainTable permissions" cellspacing="0" id="permissions">
+              <thead>
+                <tr>
+                  <th>編號</th>
+                  <th class="scroll">統編/公司</th>
+                  <th>人員/信箱</th>
+                  <th class="sort">角色</th>
+                  <th class="sort">註冊日</th>
+                  <th class="sort">狀態</th>
+                  <!-- <th>操作</th> -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="small">1001</td>
+                  <td class="scroll">94039746<br>數享科技有限公司</td>
+                  <td>黃昱璇<br>yu-hsuan.huang@drmn.com.tw</td>
+                  <td>
+                    <select name="" id="role" class="role">
+                      <option value="admin" selected>Admin</option>
+                      <option value="manager">Manager</option>
+                      <option value="dispatcher">Dispatcher</option>
+                      <option value="user">User</option>
+                      <option value="basic user">Basic user</option>
+                    </select>
+                  </td>
+                  <td class="small">24.01.05</td>
+                  <td>
+                    <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                        for="switch-1"></label>
+                    </div>
+                  </td>
+                  <!-- <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="edit" onClick="edit()"><img src="img/table/edit.svg" alt="" class="edit">編輯</i>
+                    </p>
+                  </td> -->
+                </tr>
+                <tr>
+                  <td class="small">1099</td>
+                  <td class="scroll">10348873<br>臺北大眾捷運股份有限公司臺北小巨蛋場館</td>
+                  <td>陳小一<br>sranvani@yahoo.com.tw</td>
+                  <td>
+                    <select name="" id="role" class="role">
+                      <option value="admin">Admin</option>
+                      <option value="manager" selected>Manager</option>
+                      <option value="dispatcher">Dispatcher</option>
+                      <option value="user">User</option>
+                      <option value="basic user">Basic user</option>
+                    </select>
+                  </td>
+                  <td class="small">24.01.05</td>
+                  <td>
+                    <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                        for="switch-1"></label>
+                    </div>
+                  </td>
+                  <!-- <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="edit" onClick="edit()"><img src="img/table/edit.svg" alt="" class="edit">編輯</i>
+                    </p>
+                  </td> -->
+                </tr>
+                <tr>
+                  <td class="small">1099</td>
+                  <td class="scroll">23115308<br>展昭國際企業股份有限公司</td>
+                  <td>鍾宏義<br>member@chanchao.com.tw</td>
+                  <td>
+                    <select name="" id="role" class="role">
+                      <option value="admin">Admin</option>
+                      <option value="manager" selected>Manager</option>
+                      <option value="dispatcher">Dispatcher</option>
+                      <option value="user">User</option>
+                      <option value="basic user">Basic user</option>
+                    </select>
+                  </td>
+                  <td class="small">24.01.05</td>
+                  <td>
+                    <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                        for="switch-1"></label>
+                    </div>
+                  </td>
+                  <!-- <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="edit" onClick="edit()"><img src="img/table/edit.svg" alt="" class="edit">編輯</i>
+                    </p>
+                  </td> -->
+                </tr>
+                <tr>
+                  <td class="small">1099</td>
+                  <td class="scroll">83522639<br>台北101分公司</td>
+                  <td>張祐誠<br>dpo@tfc101.com.tw</td>
+                  <td>
+                    <select name="" id="role" class="role">
+                      <option value="admin">Admin</option>
+                      <option value="manager">Manager</option>
+                      <option value="dispatcher" selected>Dispatcher</option>
+                      <option value="user">User</option>
+                      <option value="basic user">Basic user</option>
+                    </select>
+                  </td>
+                  <td class="small">24.01.05</td>
+                  <td>
+                    <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                        for="switch-1"></label>
+                    </div>
+                  </td>
+                  <!-- <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="edit" onClick="edit()"><img src="img/table/edit.svg" alt="" class="edit">編輯</i>
+                    </p>
+                  </td> -->
+                </tr>
+                <tr>
+                  <td class="small">1099</td>
+                  <td class="scroll">89615825<br>上聯國際展覽有限公司</td>
+                  <td>小蘭花<br>katespade@gmail.com</td>
+                  <td>
+                    <select name="" id="role" class="role">
+                      <option value="admin">Admin</option>
+                      <option value="manager">Manager</option>
+                      <option value="dispatcher" >Dispatcher</option>
+                      <option value="user" selected>User</option>
+                      <option value="basic user">Basic user</option>
+                    </select>
+                  </td>
+                  <td class="small">24.01.05</td>
+                  <td>
+                    <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                        for="switch-1"></label>
+                    </div>
+                  </td>
+                  <!-- <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="edit" onClick="edit()"><img src="img/table/edit.svg" alt="" class="edit">編輯</i>
+                    </p>
+                  </td> -->
+                </tr>
+                <tr>
+                  <td class="small">1099</td>
+                  <td class="scroll">A123456789<br>黃小花</td>
+                  <td>黃小花<br>taiwanpeople@hotmail.com</td>
+                  <td>
+                    <select name="" id="role" class="role">
+                      <option value="admin">Admin</option>
+                      <option value="manager">Manager</option>
+                      <option value="dispatcher">Dispatcher</option>
+                      <option value="user">User</option>
+                      <option value="basic user" selected>Basic user</option>
+                    </select>
+                  </td>
+                  <td class="small">24.01.05</td>
+                  <td>
+                    <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                        for="switch-1"></label>
+                    </div>
+                  </td>
+                  <!-- <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="edit" onClick="edit()"><img src="img/table/edit.svg" alt="" class="edit">編輯</i>
+                    </p>
+                  </td> -->
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- <div class="popup_bg edit">
+          <div class="popupWP edit small">
+            <div class="titleWP">
+              <p class="title">素材名稱</p>
+              <p class="close">×</p>
+            </div>
+            <div class="swalWP">
+              <p>確認編輯素材嗎 ?</p>
+              <div class=" btnWP">
+                <div class="btn edite_confirm small">確認</div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        
+        <div class="popup_bg add">
+          <div class="popupWP add">
+            <div class="titleWP">
+              <p class="title">新增人員</p>
+              <p class="close">×</p>
+            </div>
+            <div class="swalWP">
+              <div class="add_popup popup">
+                <div class="flex">
+                  <p>姓名</p><input type="text" class="fontLevel_1 space_around fileName" placeholder="請輸入姓名" />
+                </div>
+                <div class="flex">
+                  <p>角色</p>
+                  <select name="" class="setting_role">
+                    <option value="admin">Admin</option>
+                    <option value="manager">Manager</option>
+                    <option value="dispatcher">Dispatcher</option>
+                    <option value="user">User</option>
+                    <option value="basic user">Basic user</option>
+                  </select>
+                </div>
+                <div class="flex type">
+                  <p>副檔名</p><span class="fontLevel_3">--</span>
+                </div>
+                <div class="flex second">
+                  <p>秒數</p><span class="fontLevel_3">--</span><input type="text" class="fontLevel_1 space_around"
+                    placeholder="請輸入秒數" />
+                </div>
+                <div class="flex byte">
+                  <p>檔案</p><span class="fontLevel_3">--</span>
+                </div>
+                <div class="flex size">
+                  <p>尺寸</p><span class="fontLevel_3">--</span>
+                </div>
+                <div class="flex">
+                  <p>墊檔</p><input type="checkbox" />
+                </div>
+                <div class="flex"><input type="text" class="fontLevel_1 tag" placeholder="多個標籤,請用逗號分開"></div>
+                <div class=" btnWP">
+                  <div class="btn">送出審核</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sideNo">8</div>
+  <script src="js/textInfo.js"></script>
+  <script src="js/table.js"></script>
+  <script src="js/datePicker.js"></script>
+  <script>
+    //get date time
+    let dayNow = new Date();
+    let day = dayNow.getDate();
+    let month = dayNow.getMonth();
+    let year = dayNow.getFullYear();
+
+    //RWD popup tr detail
+
+    $('.popupWP table tr').click(function () {
+      if ($(window).width() < 600) {
+        if ($(this).parents('table.mainTable').hasClass('replace')) {
+          $('.replaceDetail').fadeIn().css({ 'display': 'flex' });
+        } else {
+          $('.cloneDetail').fadeIn().css({ 'display': 'flex' });
+        }
+        $('body').addClass('overflow');
+      }
+    });
+
+    //edit
+    function edit() {
+      $('.popup_bg.edit').fadeIn().css({ 'display': 'flex' });
+      $('body').addClass('overflow');
+    };
+    $('.popup_bg.edit .edite_confirm').click(function () {
+      //到刊播
+      window.location = "https://yowru.github.io/CMS/playStep1.html";
+    });
+    $('.popup_bg.clone .clone_confirm, .popup_bg.replace .replace_confirm').click(function () {
+      //到清單列表
+      if ($(this).parent('.btnWP').siblings('').find('input').filter(':checked').length > 0) {
+        window.location = "https://yowru.github.io/CMS/permissions.html";
+      } else {
+        Swal.fire('尚未選擇', '', 'info');
+      }
+
+    });
+
+
+    //delet
+    function delet() {
+      $('.popup_bg.delet').fadeIn().css({ 'display': 'flex' });
+      $('body').addClass('overflow');
+    };
+
+    //delete_btn
+    $('.delete_confirm').click(function () {
+      Swal.fire('確認刪除', '', 'success');
+      $('.popup_bg').fadeOut();
+    });
+
+    //close
+    $('.popup_bg .titleWP .close').click(function () {
+      $('.popup_bg').fadeOut();
+      window.location.replace(location.href);
+    });
+
+    //add & setting
+    function add() {
+      $('.popup_bg.add').fadeIn().css({ 'display': 'flex' });
+      $('body').addClass('overflow');
+    }
+
+    function setting() {
+      $('.popup_bg.setting').fadeIn().css({ 'display': 'flex' });
+      $('body').addClass('overflow');
+    }
+
+    //switch & select
+    let switchBtn = $('.switch');
+    $.each(switchBtn, function (i, el) {
+      $(this).children('input').attr('id', 'switch-' + i);
+      $(this).children('label').attr('for', 'switch-' + i);
+    });
+
+    let role = $('.role');
+    $.each(role, function (i, el) {
+      $(this).attr('id', 'role' + i);
+    });
+
+
+  </script>
+</body>
+
+</html>

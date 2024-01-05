@@ -49,12 +49,21 @@
             <div class="flexrow">
               <div class="datePicker"><input type="text" name="datetimes" id="rangeDateTime" /></div>
             </div>
+            <!-- <div class="hasInfo">
+              <input type="text" class="startDate" value="2023/12/29" />
+              <input type="text" class="endDate" value="2023/12/31" />
+              <input type="text" class="startTime" value="10:10" />
+              <input type="text" class="endTime" value="22:25" />
+              <input type="text" class="cycle" value="1,3,5,">
+              <input type="text" class="status" value="1">
+            </div> -->
             <div class="hasInfo">
               <input type="text" class="startDate" value="" />
               <input type="text" class="endDate" value="" />
               <input type="text" class="startTime" value="" />
               <input type="text" class="endTime" value="" />
               <input type="text" class="cycle" value="">
+              <input type="text" class="status" value="">
             </div>
             <div class="submitInfo">
               <input type="text" class="startDate">
@@ -257,7 +266,7 @@
                   </div>
                 </div>
                 <div class="buttonWp">
-                  <button class="submitBtn btn"  type="submit">下一步</button>
+                  <button class="submitBtn btn" type="submit">下一步</button>
                 </div>
               </div>
             </div>
@@ -272,7 +281,7 @@
 
     $(document).ready(function () {
 
-     
+
       let bg_width = $('#main .contentBG').outerWidth();
       pickerWidth = $('.daterangepicker').outerWidth();
       y = $('.accordion .text.start .year').text();
@@ -280,8 +289,8 @@
       d = $('.accordion .text.start .day').text();
 
       //
-   
-        
+
+
 
       //RWD range dateTimePicker
       if ($(window).width() <= 500) {
@@ -377,13 +386,13 @@
           $('.daterangepicker').css({ 'top': 20, 'left': (bg_width - 770) / 2 });
         } else if ($(window).width() <= 900) {
           $('.daterangepicker').css({ 'top': 20, 'left': 0 });
-        }else if ($(window).width() <= 970) {
+        } else if ($(window).width() <= 970) {
           $('.daterangepicker').css({ 'top': 20, 'left': (bg_width - 704) / 2 });
         } else if ($(window).width() <= 1100) {
           $('.daterangepicker').css({ 'top': 20, 'left': (bg_width - 770) / 2 - 14 });
         }
 
-        $('#main .contentBG').innerHeight($('.daterangepicker').outerHeight()+$('.stepFlex').outerHeight()+120);
+        $('#main .contentBG').innerHeight($('.daterangepicker').outerHeight() + $('.stepFlex').outerHeight() + 120);
 
 
       }//RWD dateTimePicker end
@@ -478,7 +487,7 @@
 
         //week text
         let startWeekTEXT = $('.startTime .week').text(new Date().getDay());
-        endWeekTEXT = $('.endTime .week').text(new Date().getDay());
+        let endWeekTEXT = $('.endTime .week').text(new Date().getDay());
 
         switch (startWeekTEXT[0].innerText) {
           case '0':
@@ -592,7 +601,7 @@
               EMinute_eq = i;
             }
           }
-         
+
           // $('#startMinute').val(SMinute).change();
           // $('#endMinute').val(EMinute).change();
           $('#startMinute option').eq(SMinute_eq).attr('selected', 'selected');
@@ -617,8 +626,9 @@
         //week
         let startWeekTEXT = $('.startTime .week').text(new Date(startDateText).getDay()),
           endWeekTEXT = $('.endTime .week').text(new Date(endDateText).getDay());
+
         switch (Number(endWeekTEXT[0].innerText)) {
-          case 7:
+          case 0:
             $('.endTime .week').text('Sun');
             break;
           case 1:
@@ -641,7 +651,7 @@
             break;
         }
         switch (Number(startWeekTEXT[0].innerText)) {
-          case 7:
+          case 0:
             $('.startTime .week').text('Sun');
             break;
           case 1:
@@ -671,8 +681,10 @@
 
         for (i = 0; i < nArrayNew.length; i++) {
           $('.cycle>div').eq(nArrayNew[i]).find('input').prop('checked', 'checked');
-         
+
         }
+
+
 
       } else {
         defaultDT();
@@ -853,12 +865,23 @@
         $('.step1 .submitInfo .cycle').attr('value', cycleMobile);
       });
 
+      //btn jump to step4;
 
+      if ($('.step1 .hasInfo .status').val() == '0') {
+        $('.submitBtn').text('下一步');
+      } else {
+        $('.submitBtn').text('確認');
+      }
 
       //submitBtn
       $('.submitBtn').click(function () {
         if ($(".cycle input[type='checkbox']:checked").length > 0) {
-          window.location = "https://yowru.github.io/CMS/playStep2.html";
+          if ($('.step1 .hasInfo .status').val() == '0') {
+            window.location = "http://localhost:8888/23.12.28_cms/playStep2.html";
+          } else {
+            window.location = "http://localhost:8888/23.12.28_cms/playStep4.html";
+          }
+
         } else {
           Swal.fire('週一至週日，至少擇一', '', 'info');
         }

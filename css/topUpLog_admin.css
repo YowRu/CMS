@@ -20,4 +20,6 @@
 
 .btnImg {
   display: table-cell;
+  border: 0;
+  background-color: transparent;
 }

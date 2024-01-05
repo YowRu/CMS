@@ -112,15 +112,17 @@
 }
 
 /*tr backgroundColor*/
-table tbody tr:nth-child(even){
+table tbody tr:nth-child(even) {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+1,fdfbff+31,fdfbff+69,ffffff+100 */
-  background: linear-gradient(to right,  #ffffff 1%,#fdfbff 31%,#fdfbff 69%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  
-  }
-  table tbody tr:nth-child(odd),
-  table.head_bg tbody tr:nth-child(odd){
-    background: transparent;
-  }
+  background: linear-gradient(to right, #ffffff 1%, #fdfbff 31%, #fdfbff 69%, #ffffff 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+}
+
+table tbody tr:nth-child(odd),
+table.head_bg tbody tr:nth-child(odd) {
+  background: transparent;
+}
 
 
 /*teb*/
@@ -179,7 +181,7 @@ table tbody tr:nth-child(even){
 .add_popup .flex input.datepicker,
 .edit_popup .flex input.datepicker {
   width: 100px;
-  text-align: center;
+  text-align: right;
 }
 
 .edit_popup .flex input.datepicker {
@@ -403,5 +405,21 @@ table tbody tr:nth-child(even){
   .popup_bg .edit .tabs li.active a,
   .popup_bg .edit .tabs li a {
     font-size: 0.85rem;
+  }
+
+  select, .flex.column input, .popupWP .flex .fontLevel_1 {
+    font-size: 0.8rem;
+  }
+
+  .popupWP .flex {
+    padding: 12px;
+  }
+}
+
+@media (max-width:375px) {
+
+  .popup_bg .edit .tabs li.active a,
+  .popup_bg .edit .tabs li a {
+    font-size: 0.8rem;
   }
 }

@@ -1,0 +1,42 @@
+.head_bg.permissions td,
+.mainTable.permissions td {
+  width: 12%;
+}
+
+
+.head_bg.permissions td:nth-child(2),
+.mainTable.permissions td:nth-child(2),
+.head_bg.permissions td:nth-child(3),
+.mainTable.permissions td:nth-child(3) {
+  width: 30%;
+}
+
+.head_bg.permissions td:nth-child(1),
+.mainTable.permissions td:nth-child(1),
+.head_bg.permissions td:nth-child(6),
+.mainTable.permissions td:nth-child(6) {
+  width: 8%;
+}
+
+.switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label, select {
+  text-align: center;
+}
+
+.role {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+@media (max-width:700px) {
+
+  .head_bg.permissions td:nth-child(5),
+  .mainTable.permissions td:nth-child(5) {
+    display: none;
+  }
+}

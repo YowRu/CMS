@@ -94,15 +94,15 @@
                     <p class="btnImg">
                       <span class="flex">
                         <i class="edit"><img src="img/table/edit.svg" alt="" class="edit" onClick="edit()">編輯</i>
-                        <i class="replace"><img src="img/table/replace.svg" alt="" class="replace"
-                            onClick="replace()">替換</i>
-                        <i class="clone"><img src="img/table/clone.svg" alt="" class="clone" onClick="clone()">複製</i>
-                        <i class="push"><img src="img/table/push.svg" alt="" class="push" onClick="push()">推播</i>
+                        <i class="replace" onClick="replace()"><img src="img/table/replace.svg" alt="" class="replace"
+                            >替換</i>
+                        <i class="clone" onClick="clone()"><img src="img/table/clone.svg" alt="" class="clone" >複製</i>
+                        <i class="push" onClick="push()"><img src="img/table/push.svg" alt="" class="push" >推播</i>
                       </span>
                       <span class="flex">
-                        <i class="stop"><img src="img/table/stop.svg" alt="" class="stop" onclick="stop()">停播</i>
+                        <i class="stop" onclick="stop()"><img src="img/table/stop.svg" alt="" class="stop" >停播</i>
                         <i class="play"><img src="img/table/play.svg" alt="" class="play">播放</i>
-                        <i class="delet"><img src="img/table/delet.svg" alt="" class="delet" onclick="delet()">刪除</i>
+                        <i class="delet" onclick="delet()"><img src="img/table/delet.svg" alt="" class="delet" >刪除</i>
                       </span>
                     </p>
                   </td>
@@ -177,15 +177,15 @@
                     <p class="btnImg">
                       <span class="flex">
                         <i class="edit"><img src="img/table/edit.svg" alt="" class="edit" onClick="edit()">編輯</i>
-                        <i class="replace"><img src="img/table/replace.svg" alt="" class="replace"
-                            onClick="replace()">替換</i>
-                        <i class="clone"><img src="img/table/clone.svg" alt="" class="clone" onClick="clone()">複製</i>
-                        <i class="push"><img src="img/table/push.svg" alt="" class="push" onClick="push()">推播</i>
+                        <i class="replace" onClick="replace()"><img src="img/table/replace.svg" alt="" class="replace"
+                            >替換</i>
+                        <i class="clone" onClick="clone()"><img src="img/table/clone.svg" alt="" class="clone" >複製</i>
+                        <i class="push" onClick="push()"><img src="img/table/push.svg" alt="" class="push" >推播</i>
                       </span>
                       <span class="flex">
-                        <i class="stop"><img src="img/table/stop.svg" alt="" class="stop" onclick="stop()">停播</i>
+                        <i class="stop" onclick="stop()"><img src="img/table/stop.svg" alt="" class="stop" >停播</i>
                         <i class="play"><img src="img/table/play.svg" alt="" class="play">播放</i>
-                        <i class="delet"><img src="img/table/delet.svg" alt="" class="delet" onclick="delet()">刪除</i>
+                        <i class="delet" onclick="delet()"><img src="img/table/delet.svg" alt="" class="delet" >刪除</i>
                       </span>
                     </p>
                   </td>
@@ -236,15 +236,15 @@
                     <p class="btnImg">
                       <span class="flex">
                         <i class="edit"><img src="img/table/edit.svg" alt="" class="edit" onClick="edit()">編輯</i>
-                        <i class="replace"><img src="img/table/replace.svg" alt="" class="replace"
-                            onClick="replace()">替換</i>
-                        <i class="clone"><img src="img/table/clone.svg" alt="" class="clone" onClick="clone()">複製</i>
-                        <i class="push"><img src="img/table/push.svg" alt="" class="push" onClick="push()">推播</i>
+                        <i class="replace" onClick="replace()"><img src="img/table/replace.svg" alt="" class="replace"
+                            >替換</i>
+                        <i class="clone" onClick="clone()"><img src="img/table/clone.svg" alt="" class="clone" >複製</i>
+                        <i class="push" onClick="push()"><img src="img/table/push.svg" alt="" class="push" >推播</i>
                       </span>
                       <span class="flex">
-                        <i class="stop"><img src="img/table/stop.svg" alt="" class="stop" onclick="stop()">停播</i>
+                        <i class="stop" onclick="stop()"><img src="img/table/stop.svg" alt="" class="stop" >停播</i>
                         <i class="play"><img src="img/table/play.svg" alt="" class="play">播放</i>
-                        <i class="delet"><img src="img/table/delet.svg" alt="" class="delet" onclick="delet()">刪除</i>
+                        <i class="delet" onclick="delet()"><img src="img/table/delet.svg" alt="" class="delet" >刪除</i>
                       </span>
                     </p>
                   </td>
@@ -671,7 +671,6 @@
   <script src="js/textInfo.js"></script>
   <script src="js/table.js"></script>
   <script src="js/datePicker.js"></script>
-  <script src="js/batch.js"></script>
   <script>
     //get date time
     let dayNow = new Date();
@@ -680,6 +679,7 @@
     let year = dayNow.getFullYear();
 
     //RWD popup tr detail
+
     $('.popupWP table tr').click(function () {
       if ($(window).width() < 600) {
         if($(this).parents('table.mainTable').hasClass('replace')){

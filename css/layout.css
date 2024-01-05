@@ -692,7 +692,18 @@ select {
   color: #fff;
 }
 
-.btn.add {
+.btnWP {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20px;
+}
+
+td.btnWP {
+  display: table-cell;
+}
+
+.btn.add, .btnWP .btn {
   position: absolute;
   width: 56px;
   right: 20px;
@@ -700,6 +711,12 @@ select {
   color: #5861E2;
   background-color: transparent;
   box-sizing: border-box;
+}
+
+.btnWP .btn {
+  position: relative;
+  margin-left: 15px;
+  right: 0;
 }
 
 .btn.search {
@@ -1049,8 +1066,9 @@ p.previous {
   color: #D92700;
 }
 
-table td.img img {
-  width: 66px;
+table td.img img, table td.img video {
+  width: 90px;
+  height: 150px;
   object-fit: cover;
 }
 

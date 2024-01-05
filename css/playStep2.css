@@ -2,7 +2,7 @@
 .step2 td img,
 .step4 td img {
   width: auto;
-  height: 50px;
+  height: 150px;
   object-fit: cover;
   margin: 2px auto;
 }

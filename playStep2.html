@@ -55,6 +55,7 @@
               <div class="searchBar">
                 <div class="btn back1 border pre">上一步</div>
                 <div class="btn stepBtn stepBtn2">下一步</div>
+                <div class="btn stepBtn stepBtnHasInfo">確認</div>
               </div>
             </div>
             <div class="searchBar" name="searchBar">
@@ -119,7 +120,7 @@
                         <td>
                           <input type="radio" name="mediaCheck" class="option-input radio">
                         </td>
-                        <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
+                        <td class="img"><img src="img/table/smallVideo.png" alt=""></td>
                         <td class="name">機場宣導</td>
                         <td class="second">10</td>
                         <td class="date">23.02.18</td>
@@ -128,7 +129,7 @@
                         <td>
                           <input type="radio" name="mediaCheck" class="option-input radio">
                         </td>
-                        <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
+                        <td class="img"><img src="img/table/smallVideo.png" alt=""></td>
                         <td class="name">機場宣導</td>
                         <td class="second">25</td>
                         <td class="date">23.03.18</td>
@@ -137,7 +138,7 @@
                         <td>
                           <input type="radio" name="mediaCheck" class="option-input radio">
                         </td>
-                        <td class="image"><img src="img/media/mediaImg.svg" alt=""></td>
+                        <td class="img"><img src="img/media/mediaImg.svg" alt=""></td>
                         <td class="name">機場宣導</td>
                         <td class="second">15</td>
                         <td class="date">23.04.18</td>
@@ -146,7 +147,7 @@
                         <td>
                           <input type="radio" name="mediaCheck" class="option-input radio">
                         </td>
-                        <td class="image"><img src="img/media/mediaImg.svg" alt=""></td>
+                        <td class="img"><img src="img/media/mediaImg.svg" alt=""></td>
                         <td class="name">機場宣導</td>
                         <td class="second">15</td>
                         <td class="date">23.05.18</td>
@@ -155,7 +156,7 @@
                         <td>
                           <input type="radio" name="mediaCheck" class="option-input radio">
                         </td>
-                        <td class="image"><img src="img/media/mediaImg.svg" alt=""></td>
+                        <td class="img"><img src="img/media/mediaImg.svg" alt=""></td>
                         <td class="name">機場宣導</td>
                         <td class="second">15</td>
                         <td class="date">23.06.18</td>
@@ -164,7 +165,7 @@
                         <td>
                           <input type="radio" name="mediaCheck" class="option-input radio">
                         </td>
-                        <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
+                        <td class="img"><img src="img/table/smallVideo.png" alt=""></td>
                         <td class="name">機場宣導</td>
                         <td class="second">25</td>
                         <td class="date">23.07.18</td>
@@ -173,7 +174,7 @@
                         <td>
                           <input type="radio" name="mediaCheck" class="option-input radio">
                         </td>
-                        <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
+                        <td class="img"><img src="img/table/smallVideo.png" alt=""></td>
                         <td class="name">機場宣導</td>
                         <td class="second">30</td>
                         <td class="date">23.07.28</td>
@@ -221,7 +222,7 @@
       let W = $(window).width();
 
       //
-      $('#main .contentBG').innerHeight($('.stepContent').outerHeight()+$('.stepFlex').outerHeight()+120);
+      $('#main .contentBG').innerHeight($('.stepContent').outerHeight() + $('.stepFlex').outerHeight() + 120);
 
       //RWD popup tr detail
       $('.mainTable tr').click(function () {
@@ -271,6 +272,15 @@
         }
       });
 
+      //btn change text
+      let getUrlString = location.href;
+      let url = new URL(getUrlString);
+      let PostId = url.searchParams.get('PostId');
+      console.log(PostId);
+      if (PostId) {
+        $('.stepBtn').hide();
+        $('.stepBtnHasInfo').show();
+      }
     });
 
   </script>

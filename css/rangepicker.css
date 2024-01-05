@@ -372,6 +372,10 @@
   text-align: center;
 }
 
+.daterangepicker .drp-buttons .submitBtnHasInfo.btn {
+  display: none;
+}
+
 .daterangepicker .drp-buttons .btn.cancelBtn {
   display: none;
 }

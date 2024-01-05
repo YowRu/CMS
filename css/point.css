@@ -134,7 +134,7 @@ header .wrapper {
   justify-content: space-between;
   align-items: center;
   padding: 7px 20px 8px;
-  box-shadow: 0px 7px 8px 8px #e1ddff;
+  /* box-shadow: 0px 7px 8px 8px #e1ddff; */
 }
 
 .accordion .tabs li a {
