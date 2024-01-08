@@ -1,0 +1,29 @@
+.popupWP.reject .swalWP {
+    height: 500px;
+}
+
+.popupWP.reject .swalWP .border {
+    border: 1px solid #E1E1E2;   
+    margin: 24px auto -8px;
+    width: 85%;
+}
+
+.btnWP {
+    justify-content: flex-start;
+}
+
+.btnWP .batch {
+    position: relative;
+    margin-right: 10px;
+}
+
+.popup_bg .popupWP.small .swalWP select {
+    height: 60px;
+    line-height: 60px;
+    color: #2F3034;
+    display: block;
+    margin: 0 auto;
+    width: 148px;
+    margin-right: 0;
+    text-align: right;
+}
