@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/sweetalert2.css">
   <link rel="stylesheet" href="css/layout.css" type="text/css">
   <link rel="stylesheet" href="css/deviceLog.css">
+  <link rel="stylesheet" href="css/mediaByDevice.css">
   <title>設備歷程</title>
 </head>
 
@@ -290,9 +291,12 @@
             </table>
           </div>
         </div>
-        <div class="batch batchCheck playCheck able">批量同意</div>
-        <div class="popup_bg delet">
-          <div class="popupWP delet small">
+        <div class="btnWP">
+          <div class="batch batchCheck playCheck able">批量同意</div>
+          <div class="batch reject playCheck able">整筆拒絕</div>
+        </div>
+        <div class="popup_bg able">
+          <div class="popupWP able small">
             <div class="titleWP">
               <p class="title">批量同意</p>
               <p class="close">×</p>
@@ -300,7 +304,28 @@
             <div class="swalWP">
               <p>確認同意所有刊播嗎 ?</p>
               <div class=" btnWP">
-                <div class="btn delete_confirm small">確認</div>
+                <div class="btn able small">確認</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup_bg reject">
+          <div class="popupWP reject small">
+            <div class="titleWP">
+              <p class="title">整筆退回</p>
+              <p class="close">×</p>
+            </div>
+            <div class="swalWP">
+              <div class="border flex">
+                <p>原因</p>
+                <select name="rejectContent">
+                  <option value="">內容與場域不符</option>
+                  <option value="">競業關係</option>
+                  <option value="">其他</option>
+                </select>
+              </div>
+              <div class=" btnWP">
+                <div class="btn reject small">確認</div>
               </div>
             </div>
           </div>
@@ -308,7 +333,7 @@
       </div>
     </div>
   </div>
-  <div class="sideNo">6</div>
+  <div class="sideNo">7</div>
   <script src="js/table.js"></script>
   <script>
 
@@ -338,12 +363,14 @@
     });
 
     $('.batch').click(function () {
-      if ($(this).hasClass('able')) {
-        $('.popup_bg.delet').fadeIn().css({ 'display': 'flex' });
-        $('body').addClass('overflow');
+      if ($(this).hasClass('batchCheck')) {
+        $('.popup_bg.able').fadeIn().css({ 'display': 'flex' });
+      } else {
+        $('.popup_bg.reject').fadeIn().css({ 'display': 'flex' });
       }
+      $('body').addClass('overflow');
     });
-    
+
     //close
     $('.popup_bg .titleWP .close').click(function () {
       $('.popup_bg').fadeOut();
