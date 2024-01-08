@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="css/playCheck.css">
   <title>刊播審核</title>
 </head>
+
 <body>
   <header></header>
   <div id="main">
@@ -40,12 +41,12 @@
           <div class="btn search"><input type="submit" value="查詢" /></div>
         </form>
         <div class="textInfo">
-          <img src="img/table/textInfo.svg" alt=""><div class="info">點選紫色字體可進行排序</div>
+          <img src="img/table/textInfo.svg" alt="">
+          <div class="info">點選紫色字體可進行排序</div>
         </div>
         <div class="table-responsive">
           <table class="head_bg">
             <tr>
-              <td class="check"><input type="checkbox"></td>
               <td>ID</td>
               <td>刊播名稱</td>
               <td>縮圖</td>
@@ -54,13 +55,13 @@
               <td class="sort">週期</td>
               <td>時段</td>
               <td>刊播人</td>
+              <td>操作</td>
             </tr>
           </table>
           <div class="tableWp">
             <table cellspacing="0" id="mediaCheckList" class="mainTable">
               <thead>
                 <tr>
-                  <th></th>
                   <th>ID</th>
                   <th class="scroll">刊播名稱</th>
                   <th>縮圖</th>
@@ -69,91 +70,57 @@
                   <th class="sort">週期</th>
                   <th>時段</th>
                   <th>刊播人</th>
+                  <th>操作</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="check">
-                    <input type="checkbox">
-                  </td>
                   <td class="small">A123456789</td>
-                  <td class="scroll" >刊播名稱</td>
+                  <td class="scroll">刊播名稱</td>
                   <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
                   <td>23.06.06</td>
                   <td>24.06.06</td>
                   <td>每天</td>
                   <td class="column small">00:00<br>|<br>23:59</td>
                   <td class="small">AAAAA公司</td>
+                  <td class="btnWP">
+                    <p class="btnImg" onclick="window.open('http://localhost:8888/24.01.05_cms/mediaByDevice.html')">
+                      <i class="info"><img src="img/table/Info.svg" alt="">查看</i>
+                    </p>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="check">
-                    <input type="checkbox">
-                  </td>
                   <td class="small">A123456789</td>
-                  <td class="scroll" >刊播名稱</td>
+                  <td class="scroll">刊播名稱</td>
                   <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
                   <td>23.06.06</td>
                   <td>24.06.06</td>
                   <td>每天</td>
                   <td class="column small">00:00<br>|<br>23:59</td>
                   <td class="small">AAAAA公司</td>
+                  <td class="btnWP">
+                    <p class="btnImg" onclick="window.open('http://localhost:8888/24.01.05_cms/mediaByDevice.html')">
+                      <i class="info"><img src="img/table/Info.svg" alt="">查看</i>
+                    </p>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="check">
-                    <input type="checkbox">
-                  </td>
                   <td class="small">A123456789</td>
-                  <td class="scroll" >刊播名稱</td>
+                  <td class="scroll">刊播名稱</td>
                   <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
                   <td>23.06.06</td>
                   <td>24.06.06</td>
                   <td>每天</td>
                   <td class="column small">00:00<br>|<br>23:59</td>
                   <td class="small">AAAAA公司</td>
+                  <td class="btnWP">
+                    <p class="btnImg" onclick="window.open('http://localhost:8888/24.01.05_cms/mediaByDevice.html')">
+                      <i class="info"><img src="img/table/Info.svg" alt="">查看</i>
+                    </p>
+                  </td>
                 </tr>
               </tbody>
             </table>
-          </div>
-        </div>
-        <div class="batch batchCheck playCheck">批量同意</div>
-        
-        <div class="popup_bg check">
-          <div class="popupWP check">
-            <div class="titleWP">
-              <p class="title">A123456789</p>
-              <p class="close">×</p>
-            </div>
-            <div class="swalWP">
-              <div class="check_popup popup">
-                <div class="flex">
-                  <p>刊播名稱</p><span>機場宣導機場宣導機場宣導</span>
-                </div>
-                <div class="flex imageWP show"><img src="img/media/detail_Img.svg" class="show" alt=""></div>
-                <div class="flex">
-                  <p>開始日</p><span>23.06.06</span>
-                </div>
-                <div class="flex">
-                  <p>結束日</p><span>24.06.06</span>
-                </div>
-                <div class="flex">
-                  <p>週期</p><span>每天</span>
-                </div>
-                <div class="flex">
-                  <p>時段</p><span>00:00 - 23:59</span>
-                </div> 
-                <div class="flex size">
-                  <p>刊播人</p><span>刊播人名稱呈現在這裡</span>
-                </div>
-                <div class="flex column notagree">
-                  <p>不同意原因</p>
-                  <textarea type="text" placeholder="請輸入不同意原因"></textarea>
-                </div>
-                <div class="btnWP hasTwo">
-                  <div class="btn agree confirm">同意</div>
-                  <div class="btn notagree">退回</div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -162,8 +129,37 @@
   <div class="sideNo">6</div>
   <script src="js/textInfo.js"></script>
   <script src="js/table.js"></script>
-  <script src="js/batch.js"></script>
   <script>
+    //checkbox ALL
+    $('.table-responsive .head_bg td input[type="checkbox"]').click(function () {
+      let num = $(this).parents('.table-responsive').find('.mainTable td input[type="checkbox"]:checked').length;
+      if (num == $('.mainTable td input[type="checkbox"]').length) {
+        $('.mainTable td input[type="checkbox"]').prop('checked', false);
+        $('.batch').removeClass('able');
+      } else {
+        $('.mainTable td input[type="checkbox"]').prop('checked', true);
+        $('.batch').addClass('able');
+      }
+    });
+
+    //batch
+    $('.mainTable input[type="checkbox"]').change(function () {
+      if ($('.mainTable input[type="checkbox"]:checked').length > 1) {
+        $('.batch').addClass('able');
+        if ($('.mainTable input[type="checkbox"]:checked').length !== $('.mainTable input[type="checkbox"]').length) {
+          $('.head_bg td input[type="checkbox"]').prop('checked', false);
+        }
+      } else {
+        $('.batch').removeClass('able');
+      }
+    });
+
+    $('.batch').click(function () {
+      if ($(this).hasClass('able')) {
+        $('.popup_bg.delet').fadeIn().css({ 'display': 'flex' });
+        $('body').addClass('overflow');
+      }
+    });
     //pop
     $('td').click(function () {
       if (!$(this).hasClass('check')) {
@@ -209,7 +205,7 @@
         Swal.fire('已退回', '', 'success');
         $('.popup_bg').fadeOut();
       }
-      
+
     });
   </script>
 </body>
