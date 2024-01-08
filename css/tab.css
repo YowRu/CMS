@@ -1,0 +1,57 @@
+/*teb*/
+.popupWP.width600.edit .titleWP {
+  background-color: #ededed;
+}
+
+.popup_bg .tabs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: transparent;
+  padding: 0 2px;
+}
+
+.popup_bg .tabs li {
+  padding: 0 12px;
+  height: 44px;
+  line-height: 44px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-top: 4px;
+}
+
+.popup_bg .tabs li.active {
+  background-color: #fff;
+}
+
+.popup_bg .tabs li a {
+  color: #bbb;
+}
+
+.popup_bg .tabs li.active a {
+  color: #2F3034;
+}
+
+@media(max-width:515px) {
+
+  .popup_bg .tabs li.active a,
+  .popup_bg .tabs li a {
+    font-size: 0.9rem;
+  }
+}
+
+@media(max-width:414px) {
+
+  .popup_bg .tabs li.active a,
+  .popup_bg .tabs li a {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width:375px) {
+
+  .popup_bg .tabs li.active a,
+  .popup_bg .tabs li a {
+    font-size: 0.8rem;
+  }
+}

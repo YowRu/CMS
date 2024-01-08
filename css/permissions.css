@@ -1,6 +1,14 @@
+.popup_bg .swalWP {
+  padding-bottom: 94px;
+}
+
+.table-responsive {
+  margin-top: 68px;
+}
+
 .head_bg.permissions td,
 .mainTable.permissions td {
-  width: 12%;
+  width: 8%;
 }
 
 
@@ -8,14 +16,14 @@
 .mainTable.permissions td:nth-child(2),
 .head_bg.permissions td:nth-child(3),
 .mainTable.permissions td:nth-child(3) {
-  width: 30%;
+  width: 23%;
 }
 
-.head_bg.permissions td:nth-child(1),
-.mainTable.permissions td:nth-child(1),
-.head_bg.permissions td:nth-child(6),
-.mainTable.permissions td:nth-child(6) {
-  width: 8%;
+.head_bg.permissions td:nth-child(4),
+.mainTable.permissions td:nth-child(4),
+.head_bg.permissions td:nth-child(5),
+.mainTable.permissions td:nth-child(5) {
+  width: 14%;
 }
 
 .switch {
@@ -24,13 +32,66 @@
   align-items: center;
 }
 
-label, select {
+label,
+select {
   text-align: center;
 }
 
 .role {
   display: inline-block;
   margin: 0 auto;
+}
+
+.item.flex,
+.operate {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 120px;
+  border: 0;
+  margin: 0;
+}
+
+.operate {
+  width: 67%;
+}
+
+.item.flex input {
+  margin-right: 5px;
+}
+
+.item.flex label {
+  font-size: 1rem;
+  color: #1e1e1e;
+}
+
+.operate .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+/*pop*/
+.popupWP .flex {
+  padding: 7px 12px;
+}
+
+.popupWP.width600 .popup {
+  border: 0;
+  align-items: flex-start;
+  padding: 30px 20px;
+  margin-bottom: -16px;
+}
+
+.edit_popup.flex .info {
+  width: 100%;
+}
+
+.info>.flex {
+  justify-content: space-evenly;
+  box-sizing: content-box;
 }
 
 @media (max-width:700px) {

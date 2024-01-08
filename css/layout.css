@@ -173,6 +173,7 @@ header .btnWP {
   right: 0;
   height: 52px;
   z-index: 100;
+  margin-top: 0;
 }
 
 header .btnWP a,
@@ -200,7 +201,7 @@ header .btnWP .hello .time {
 
 
 header .btnWP .icon {
-  margin: 1rem;
+  margin: 1rem .5rem;
   color: #6D6E71;
 }
 
@@ -692,7 +693,7 @@ select {
   color: #fff;
 }
 
-#main .btnWP {
+.btnWP {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -703,7 +704,7 @@ td.btnWP {
   display: table-cell;
 }
 
-.btn.add, .btnWP .btn {
+.btn.add {
   position: absolute;
   width: 56px;
   right: 20px;
@@ -713,11 +714,6 @@ td.btnWP {
   box-sizing: border-box;
 }
 
-.btnWP .btn {
-  position: relative;
-  margin-left: 15px;
-  right: 0;
-}
 
 .btn.search {
   background-color: #5861E2;
