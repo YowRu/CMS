@@ -17,9 +17,11 @@
   <link rel="stylesheet" href="css/sweetalert2.css">
   <link rel="stylesheet" href="css/layout.css" type="text/css">
   <link rel="stylesheet" href="css/switch.css">
+  <link rel="stylesheet" href="css/tab.css">
   <link rel="stylesheet" href="css/permissions.css">
   <title>角色權限</title>
 </head>
+
 <body>
   <header></header>
   <div id="main">
@@ -46,11 +48,8 @@
           <img src="img/table/textInfo.svg" alt="">
           <div class="info">點選紫色字體可進行排序</div>
         </div>
-        <div class="btnWP">
-          <!-- <div class="btn " onclick="add()">新增</div> -->
-          <div class="btn " onclick="setting()">設定</div>
-        </div>
-        
+        <div class="btn add" onclick="setting()">設定</div>
+
         <div class="table-responsive permissions">
           <table class="head_bg permissions">
             <tr>
@@ -60,7 +59,7 @@
               <td class="sort">角色</td>
               <td class="sort">註冊日</td>
               <td class="sort">狀態</td>
-              <!-- <td>操作</td> -->
+              <td>操作</td>
             </tr>
           </table>
           <div class="tableWp marginTop">
@@ -73,7 +72,7 @@
                   <th class="sort">角色</th>
                   <th class="sort">註冊日</th>
                   <th class="sort">狀態</th>
-                  <!-- <th>操作</th> -->
+                  <th>操作</th>
                 </tr>
               </thead>
               <tbody>
@@ -82,12 +81,12 @@
                   <td class="scroll">94039746<br>數享科技有限公司</td>
                   <td>黃昱璇<br>yu-hsuan.huang@drmn.com.tw</td>
                   <td>
-                    <select name="" id="role" class="role">
+                    <select name="" class="role">
                       <option value="admin" selected>Admin</option>
                       <option value="manager">Manager</option>
                       <option value="supervisor">Supervisor</option>
                       <option value="operator">Operator</option>
-                      <option value="basic user">Basic user</option>
+                      <option value="User">User</option>
                     </select>
                   </td>
                   <td class="small">24.01.05</td>
@@ -96,23 +95,23 @@
                         for="switch-1"></label>
                     </div>
                   </td>
-                  <!-- <td class="btnWP">
+                  <td class="btnWP">
                     <p class="btnImg">
                       <i class="edit" onClick="edit()"><img src="img/table/edit.svg" alt="" class="edit">編輯</i>
                     </p>
-                  </td> -->
+                  </td>
                 </tr>
                 <tr>
                   <td class="small">1099</td>
                   <td class="scroll">10348873<br>臺北大眾捷運股份有限公司臺北小巨蛋場館</td>
                   <td>陳小一<br>sranvani@yahoo.com.tw</td>
                   <td>
-                    <select name="" id="role" class="role">
+                    <select name="" class="role">
                       <option value="admin">Admin</option>
                       <option value="manager" selected>Manager</option>
                       <option value="supervisor">Supervisor</option>
                       <option value="operator">Operator</option>
-                      <option value="basic user">Basic user</option>
+                      <option value="User">User</option>
                     </select>
                   </td>
                   <td class="small">24.01.05</td>
@@ -121,23 +120,23 @@
                         for="switch-1"></label>
                     </div>
                   </td>
-                  <!-- <td class="btnWP">
+                  <td class="btnWP">
                     <p class="btnImg">
                       <i class="edit" onClick="edit()"><img src="img/table/edit.svg" alt="" class="edit">編輯</i>
                     </p>
-                  </td> -->
+                  </td>
                 </tr>
                 <tr>
                   <td class="small">1099</td>
                   <td class="scroll">23115308<br>展昭國際企業股份有限公司</td>
                   <td>鍾宏義<br>member@chanchao.com.tw</td>
                   <td>
-                    <select name="" id="role" class="role">
+                    <select name="" class="role">
                       <option value="admin">Admin</option>
                       <option value="manager" selected>Manager</option>
                       <option value="supervisor">Supervisor</option>
                       <option value="operator">Operator</option>
-                      <option value="basic user">Basic user</option>
+                      <option value="User">User</option>
                     </select>
                   </td>
                   <td class="small">24.01.05</td>
@@ -146,23 +145,23 @@
                         for="switch-1"></label>
                     </div>
                   </td>
-                  <!-- <td class="btnWP">
+                  <td class="btnWP">
                     <p class="btnImg">
                       <i class="edit" onClick="edit()"><img src="img/table/edit.svg" alt="" class="edit">編輯</i>
                     </p>
-                  </td> -->
+                  </td>
                 </tr>
                 <tr>
                   <td class="small">1099</td>
                   <td class="scroll">83522639<br>台北101分公司</td>
                   <td>張祐誠<br>dpo@tfc101.com.tw</td>
                   <td>
-                    <select name="" id="role" class="role">
+                    <select name="" class="role">
                       <option value="admin">Admin</option>
                       <option value="manager">Manager</option>
                       <option value="supervisor" selected>supervisor</option>
                       <option value="operator">Operator</option>
-                      <option value="basic user">Basic user</option>
+                      <option value="User">User</option>
                     </select>
                   </td>
                   <td class="small">24.01.05</td>
@@ -171,23 +170,23 @@
                         for="switch-1"></label>
                     </div>
                   </td>
-                  <!-- <td class="btnWP">
+                  <td class="btnWP">
                     <p class="btnImg">
                       <i class="edit" onClick="edit()"><img src="img/table/edit.svg" alt="" class="edit">編輯</i>
                     </p>
-                  </td> -->
+                  </td>
                 </tr>
                 <tr>
                   <td class="small">1099</td>
                   <td class="scroll">89615825<br>上聯國際展覽有限公司</td>
                   <td>小蘭花<br>katespade@gmail.com</td>
                   <td>
-                    <select name="" id="role" class="role">
+                    <select name="" class="role">
                       <option value="admin">Admin</option>
                       <option value="manager">Manager</option>
-                      <option value="supervisor" >supervisor</option>
-                      <option value="user" selected>User</option>
-                      <option value="basic user">Basic user</option>
+                      <option value="supervisor">supervisor</option>
+                      <option value="Operator" selected>Operator</option>
+                      <option value="User">User</option>
                     </select>
                   </td>
                   <td class="small">24.01.05</td>
@@ -196,23 +195,23 @@
                         for="switch-1"></label>
                     </div>
                   </td>
-                  <!-- <td class="btnWP">
+                  <td class="btnWP">
                     <p class="btnImg">
                       <i class="edit" onClick="edit()"><img src="img/table/edit.svg" alt="" class="edit">編輯</i>
                     </p>
-                  </td> -->
+                  </td>
                 </tr>
                 <tr>
                   <td class="small">1099</td>
-                  <td class="scroll">A123456789<br>黃小花</td>
+                  <td class="scroll">--<br>--</td>
                   <td>黃小花<br>taiwanpeople@hotmail.com</td>
                   <td>
-                    <select name="" id="role" class="role">
+                    <select name="" class="role">
                       <option value="admin">Admin</option>
                       <option value="manager">Manager</option>
                       <option value="supervisor">Supervisor</option>
                       <option value="operator">Operator</option>
-                      <option value="basic user" selected>Basic user</option>
+                      <option value="User" selected>User</option>
                     </select>
                   </td>
                   <td class="small">24.01.05</td>
@@ -221,72 +220,874 @@
                         for="switch-1"></label>
                     </div>
                   </td>
-                  <!-- <td class="btnWP">
+                  <td class="btnWP">
                     <p class="btnImg">
                       <i class="edit" onClick="edit()"><img src="img/table/edit.svg" alt="" class="edit">編輯</i>
                     </p>
-                  </td> -->
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
-
-        <!-- <div class="popup_bg edit">
-          <div class="popupWP edit small">
+        <div class="popup_bg setting">
+          <div class="popupWP width600 edit">
             <div class="titleWP">
-              <p class="title">素材名稱</p>
+              <ul class="tabs">
+                <li><a href="#tab1">Admin</a></li>
+                <li><a href="#tab2">Manager</a></li>
+                <li><a href="#tab3">Supervisor</a></li>
+                <li><a href="#tab4">Operator</a></li>
+                <li><a href="#tab5">User</a></li>
+              </ul>
               <p class="close">×</p>
             </div>
-            <div class="swalWP">
-              <p>確認編輯素材嗎 ?</p>
-              <div class=" btnWP">
-                <div class="btn edite_confirm small">確認</div>
-              </div>
-            </div>
+            <ul class="swalWP tab_container">
+              <li id="tab1" class="tab_content">
+                <div class="edit_popup popup flex">
+                  <div class="info">
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu1" checked>
+                        <label for="menu1">數據中心</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu2" checked>
+                        <label for="menu2">媒體素材</label>
+                      </div>
+                      <div class="operate">
+                        <div class="column">
+                          <span>查看</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>刪除</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu3" checked>
+                        <label for="menu3">素材申請</label>
+                      </div>
+                      <div class="operate">
+                        <div class="column">
+                          <span>新增</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>查看</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu4" checked>
+                        <label for="menu4">素材審核</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu5" checked>
+                        <label for="menu5">設備控管</label>
+                      </div>
+                      <div class="operate">
+                        <div class="column">
+                          <span>編輯</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>歷程</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>截圖</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu6" checked>
+                        <label for="menu6">媒體刊播</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu7" checked>
+                        <label for="menu7">刊播審核</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                    <div class="flex menuSetting overflow">
+                      <div class="item flex ">
+                        <input type="checkbox" id="menu8" checked>
+                        <label for="menu8">刊播列表</label>
+                      </div>
+                      <div class="operate">
+                        <div class="column">
+                          <span>編輯</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>替換</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>複製</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>推播</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>停播</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>播放</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>刪除</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu9" checked>
+                        <label for="menu9">角色權限</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class=" btnWP">
+                  <div class="btn confirm small">確認</div>
+                </div>
+              </li>
+              <li id="tab2" class="tab_content">
+                <div class="edit_popup popup flex">
+                  <div class="info">
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu1" checked>
+                        <label for="menu1">數據中心</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu2" checked>
+                        <label for="menu2">媒體素材</label>
+                      </div>
+                      <div class="operate">
+                        <div class="column">
+                          <span>查看</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>刪除</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu3" checked>
+                        <label for="menu3">素材申請</label>
+                      </div>
+                      <div class="operate">
+                        <div class="column">
+                          <span>新增</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>查看</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu4" checked>
+                        <label for="menu4">素材審核</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu5" checked>
+                        <label for="menu5">設備控管</label>
+                      </div>
+                      <div class="operate">
+                        <div class="column">
+                          <span>編輯</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>歷程</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>截圖</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu6" checked>
+                        <label for="menu6">媒體刊播</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu7" checked>
+                        <label for="menu7">刊播審核</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu8" checked>
+                        <label for="menu8">刊播列表</label>
+                      </div>
+                      <div class="operate">
+                        <div class="column">
+                          <span>編輯</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>替換</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>複製</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>推播</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>停播</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>播放</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>刪除</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu9" checked>
+                        <label for="menu9">角色權限</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class=" btnWP">
+                  <div class="btn confirm small">確認</div>
+                </div>
+              </li>
+              <li id="tab3" class="tab_content">
+                <div class="edit_popup popup flex">
+                  <div class="info">
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu1" checked>
+                        <label for="menu1">數據中心</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu2" checked>
+                        <label for="menu2">媒體素材</label>
+                      </div>
+                      <div class="operate">
+                        <div class="column">
+                          <span>查看</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>刪除</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu3" checked>
+                        <label for="menu3">素材申請</label>
+                      </div>
+                      <div class="operate">
+                        <div class="column">
+                          <span>新增</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>查看</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu4" checked>
+                        <label for="menu4">素材審核</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu5" checked>
+                        <label for="menu5">設備控管</label>
+                      </div>
+                      <div class="operate">
+                        <div class="column">
+                          <span>編輯</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>歷程</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>截圖</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu6" checked>
+                        <label for="menu6">媒體刊播</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu7" checked>
+                        <label for="menu7">刊播審核</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu8" checked>
+                        <label for="menu8">刊播列表</label>
+                      </div>
+                      <div class="operate">
+                        <div class="column">
+                          <span>編輯</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>替換</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>複製</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>推播</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>停播</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>播放</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>刪除</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu9" checked>
+                        <label for="menu9">角色權限</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class=" btnWP">
+                  <div class="btn confirm small">確認</div>
+                </div>
+              </li>
+              <li id="tab4" class="tab_content">
+                <div class="edit_popup popup flex">
+                  <div class="info">
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu1" checked>
+                        <label for="menu1">數據中心</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu2" checked>
+                        <label for="menu2">媒體素材</label>
+                      </div>
+                      <div class="operate">
+                        <div class="column">
+                          <span>查看</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>刪除</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu3" checked>
+                        <label for="menu3">素材申請</label>
+                      </div>
+                      <div class="operate">
+                        <div class="column">
+                          <span>新增</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>查看</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu4" checked>
+                        <label for="menu4">素材審核</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu5" checked>
+                        <label for="menu5">設備控管</label>
+                      </div>
+                      <div class="operate">
+                        <div class="column">
+                          <span>編輯</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>歷程</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>截圖</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu6" checked>
+                        <label for="menu6">媒體刊播</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu7" checked>
+                        <label for="menu7">刊播審核</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu8" checked>
+                        <label for="menu8">刊播列表</label>
+                      </div>
+                      <div class="operate">
+                        <div class="column">
+                          <span>編輯</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>替換</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>複製</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>推播</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>停播</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>播放</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>刪除</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu9" checked>
+                        <label for="menu9">角色權限</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class=" btnWP">
+                  <div class="btn confirm small">確認</div>
+                </div>
+              </li>
+              <li id="tab5" class="tab_content">
+                <div class="edit_popup popup flex">
+                  <div class="info">
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu1" checked>
+                        <label for="menu1">數據中心</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu2" checked>
+                        <label for="menu2">媒體素材</label>
+                      </div>
+                      <div class="operate">
+                        <div class="column">
+                          <span>查看</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>刪除</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu3" checked>
+                        <label for="menu3">素材申請</label>
+                      </div>
+                      <div class="operate">
+                        <div class="column">
+                          <span>新增</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>查看</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu4" checked>
+                        <label for="menu4">素材審核</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu5" checked>
+                        <label for="menu5">設備控管</label>
+                      </div>
+                      <div class="operate">
+                        <div class="column">
+                          <span>編輯</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>歷程</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>截圖</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu6" checked>
+                        <label for="menu6">媒體刊播</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu7" checked>
+                        <label for="menu7">刊播審核</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu8" checked>
+                        <label for="menu8">刊播列表</label>
+                      </div>
+                      <div class="operate">
+                        <div class="column">
+                          <span>編輯</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>替換</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>複製</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>推播</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>停播</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>播放</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <span>刪除</span>
+                          <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
+                              for="switch-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex menuSetting">
+                      <div class="item flex">
+                        <input type="checkbox" id="menu9" checked>
+                        <label for="menu9">角色權限</label>
+                      </div>
+                      <div class="operate"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class=" btnWP">
+                  <div class="btn confirm small">確認</div>
+                </div>
+              </li>
+            </ul>
           </div>
-        </div> -->
-        
-        <div class="popup_bg add">
+        </div>
+        <div class="popup_bg edit">
           <div class="popupWP add">
             <div class="titleWP">
-              <p class="title">新增人員</p>
+              <p class="title">角色編輯</p>
               <p class="close">×</p>
             </div>
             <div class="swalWP">
               <div class="add_popup popup">
                 <div class="flex">
-                  <p>姓名</p><input type="text" class="fontLevel_1 space_around fileName" placeholder="請輸入姓名" />
+                  <p>姓名</p><input type="text" class="fontLevel_1 space_around fileName" placeholder="請輸入操作人姓名"
+                    value="黃昱璇" />
+                </div>
+                <div class="flex">
+                  <p>信箱</p><input type="text" class="fontLevel_1 space_around fileName" placeholder="請輸入信箱"
+                    value="yu-hsuan.huang@drmn.com.tw" />
+                </div>
+                <div class="flex">
+                  <p>公司</p><input type="text" class="fontLevel_1 space_around fileName" placeholder="請輸入公司名稱"
+                    value="數享科技有限公司" />
+                </div>
+                <div class="flex">
+                  <p>統編</p><input type="text" class="fontLevel_1 space_around fileName" placeholder="請輸入統一編號"
+                    value="94039746" />
                 </div>
                 <div class="flex">
                   <p>角色</p>
-                  <select name="" class="setting_role">
-                    <option value="admin">Admin</option>
+                  <select name="" class="editRole" id="editRole">
+                    <option value="admin" selected>Admin</option>
                     <option value="manager">Manager</option>
                     <option value="supervisor">Supervisor</option>
                     <option value="operator">Operator</option>
-                    <option value="basic user">Basic user</option>
+                    <option value="User">User</option>
                   </select>
                 </div>
-                <div class="flex type">
-                  <p>副檔名</p><span class="fontLevel_3">--</span>
-                </div>
-                <div class="flex second">
-                  <p>秒數</p><span class="fontLevel_3">--</span><input type="text" class="fontLevel_1 space_around"
-                    placeholder="請輸入秒數" />
-                </div>
-                <div class="flex byte">
-                  <p>檔案</p><span class="fontLevel_3">--</span>
-                </div>
-                <div class="flex size">
-                  <p>尺寸</p><span class="fontLevel_3">--</span>
-                </div>
                 <div class="flex">
-                  <p>墊檔</p><input type="checkbox" />
+                  <p>狀態</p>
+                  <div class="switch switch__2"><input id="editSwitch" type="checkbox" checked><label
+                      for="editSwitch"></label>
+                  </div>
                 </div>
-                <div class="flex"><input type="text" class="fontLevel_1 tag" placeholder="多個標籤,請用逗號分開"></div>
                 <div class=" btnWP">
-                  <div class="btn">送出審核</div>
+                  <div class="btn confirm small">確認</div>
                 </div>
               </div>
             </div>
@@ -295,7 +1096,7 @@
       </div>
     </div>
   </div>
-  <div class="sideNo">8</div>
+  <div class="sideNo">9</div>
   <script src="js/textInfo.js"></script>
   <script src="js/table.js"></script>
   <script src="js/datePicker.js"></script>
@@ -357,6 +1158,12 @@
       window.location.replace(location.href);
     });
 
+    //confirm
+    $('.confirm').click(function () {
+      $('.popup_bg').fadeOut();
+      window.location.replace(location.href);
+    });
+
     //add & setting
     function add() {
       $('.popup_bg.add').fadeIn().css({ 'display': 'flex' });
@@ -368,11 +1175,11 @@
       $('body').addClass('overflow');
     }
 
-    //switch & select
+    //switch & select 
     let switchBtn = $('.switch');
     $.each(switchBtn, function (i, el) {
-      $(this).children('input').attr('id', 'switch-' + i);
-      $(this).children('label').attr('for', 'switch-' + i);
+      $(this).children('input').attr('id', 'switch' + i);
+      $(this).children('label').attr('for', 'switch' + i);
     });
 
     let role = $('.role');
@@ -380,7 +1187,35 @@
       $(this).attr('id', 'role' + i);
     });
 
+    //setting #tab input & label
+    for (let i = 0; i < $('.tab_container li').length; i++) {
+      for (let j = 0; j < $('.tab_container li').eq(i).find('.menuSetting').length; j++) {
+        $('.tab_container li').eq(i).find('.menuSetting').eq(j).find('.item.flex input').attr('id', 'tab' + i + j);
+        $('.tab_container li').eq(i).find('.menuSetting').eq(j).find('.item.flex label').attr('for', 'tab' + i + j);
+      }
 
+    }
+
+    //tab
+    $(function () {
+      let _showTab = 0;
+      $('.popup_bg.setting .popupWP').each(function () {
+        let $tab = $(this);
+        let $defaultLi = $('.tabs li', $tab).eq(_showTab).addClass('active');
+        $($defaultLi.find('a').attr('href')).siblings().hide();
+
+        $('.tabs li', $tab).click(function () {
+          let $this = $(this),
+            _clickTab = $this.find('a').attr('href');
+          $this.addClass('active').siblings('.active').removeClass('active');
+          $(_clickTab).stop(false, true).fadeIn().siblings().hide();
+
+          return false;
+        }).find('a').focus(function () {
+          this.blur();
+        });
+      });
+    });
   </script>
 </body>
 

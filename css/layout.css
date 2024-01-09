@@ -206,7 +206,8 @@ header .btnWP .icon {
 }
 
 header .btnWP .point,
-header .btnWP .logout {
+header .btnWP .logout,
+header .btnWP .member {
   width: 20px;
   height: 20px;
   background: url('../img/menu/logout.svg') no-repeat center;
@@ -215,7 +216,8 @@ header .btnWP .logout {
 }
 
 header .btnWP .point:hover:after,
-header .btnWP .logout:hover:after {
+header .btnWP .logout:hover:after,
+header .btnWP .member:hover:after {
   content: '登出';
   color: #6D6E71;
   font-size: 0.9rem;
@@ -225,6 +227,7 @@ header .btnWP .logout:hover:after {
   width: 38px;
   background-color: #F8F0FF;
   padding: 1px 3px;
+  font-family: '微軟正黑', 'Noto Sans TC', sans-serif;
 }
 
 header .btnWP .point:hover:after {
@@ -244,6 +247,10 @@ header .btnWP .member {
   height: 20px;
   background: url('../img/menu/user.svg') no-repeat center;
   background-size: contain;
+}
+
+header .btnWP .member:hover:after {
+  content: '會員';
 }
 
 header .btnWP select {
@@ -1062,7 +1069,8 @@ p.previous {
   color: #D92700;
 }
 
-table td.img img, table td.img video {
+table td.img img,
+table td.img video {
   width: 90px;
   height: 150px;
   object-fit: cover;
@@ -1928,7 +1936,7 @@ div:where(.swal2-container).swal2-center>.swal2-popup.width600 .popupWP {
 
   header .wrapper .menu .side {
     overflow: scroll;
-    height: 80vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;

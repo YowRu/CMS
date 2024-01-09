@@ -1,6 +1,11 @@
 body {
   background: url('../img/menu/pointBG.png') no-repeat center;
   background-size: cover;
+  height: 100vh;
+}
+
+header .wrapper h1 a:after {
+  border-bottom: 0;
 }
 
 header:after {
@@ -30,11 +35,16 @@ header .wrapper {
   background: transparent;
 }
 
-#main {
+#main,
+.accordionWP {
   padding-top: 37px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.accordionWP {
+  padding-top: 0;
 }
 
 .wrapper {
@@ -280,6 +290,14 @@ textarea {
   .wrapper {
     width: 80%;
   }
+
+  .tabsWP {
+    overflow-y: scroll;
+  }
+
+  .accordion .tabs {
+    width: 130%;
+  }
 }
 
 @media (max-width:700px) {
@@ -292,7 +310,7 @@ textarea {
 
 @media (max-width:620px) {
   .accordion .tabs {
-    width: 120%;
+    width: 140%;
   }
 
   .accordion .tabsWP {
@@ -300,9 +318,15 @@ textarea {
   }
 }
 
+@media (max-width:550px) {
+  .accordion .tabs {
+    width: 160%;
+  }
+}
+
 @media (max-width:515px) {
   .accordion .tabs {
-    width: 130%;
+    width: 180%;
   }
 
   .wrapper {
@@ -310,26 +334,20 @@ textarea {
   }
 }
 
-@media (max-width:465px) {
+@media (max-width:450px) {
   .accordion .tabs {
-    width: 140%;
+    width: 190%;
   }
 }
 
-@media (max-width:434px) {
+@media (max-width:414px) {
   .accordion .tabs {
-    width: 150%;
-  }
-}
-
-@media (max-width:404px) {
-  .accordion .tabs {
-    width: 170%;
+    width: 210%;
   }
 }
 
 @media (max-width:365px) {
   .accordion .tabs {
-    width: 190%;
+    width: 230%;
   }
 }

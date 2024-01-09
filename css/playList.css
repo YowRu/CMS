@@ -7,8 +7,13 @@ table tbody tr:nth-child(even) {
 }
 
 table tbody tr:nth-child(odd),
-table.head_bg tbody tr:nth-child(odd) {
+table tbody tr:nth-child(even) {
   background: transparent;
+}
+
+table.mainTable>tbody>tr:nth-child(4n+1) ,
+table.mainTable>tbody>tr.color{
+  background: linear-gradient(to right, #ffffff 1%, #faf6ff 31%, #faf7fd 69%, #ffffff 100%);
 }
 
 .popupWP .filter .flex.date {

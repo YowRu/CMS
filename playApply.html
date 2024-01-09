@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="js/loading.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/rangepicker_single.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/sweetalert2.css">
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
+  <link rel="stylesheet" href="css/mediaApply.css">
+  <link rel="stylesheet" href="css/playApply.css">
+  <title>刊播申請</title>
+</head>
+<body>
+  <header></header>
+  <div id="main">
+    <div class="content">
+      <div class="title"></div>
+      <div class="contentBG">
+        <form class="searchBar" name="searchBar">
+          <div class="filter">
+            <div class="flex keyWords">
+              <input type="text" placeholder="輸入關鍵字" class="keyWords">
+            </div>
+          </div>
+          <div class="btn search"><input type="submit" value="查詢" /></div>
+        </form>
+        <div class="textInfo">
+          <img src="img/table/textInfo.svg" alt="">
+          <div class="info">點選紫色字體可進行排序</div>
+        </div>
+        <div class="table-responsive">
+          <table class="head_bg">
+            <tr>
+              <td class="check"></td>
+              <td>編號</td>
+              <td>刊播名稱</td>
+              <td>縮圖</td>
+              <td class="sort">起訖日</td>
+              <td class="sort">週期</td>
+              <td>時段</td>
+              <td class="sort">狀態</td>
+              <td>內容</td>
+            </tr>
+          </table>
+          <div class="tableWp marginTop">
+            <table cellspacing="0" class="mainTable">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th class="">編號</th>
+                  <th>刊播名稱</th>
+                  <th>縮圖</th>
+                  <th class="sort">起訖日</th>
+                  <th class="sort">週期</th>
+                  <th>時段</th>
+                  <th class="sort">狀態</th>
+                  <th>內容</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="check">
+                    <img src="img/table/close.svg" alt="" class="detailClose" onclick="detail(this)">
+                  </td>
+                  <td>01</td>
+                  <td class="name">福氣好運到</td>
+                  <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
+                  <td class="column small">23.06.18<br>|<br>23.12.18</td>
+                  <td>1,3,5</td>
+                  <td class="column small">10:00<br>|<br>18:00</td>
+                  <td class="primaryColor">待審</td>
+                  <td class="btnWP">
+                    <p class="btnImg" onclick="view()">
+                      <i class="info"><img src="img/table/Info.svg" alt="">查看</i>
+                    </p>
+                  </td>
+                </tr>
+                <tr class="detail">
+                  <td colspan="9">
+                    <table class="detailContent">
+                      <tr>
+                        <th></th>
+                        <th>設備名稱</th>
+                        <th class="num" colspan="2">地址</th>
+                        <th colspan="2">所屬公司</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>uhioho1</td>
+                        <td class="num" colspan="2">103台北市大同區哈密街61號</td>
+                        <td colspan="2">大龍峒保安宮</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>uhioho1</td>
+                        <td class="num" colspan="2">103台北市大同區哈密街61號</td>
+                        <td colspan="2">大龍峒保安宮</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>uhioho1</td>
+                        <td class="num" colspan="2">103台北市大同區哈密街61號</td>
+                        <td colspan="2">大龍峒保安宮</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="check">
+                    <img src="img/table/close.svg" alt="" class="detailClose" onclick="detail(this)">
+                  </td>
+                  <td>02</td>
+                  <td class="name">旺旺好運來</td>
+                  <td class="img"> <video src="img/cat.mp4" controls></video></td>
+                  <td class="column small">23.06.18<br>|<br>23.12.18</td>
+                  <td>1,3,5</td>
+                  <td class="column small">10:00<br>|<br>18:00</td>
+                  <td class="red">退回</td>
+                  <td class="btnWP">
+                    <p class="btnImg" onclick="view()">
+                      <i class="info"><img src="img/table/Info.svg" alt="">查看</i>
+                    </p>
+                  </td>
+                </tr>
+                <tr class="detail">
+                  <td colspan="9">
+                    <table class="detailContent">
+                      <tr>
+                        <th></th>
+                        <th>設備名稱</th>
+                        <th class="num" colspan="2">地址</th>
+                        <th colspan="2">所屬公司</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>uhioho1</td>
+                        <td class="num" colspan="2">103台北市大同區哈密街61號</td>
+                        <td colspan="2">大龍峒保安宮</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>uhioho1</td>
+                        <td class="num" colspan="2">103台北市大同區哈密街61號</td>
+                        <td colspan="2">大龍峒保安宮</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>uhioho1</td>
+                        <td class="num" colspan="2">103台北市大同區哈密街61號</td>
+                        <td colspan="2">大龍峒保安宮</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="popup_bg view">
+          <div class="popupWP view">
+            <div class="titleWP">
+              <p class="title">刊播詳情</p>
+              <p class="close">×</p>
+            </div>
+            <div class="swalWP">
+              <div class="view_popup popup">
+                <div class="flex">
+                  <p>編號</p><span class="fontLevel_3">01</span>
+                </div>
+                <div class="flex">
+                  <p>刊播名稱</p><span>機場宣導</span>
+                </div>
+                <div class="flex imageWP show">
+                  <!-- <img src="img/media/detail_Img.svg" class="show" alt=""> -->
+                  <video src="img/cat.mp4" controls></video>
+                </div>
+                <div class="flex">
+                  <p>起訖日</p><span>23.06.18－23.12.18</span>
+                </div>
+                <div class="flex">
+                  <p>週期</p><span>1,3,5</span>
+                </div>
+                <div class="flex ">
+                  <p>時段</p><span>10:00－18:00</span>
+                </div>
+                <div class="flex ">
+                  <p>狀態</p><span>退回</span>
+                </div>
+                <div class="flex ">
+                  <p>原因</p><span>內容與場域不符</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sideNo">6</div>
+  <script src="js/textInfo.js"></script>
+  <script src="js/table.js"></script>
+  <script src="js/datePicker.js"></script>
+  <script>
+    //get date time
+    let dayNow = new Date();
+    let day = dayNow.getDate();
+    let month = dayNow.getMonth();
+    let year = dayNow.getFullYear();
+    $('.popupWP.add .swalWP .flex.date span').text(year + '/' + (month + 1) + '/' + day);
+
+    //view
+    function view(){
+      $('.popup_bg.view').fadeIn().css({ 'display': 'flex' });
+      $('body').addClass('overflow');
+    };
+
+    //close
+    $('.popup_bg .titleWP .close').click(function () {
+      $('.popup_bg').fadeOut();
+      $('video').trigger('pause');
+      window.location.replace(location.href);
+    });
+
+     //detail
+     function detail(obj) {
+      if ($(obj).hasClass('detailClose')) {
+        $(obj).prop({ 'src': 'img/table/open.svg', 'class': 'detailOpen' });
+      } else {
+        $(obj).prop({ 'src': 'img/table/close.svg', 'class': 'detailClose' });
+      }
+      $(obj).parents('tr').next('.detail').slideToggle();
+    }
+
+    $('table.mainTable>tbody>tr:nth-child(4n+1) ').addClass('color');
+    $('table.mainTable tr.color ').next('.detail').addClass('color');
+  </script>
+</body>
+
+</html>

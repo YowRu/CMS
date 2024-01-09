@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="js/loading.js"></script>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/sweetalert2.css">
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
+  <link rel="stylesheet" href="css/point.css">
+  <link rel="stylesheet" href="css/member.css">
+  <title>會員中心</title>
+</head>
+
+<body>
+  <header></header>
+  <div id="main">
+    <div class="accordionWP">
+      <div class="accordion">
+        <div class="tabsWP">
+          <ul class="tabs">
+            <li class="active"><a href="member.html">會員資料</a></li>
+            <li><a href="topUp_admin.html">線下儲值</a></li>
+            <li><a href="topUpLog_admin.html">儲值紀錄</a></li>
+            <li><a href="pointLog_admin.html">使用紀錄</a></li>
+            <li><a href="topUp.html" class="lineH">儲值</a></li>
+            <li><a href="pointLog.html" class="lineH">紀錄</a></li>
+          </ul>
+        </div>
+        <ul class="tab_container">
+          <li id="tab0" class="tab_content">
+            <div class="wrapper">
+              <input type="text" value="0" class="status">
+              <div class="flex top">
+                <div class="left">
+                  <div class="clo">
+                    <img src="img/member/member.svg" alt="" class="memberImg">
+                    <p class="big">黃昱璇</p>
+                  </div>
+                  <p class="grade">VIP 會員</p>
+                </div>
+                <div class="right">
+                  <div class="company">
+                    <img src="img/member/company.png" alt="">
+                    <p class="big">企業版</p>
+                  </div>
+                  <div class="personal">
+                    <img src="img/member/personal.png" alt="">
+                    <p class="big">個人版</p>
+                  </div>
+                  <div class="level">
+                    <div class="border">升級企業版</div>
+                  </div>
+                </div>
+              </div>
+              <div class="gray">
+                <p class="flex">
+                  <img src="img/clock.svg" alt="">
+                  <span class="light">會籍到期</span>
+                  <span>2025/01/09</span>
+                </p>
+                <p class="flex">
+                  <img src="img/member/ticket.svg" alt="">
+                  <span class="light">續會條件</span>
+                  <span>會籍效期 12 個月內累積刊播 50次</span>
+                </p>
+                <p onclick="levelInfo()" class="link">查看會員等級規則</p>
+              </div>
+              <div class="inputWP">
+                <p>姓名</p><input type="text" class="fontLevel_1 space_around fileName" placeholder="請輸入操作人姓名"
+                  value="黃昱璇" />
+              </div>
+              <div class="inputWP">
+                <p>信箱</p><input type="text" class="fontLevel_1 space_around fileName" placeholder="請輸入信箱"
+                  value="yu-hsuan.huang@drmn.com.tw" />
+              </div>
+              <div class="inputWP">
+                <p>手機</p><input type="text" class="fontLevel_1 space_around fileName" placeholder="請輸入手機"
+                  value="0911111111" />
+              </div>
+              <div class="inputWP company">
+                <p>公司</p><input type="text" class="fontLevel_1 space_around fileName" placeholder="請輸入公司名稱"
+                  value="數享科技有限公司" />
+              </div>
+              <div class="inputWP company">
+                <p>統編</p><input type="text" class="fontLevel_1 space_around fileName" placeholder="請輸入統一編號"
+                  value="94039746" />
+              </div>
+              <div class="btn">送出</div>
+            </div>
+      </div>
+    </div>
+    </li>
+    </ul>
+  </div>
+  <script>
+
+
+    if ($('.status').val('0')) {
+      $('.wrapper .right .company').addClass('hide');
+      $('.wrapper .right .personal').removeClass('hide');
+    } else {
+      $('.wrapper .right .personal').addClass('hide');
+      $('.wrapper .right .company').removeClass('hide');
+    }
+ 
+  </script>
+</body>
+
+</html>

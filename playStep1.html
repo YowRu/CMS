@@ -63,7 +63,7 @@
               <input type="text" class="startTime" value="" />
               <input type="text" class="endTime" value="" />
               <input type="text" class="cycle" value="">
-              <input type="text" class="status" value="">
+              <input type="text" class="status" value="0">
             </div>
             <div class="submitInfo">
               <input type="text" class="startDate">
@@ -877,9 +877,9 @@
       $('.submitBtn').click(function () {
         if ($(".cycle input[type='checkbox']:checked").length > 0) {
           if ($('.step1 .hasInfo .status').val() == '0') {
-            window.location = "https://yowru.github.io/CMS/playStep2.html";
+            window.location = "playStep2.html";
           } else {
-            window.location = "https://yowru.github.io/CMS/playStep4.html";
+            window.location = "playStep4.html";
           }
 
         } else {
