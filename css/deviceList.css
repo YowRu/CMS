@@ -1,3 +1,25 @@
+.fa-thin.fa-check::before {
+  content: '\f00c';
+  font-family: "FontAwesome";
+  font-style: normal;
+  background: radial-gradient(ellipse at center, #65c746 2%, #47b126 51%);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 0.15rem;
+}
+
+.fa-thin.fa-xmark::before {
+  content: '\f00d';
+  font-family: "FontAwesome";
+  font-style: normal;
+  background: radial-gradient(ellipse at center, #a6a6a6 2%, #5c5c5c 99%);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.85rem;
+  padding: 0.18rem 0.22rem;
+}
+
 .head_bg td,
 .mainTable .main>td {
   width: 10%;

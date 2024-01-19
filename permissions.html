@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="css/switch.css">
   <link rel="stylesheet" href="css/tab.css">
   <link rel="stylesheet" href="css/permissions.css">
-  <title>角色權限</title>
+  <title>帳號管理</title>
 </head>
 
 <body>
@@ -53,10 +53,10 @@
         <div class="table-responsive permissions">
           <table class="head_bg permissions">
             <tr>
-              <td>ID</td>
+              <td>編號</td>
+              <td>姓名</td>
               <td>統編/公司</td>
-              <td>人員/信箱</td>
-              <td class="sort">角色</td>
+              <td class="sort">帳號</td>
               <td class="sort">註冊日</td>
               <td class="sort">狀態</td>
               <td>操作</td>
@@ -67,9 +67,9 @@
               <thead>
                 <tr>
                   <th>編號</th>
+                  <th>姓名</th>
                   <th class="scroll">統編/公司</th>
-                  <th>人員/信箱</th>
-                  <th class="sort">角色</th>
+                  <th class="sort">帳號</th>
                   <th class="sort">註冊日</th>
                   <th class="sort">狀態</th>
                   <th>操作</th>
@@ -78,22 +78,12 @@
               <tbody>
                 <tr>
                   <td class="small">1001</td>
+                  <td>黃昱璇</td>
                   <td class="scroll">94039746<br>數享科技有限公司</td>
-                  <td>黃昱璇<br>yu-hsuan.huang@drmn.com.tw</td>
-                  <td>
-                    <select name="" class="role">
-                      <option value="admin" selected>Admin</option>
-                      <option value="manager">Manager</option>
-                      <option value="supervisor">Supervisor</option>
-                      <option value="operator">Operator</option>
-                      <option value="User">User</option>
-                    </select>
-                  </td>
+                  <td>yu-hsuan.huang@drmn.com.tw</td>
                   <td class="small">24.01.05</td>
                   <td>
-                    <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
-                        for="switch-1"></label>
-                    </div>
+                    <i class="fa-thin fa-check"></i>
                   </td>
                   <td class="btnWP">
                     <p class="btnImg">
@@ -103,22 +93,12 @@
                 </tr>
                 <tr>
                   <td class="small">1099</td>
+                  <td>陳小一</td>
                   <td class="scroll">10348873<br>臺北大眾捷運股份有限公司臺北小巨蛋場館</td>
-                  <td>陳小一<br>sranvani@yahoo.com.tw</td>
-                  <td>
-                    <select name="" class="role">
-                      <option value="admin">Admin</option>
-                      <option value="manager" selected>Manager</option>
-                      <option value="supervisor">Supervisor</option>
-                      <option value="operator">Operator</option>
-                      <option value="User">User</option>
-                    </select>
-                  </td>
+                  <td>sranvani@yahoo.com.tw</td>
                   <td class="small">24.01.05</td>
                   <td>
-                    <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
-                        for="switch-1"></label>
-                    </div>
+                    <i class="fa-thin fa-check"></i>
                   </td>
                   <td class="btnWP">
                     <p class="btnImg">
@@ -128,22 +108,13 @@
                 </tr>
                 <tr>
                   <td class="small">1099</td>
+                  <td>鍾宏義</td>
                   <td class="scroll">23115308<br>展昭國際企業股份有限公司</td>
-                  <td>鍾宏義<br>member@chanchao.com.tw</td>
-                  <td>
-                    <select name="" class="role">
-                      <option value="admin">Admin</option>
-                      <option value="manager" selected>Manager</option>
-                      <option value="supervisor">Supervisor</option>
-                      <option value="operator">Operator</option>
-                      <option value="User">User</option>
-                    </select>
-                  </td>
+                  <td>member@chanchao.com.tw</td>
                   <td class="small">24.01.05</td>
                   <td>
-                    <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
-                        for="switch-1"></label>
-                    </div>
+                    <!-- <i class="fa-thin fa-check"></i> -->
+                    <i class="fa-thin fa-xmark"></i>
                   </td>
                   <td class="btnWP">
                     <p class="btnImg">
@@ -153,22 +124,12 @@
                 </tr>
                 <tr>
                   <td class="small">1099</td>
+                  <td>張祐誠</td>
                   <td class="scroll">83522639<br>台北101分公司</td>
-                  <td>張祐誠<br>dpo@tfc101.com.tw</td>
-                  <td>
-                    <select name="" class="role">
-                      <option value="admin">Admin</option>
-                      <option value="manager">Manager</option>
-                      <option value="supervisor" selected>supervisor</option>
-                      <option value="operator">Operator</option>
-                      <option value="User">User</option>
-                    </select>
-                  </td>
+                  <td>dpo@tfc101.com.tw</td>
                   <td class="small">24.01.05</td>
                   <td>
-                    <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
-                        for="switch-1"></label>
-                    </div>
+                    <i class="fa-thin fa-check"></i>
                   </td>
                   <td class="btnWP">
                     <p class="btnImg">
@@ -178,22 +139,12 @@
                 </tr>
                 <tr>
                   <td class="small">1099</td>
+                  <td>小蘭花</td>
                   <td class="scroll">89615825<br>上聯國際展覽有限公司</td>
-                  <td>小蘭花<br>katespade@gmail.com</td>
-                  <td>
-                    <select name="" class="role">
-                      <option value="admin">Admin</option>
-                      <option value="manager">Manager</option>
-                      <option value="supervisor">supervisor</option>
-                      <option value="Operator" selected>Operator</option>
-                      <option value="User">User</option>
-                    </select>
-                  </td>
+                  <td>katespade@gmail.com</td>
                   <td class="small">24.01.05</td>
                   <td>
-                    <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
-                        for="switch-1"></label>
-                    </div>
+                    <i class="fa-thin fa-check"></i>
                   </td>
                   <td class="btnWP">
                     <p class="btnImg">
@@ -203,22 +154,12 @@
                 </tr>
                 <tr>
                   <td class="small">1099</td>
+                  <td>黃小花</td>
                   <td class="scroll">--<br>--</td>
-                  <td>黃小花<br>taiwanpeople@hotmail.com</td>
-                  <td>
-                    <select name="" class="role">
-                      <option value="admin">Admin</option>
-                      <option value="manager">Manager</option>
-                      <option value="supervisor">Supervisor</option>
-                      <option value="operator">Operator</option>
-                      <option value="User" selected>User</option>
-                    </select>
-                  </td>
+                  <td>taiwanpeople@hotmail.com</td>
                   <td class="small">24.01.05</td>
                   <td>
-                    <div class="switch switch__2"><input id="switch-1" type="checkbox" checked><label
-                        for="switch-1"></label>
-                    </div>
+                    <i class="fa-thin fa-check"></i>
                   </td>
                   <td class="btnWP">
                     <p class="btnImg">
@@ -393,7 +334,7 @@
                     <div class="flex menuSetting">
                       <div class="item flex">
                         <input type="checkbox" id="menu9" checked>
-                        <label for="menu9">角色權限</label>
+                        <label for="menu9">帳號權限</label>
                       </div>
                       <div class="operate"></div>
                     </div>
@@ -553,7 +494,7 @@
                     <div class="flex menuSetting">
                       <div class="item flex">
                         <input type="checkbox" id="menu9" checked>
-                        <label for="menu9">角色權限</label>
+                        <label for="menu9">帳號權限</label>
                       </div>
                       <div class="operate"></div>
                     </div>
@@ -713,7 +654,7 @@
                     <div class="flex menuSetting">
                       <div class="item flex">
                         <input type="checkbox" id="menu9" checked>
-                        <label for="menu9">角色權限</label>
+                        <label for="menu9">帳號權限</label>
                       </div>
                       <div class="operate"></div>
                     </div>
@@ -873,7 +814,7 @@
                     <div class="flex menuSetting">
                       <div class="item flex">
                         <input type="checkbox" id="menu9" checked>
-                        <label for="menu9">角色權限</label>
+                        <label for="menu9">帳號權限</label>
                       </div>
                       <div class="operate"></div>
                     </div>
@@ -1033,7 +974,7 @@
                     <div class="flex menuSetting">
                       <div class="item flex">
                         <input type="checkbox" id="menu9" checked>
-                        <label for="menu9">角色權限</label>
+                        <label for="menu9">帳號權限</label>
                       </div>
                       <div class="operate"></div>
                     </div>
@@ -1049,7 +990,7 @@
         <div class="popup_bg edit">
           <div class="popupWP add">
             <div class="titleWP">
-              <p class="title">角色編輯</p>
+              <p class="title">帳號編輯</p>
               <p class="close">×</p>
             </div>
             <div class="swalWP">
@@ -1071,7 +1012,7 @@
                     value="94039746" />
                 </div>
                 <div class="flex">
-                  <p>角色</p>
+                  <p>帳號</p>
                   <select name="" class="editRole" id="editRole">
                     <option value="admin" selected>Admin</option>
                     <option value="manager">Manager</option>
@@ -1182,10 +1123,7 @@
       $(this).children('label').attr('for', 'switch' + i);
     });
 
-    let role = $('.role');
-    $.each(role, function (i, el) {
-      $(this).attr('id', 'role' + i);
-    });
+ 
 
     //setting #tab input & label
     for (let i = 0; i < $('.tab_container li').length; i++) {
