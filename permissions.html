@@ -48,8 +48,10 @@
           <img src="img/table/textInfo.svg" alt="">
           <div class="info">點選紫色字體可進行排序</div>
         </div>
-        <div class="btn add" onclick="setting()">設定</div>
-
+        <div class="btnWP">
+          <div class="btn add" onclick="setting()">設定</div>
+          <div class="btn add big" onclick="add()">新增公司</div>
+        </div>
         <div class="table-responsive permissions">
           <table class="head_bg permissions">
             <tr>
@@ -987,6 +989,29 @@
             </ul>
           </div>
         </div>
+        <div class="popup_bg add">
+          <div class="popupWP add">
+            <div class="titleWP">
+              <p class="title">新增公司</p>
+              <p class="close">×</p>
+            </div>
+            <div class="swalWP">
+              <div class="add_popup popup">
+                <div class="flex">
+                  <p>公司</p><input type="text" class="fontLevel_1 space_around fileName" placeholder="請輸入公司名稱"
+                    value="" />
+                </div>
+                <div class="flex">
+                  <p>統編</p><input type="text" class="fontLevel_1 space_around fileName" placeholder="請輸入統一編號"
+                    value="" />
+                </div>
+                <div class=" btnWP">
+                  <div class="btn confirm small">確認</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="popup_bg edit">
           <div class="popupWP add">
             <div class="titleWP">
@@ -1123,7 +1148,7 @@
       $(this).children('label').attr('for', 'switch' + i);
     });
 
- 
+
 
     //setting #tab input & label
     for (let i = 0; i < $('.tab_container li').length; i++) {
