@@ -1,3 +1,6 @@
+.btnWP{margin-top: 0;}
+.btn.add{position: relative;right: 0;}
+.btn.add.big{width: 80px;margin-left: 10px;}
 .popupWP.width600 {
   height: 600px;
 }
@@ -5,11 +8,8 @@
 .popup_bg .swalWP {
   padding-bottom: 94px;
 }
-
-.table-responsive {
-  margin-top: 68px;
-}
-
+.popup_bg.add .swalWP,.popupWP.add{height:250px;}
+.popup_bg.add .swalWP{overflow: hidden;}
 .head_bg.permissions td,
 .mainTable.permissions td {
   width: 8%;
