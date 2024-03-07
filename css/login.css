@@ -21,6 +21,10 @@ body::after {
   opacity: 0.3;
 }
 
+form {
+  width: 100%;
+}
+
 header {
   background: transparent;
 }
@@ -83,9 +87,11 @@ header .btnWP {
   margin: 0 auto;
   display: block;
 }
-.right .top img.none{
+
+.right .top img.none {
   display: none;
 }
+
 .right .flex {
   display: flex;
   justify-content: space-between;

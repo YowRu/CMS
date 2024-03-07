@@ -461,6 +461,21 @@ header .side>a span.hided {
   opacity: 0;
 }
 
+header .side>a span.redCircle:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: -12px;
+  top: -4px;
+  width: 5px;
+  height: 5px;
+  background-color: #d71045;
+  border-radius: 50%;
+  padding: 2px;
+  border: 1px solid #ffffff;
+  box-shadow: 0px 0px 4px 0px #ff4cb4;
+}
+
 header .side a img.active,
 header .side a.current img.normal {
   display: none;
@@ -711,6 +726,10 @@ td.btnWP {
   display: table-cell;
 }
 
+.table-responsive .head_bg td.lineHeight {
+  line-height: normal;
+}
+
 .btn.add {
   position: absolute;
   width: 56px;
@@ -812,6 +831,16 @@ table td {
 }
 
 td.small {
+  font-size: 0.85rem;
+}
+
+td.small .deviceNum::after {
+  content: '台';
+  font-size: 0.85rem;
+}
+
+td.small .playNum::after {
+  content: '次';
   font-size: 0.85rem;
 }
 
@@ -1815,6 +1844,7 @@ div:where(.swal2-container).swal2-center>.swal2-popup.width600 .popupWP {
   background-color: #3CBC26;
   width: 56px;
   margin: 0 auto;
+  border: 0;
 }
 
 .popup .btn {
