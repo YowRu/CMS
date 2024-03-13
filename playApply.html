@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/playApply.css">
   <title>刊播申請</title>
 </head>
+
 <body>
   <header></header>
   <div id="main">
@@ -32,7 +33,7 @@
               <input type="text" placeholder="輸入關鍵字" class="keyWords">
             </div>
           </div>
-          <div class="btn search"><input type="submit" value="查詢" /></div>
+          <!-- <div class="btn search"><input type="submit" value="查詢" /></div> -->
         </form>
         <div class="textInfo">
           <img src="img/table/textInfo.svg" alt="">
@@ -67,15 +68,15 @@
                   <th>內容</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody class="fbody">
                 <tr>
-                  <td class="check">
-                    <img src="img/table/close.svg" alt="" class="detailClose" onclick="detail(this)">
+                  <td class="check" onclick="detail(this)">
+                    <img src="img/table/close.svg" alt="" class="detailClose" />
                   </td>
                   <td>01</td>
                   <td class="name">福氣好運到</td>
                   <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
-                  <td class="column small">23.06.18<br>|<br>23.12.18</td>
+                  <td class="column small">24.01.18<br>|<br>24.12.18</td>
                   <td>1,3,5</td>
                   <td class="column small">10:00<br>|<br>18:00</td>
                   <td class="primaryColor">待審</td>
@@ -85,51 +86,9 @@
                     </p>
                   </td>
                 </tr>
-                <tr class="detail">
-                  <td colspan="9">
-                    <table class="detailContent">
-                      <tr>
-                        <th></th>
-                        <th>設備名稱</th>
-                        <th class="num" colspan="2">地址</th>
-                        <th colspan="2">所屬公司</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>uhioho1</td>
-                        <td class="num" colspan="2">103台北市大同區哈密街61號</td>
-                        <td colspan="2">大龍峒保安宮</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>uhioho1</td>
-                        <td class="num" colspan="2">103台北市大同區哈密街61號</td>
-                        <td colspan="2">大龍峒保安宮</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>uhioho1</td>
-                        <td class="num" colspan="2">103台北市大同區哈密街61號</td>
-                        <td colspan="2">大龍峒保安宮</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
                 <tr>
-                  <td class="check">
-                    <img src="img/table/close.svg" alt="" class="detailClose" onclick="detail(this)">
+                  <td class="check" onclick="detail(this)">
+                    <img src="img/table/close.svg" alt="" class="detailClose" />
                   </td>
                   <td>02</td>
                   <td class="name">旺旺好運來</td>
@@ -144,53 +103,10 @@
                     </p>
                   </td>
                 </tr>
-                <tr class="detail">
-                  <td colspan="9">
-                    <table class="detailContent">
-                      <tr>
-                        <th></th>
-                        <th>設備名稱</th>
-                        <th class="num" colspan="2">地址</th>
-                        <th colspan="2">所屬公司</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>uhioho1</td>
-                        <td class="num" colspan="2">103台北市大同區哈密街61號</td>
-                        <td colspan="2">大龍峒保安宮</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>uhioho1</td>
-                        <td class="num" colspan="2">103台北市大同區哈密街61號</td>
-                        <td colspan="2">大龍峒保安宮</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>uhioho1</td>
-                        <td class="num" colspan="2">103台北市大同區哈密街61號</td>
-                        <td colspan="2">大龍峒保安宮</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
               </tbody>
             </table>
           </div>
         </div>
-
         <div class="popup_bg view">
           <div class="popupWP view">
             <div class="titleWP">
@@ -235,6 +151,7 @@
   <script src="js/textInfo.js"></script>
   <script src="js/table.js"></script>
   <script src="js/datePicker.js"></script>
+  <script src="js/search.js"></script>
   <script>
     //get date time
     let dayNow = new Date();
@@ -244,7 +161,7 @@
     $('.popupWP.add .swalWP .flex.date span').text(year + '/' + (month + 1) + '/' + day);
 
     //view
-    function view(){
+    function view() {
       $('.popup_bg.view').fadeIn().css({ 'display': 'flex' });
       $('body').addClass('overflow');
     };
@@ -256,18 +173,71 @@
       window.location.replace(location.href);
     });
 
-     //detail
-     function detail(obj) {
-      if ($(obj).hasClass('detailClose')) {
-        $(obj).prop({ 'src': 'img/table/open.svg', 'class': 'detailOpen' });
+    //detail
+    // function detail(obj) {
+    //   if ($(obj).hasClass('detailClose')) {
+    //     $(obj).prop({ 'src': 'img/table/open.svg', 'class': 'detailOpen' });
+    //   } else {
+    //     $(obj).prop({ 'src': 'img/table/close.svg', 'class': 'detailClose' });
+    //   }
+    //   $(obj).parents('tr').next('.detail').slideToggle();
+    // }
+    //detail
+    let data = [{
+      name: 'fbdfge1',
+      address: '1111111111111111',
+      company: '大龍'
+    }, {
+      name: 'regergegergergerg2',
+      address: '台北市信義路二段194號 ',
+      company: '鼎泰豐'
+    }]
+
+
+    let newRow = `
+    <table class="detailContent">
+        <tr>
+            <th></th>
+            <th>設備名稱</th>
+            <th class="num" colspan="2">地址</th>
+            <th colspan="2">所屬公司</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>`;
+
+    // Loop through data2 array to create table rows
+    data.forEach((item, index) => {
+      newRow += `
+        <tr>
+            <td></td>
+            <td>${item.name}</td>
+            <td class="num" colspan="2">${item.address}</td>
+            <td colspan="2">${item.company}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>`;
+    });
+
+    function detail(obj) {
+      if ($(obj).children('img').hasClass('detailClose')) {
+        $(obj).children('img').prop({ 'src': 'img/table/open.svg', 'class': 'detailOpen' });
+        $(obj).parents('tr').after('<tr class="detail"><td colspan="9"></td></tr>');
+        $(obj).parents('tr').next('.detail').children('td').append(newRow);
       } else {
-        $(obj).prop({ 'src': 'img/table/close.svg', 'class': 'detailClose' });
+        $(obj).children('img').prop({ 'src': 'img/table/close.svg', 'class': 'detailClose' });
+        $(obj).parents('tr').next('.detail').remove();
       }
-      $(obj).parents('tr').next('.detail').slideToggle();
     }
 
     $('table.mainTable>tbody>tr:nth-child(4n+1) ').addClass('color');
     $('table.mainTable tr.color ').next('.detail').addClass('color');
+
   </script>
 </body>
 

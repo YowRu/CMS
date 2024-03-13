@@ -31,7 +31,7 @@
             <div class="flex keyWords">
               <input type="text" placeholder="輸入關鍵字" class="keyWords">
             </div>
-            <div class="flex type">
+            <!-- <div class="flex type">
               <label for="type">格式 :</label>
               <select name="" id="type">
                 <option value="all">全部</option>
@@ -53,9 +53,9 @@
             <div class="flex date">
               <label for="applyDate_mediaCheck">申請日 :</label>
               <input type="text" class="dateTimepicker datepicker" id="applyDate_mediaCheck" placeholder="請選擇" />
-            </div>
+            </div> -->
           </div>
-          <div class="btn search"><input type="submit" value="查詢" /></div>
+          <!-- <div class="btn search"><input type="submit" value="查詢" /></div> -->
         </form>
         <div class="textInfo">
           <img src="img/table/textInfo.svg" alt="">
@@ -88,7 +88,7 @@
                   <th class="sort">申請日</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody class="fbody">
                 <tr class="check">
                   <td class="check"><input type="checkbox"></td>
                   <td>A000000001</td>
@@ -184,37 +184,10 @@
   <script src="js/textInfo.js"></script>
   <script src="js/table.js"></script>
   <script src="js/datePicker.js"></script>
+  <script src="js/batch.js"></script>
+  <script src="js/search.js"></script>
   <script>
-    //checkbox ALL
-    $('.table-responsive .head_bg td input[type="checkbox"]').click(function () {
-      let num = $(this).parents('.table-responsive').find('.mainTable td input[type="checkbox"]:checked').length;
-      if (num == $('.mainTable td input[type="checkbox"]').length) {
-        $('.mainTable td input[type="checkbox"]').prop('checked', false);
-        $('.batch').removeClass('able');
-      } else {
-        $('.mainTable td input[type="checkbox"]').prop('checked', true);
-        $('.batch').addClass('able');
-      }
-    });
-
-    //batch
-    $('.mainTable input[type="checkbox"]').change(function () {
-      if ($('.mainTable input[type="checkbox"]:checked').length > 1) {
-        $('.batch').addClass('able');
-        if ($('.mainTable input[type="checkbox"]:checked').length !== $('.mainTable input[type="checkbox"]').length) {
-          $('.head_bg td input[type="checkbox"]').prop('checked', false);
-        }
-      } else {
-        $('.batch').removeClass('able');
-      }
-    });
-
-    $('.batch').click(function () {
-      if ($(this).hasClass('able')) {
-        $('.popup_bg.delet').fadeIn().css({ 'display': 'flex' });
-        $('body').addClass('overflow');
-      }
-    });
+   
     //pop
     $('td').click(function () {
       if (!$(this).hasClass('check')) {
