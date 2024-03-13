@@ -506,6 +506,7 @@ header .side a.current img.active {
   position: absolute;
   top: 74px;
   left: 0%;
+  z-index: -1;
 }
 
 #main .content.hided {
@@ -861,7 +862,6 @@ td.small .playNum::after {
 }
 
 tr.detail {
-  display: none;
   transition: all 1s ease-out;
   -webkit-transition: all 1s ease-out;
   -moz-transition: all 1s ease-out;
