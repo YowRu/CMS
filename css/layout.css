@@ -601,6 +601,7 @@ header .side a.current img.active {
   padding-left: 0;
 }
 
+.keywordSearch .flex,
 .searchBar .flex {
   margin-right: 10px;
   border: 1px solid #f6f6ff;
@@ -613,10 +614,12 @@ header .side a.current img.active {
   border-radius: 2px;
 }
 
+.keywordSearch .flex input,
 .searchBar .flex input {
   font-size: 0.9rem;
 }
 
+.keywordSearch .flex.keyWords,
 .searchBar .flex.keyWords {
   width: 114px;
   height: 36px;
@@ -1542,7 +1545,8 @@ img.uploadImg.show {
   padding: 0 15px;
 }
 
-.popupWP .flex.column textarea {
+.popupWP .flex.column textarea,
+.popupWP .flex.column p.notagree {
   margin-top: 4px;
   font-size: 0.9rem;
   height: 50px;
