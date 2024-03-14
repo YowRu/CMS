@@ -19,29 +19,14 @@
   <link rel="stylesheet" href="css/playList.css">
   <title>刊播列表</title>
 </head>
+
 <body>
   <header></header>
   <div id="main">
     <div class="content">
       <div class="title"></div>
       <div class="contentBG">
-        <form class="searchBar" name="searchBar">
-          <div class="filter">
-            <div class="flex keyWords">
-              <input type="text" placeholder="輸入關鍵字" class="keyWords">
-            </div>
-            <div class="flex state">
-              <label for="state">狀態 :</label>
-              <select name="" id="state">
-                <option value="all">全部</option>
-                <option value="" class="prepare">準備</option>
-                <option value="" class="endplay">結束</option>
-                <option value="" class="playing">刊播</option>
-              </select>
-            </div>
-          </div>
-          <div class="btn search"><input type="submit" value="查詢" /></div>
-        </form>
+        <div class="keywordSearch"></div>
         <div class="textInfo">
           <img src="img/table/textInfo.svg" alt="">
           <div class="info">點選紫色字體可進行排序</div>
@@ -77,12 +62,12 @@
                   <th>操作</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody class="fbody">
                 <tr>
-                  <td class="check">
-                    <img src="img/table/close.svg" alt="" class="detailClose" onclick="detail(this)">
+                  <td class="check" onclick="detail(this)">
+                    <img src="img/table/close.svg" alt="" class="detailClose" >
                   </td>
-                  <td class="small">A123456789</td>
+                  <td class="small">B12C456789</td>
                   <td class="scroll">刊播名稱</td>
                   <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
                   <td class="prepare">準備</td>
@@ -94,76 +79,22 @@
                     <p class="btnImg">
                       <span class="flex">
                         <i class="edit"><img src="img/table/edit.svg" alt="" class="edit" onClick="edit()">編輯</i>
-                        <i class="replace" onClick="replace()"><img src="img/table/replace.svg" alt="" class="replace"
-                            >替換</i>
-                        <i class="clone" onClick="clone()"><img src="img/table/clone.svg" alt="" class="clone" >複製</i>
-                        <i class="push" onClick="push()"><img src="img/table/push.svg" alt="" class="push" >推播</i>
+                        <i class="replace" onClick="replace()"><img src="img/table/replace.svg" alt=""
+                            class="replace">替換</i>
+                        <i class="clone" onClick="clone()"><img src="img/table/clone.svg" alt="" class="clone">複製</i>
+                        <i class="push" onClick="push()"><img src="img/table/push.svg" alt="" class="push">推播</i>
                       </span>
                       <span class="flex">
-                        <i class="stop" onclick="stop()"><img src="img/table/stop.svg" alt="" class="stop" >停播</i>
+                        <i class="stop" onclick="stop()"><img src="img/table/stop.svg" alt="" class="stop">停播</i>
                         <i class="play"><img src="img/table/play.svg" alt="" class="play">播放</i>
-                        <i class="delet" onclick="delet()"><img src="img/table/delet.svg" alt="" class="delet" >刪除</i>
+                        <i class="delet" onclick="delet()"><img src="img/table/delet.svg" alt="" class="delet">刪除</i>
                       </span>
                     </p>
                   </td>
                 </tr>
-                <tr class="detail">
-                  <td colspan="10">
-                    <table class="detailContent">
-                      <tr>
-                        <th></th>
-                        <th>設備名稱</th>
-                        <th class="num">mac address</th>
-                        <th>播放次數</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>uhioho1</td>
-                        <td class="num">A123456789</td>
-                        <td>6</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>uhioho1</td>
-                        <td class="num">A123456789</td>
-                        <td>6</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>uhioho1</td>
-                        <td class="num">A123456789</td>
-                        <td>6</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
                 <tr>
-                  <td class="check">
-                    <img src="img/table/close.svg" alt="" class="detailClose" onclick="detail(this)">
+                  <td class="check" onclick="detail(this)">
+                    <img src="img/table/close.svg" alt="" class="detailClose" >
                   </td>
                   <td class="small">B123456789</td>
                   <td class="scroll">刊播名稱</td>
@@ -177,52 +108,22 @@
                     <p class="btnImg">
                       <span class="flex">
                         <i class="edit"><img src="img/table/edit.svg" alt="" class="edit" onClick="edit()">編輯</i>
-                        <i class="replace" onClick="replace()"><img src="img/table/replace.svg" alt="" class="replace"
-                            >替換</i>
-                        <i class="clone" onClick="clone()"><img src="img/table/clone.svg" alt="" class="clone" >複製</i>
-                        <i class="push" onClick="push()"><img src="img/table/push.svg" alt="" class="push" >推播</i>
+                        <i class="replace" onClick="replace()"><img src="img/table/replace.svg" alt=""
+                            class="replace">替換</i>
+                        <i class="clone" onClick="clone()"><img src="img/table/clone.svg" alt="" class="clone">複製</i>
+                        <i class="push" onClick="push()"><img src="img/table/push.svg" alt="" class="push">推播</i>
                       </span>
                       <span class="flex">
-                        <i class="stop" onclick="stop()"><img src="img/table/stop.svg" alt="" class="stop" >停播</i>
+                        <i class="stop" onclick="stop()"><img src="img/table/stop.svg" alt="" class="stop">停播</i>
                         <i class="play"><img src="img/table/play.svg" alt="" class="play">播放</i>
-                        <i class="delet" onclick="delet()"><img src="img/table/delet.svg" alt="" class="delet" >刪除</i>
+                        <i class="delet" onclick="delet()"><img src="img/table/delet.svg" alt="" class="delet">刪除</i>
                       </span>
                     </p>
                   </td>
                 </tr>
-                <tr class="detail">
-                  <td colspan="10">
-                    <table class="detailContent">
-                      <tr>
-                        <th></th>
-                        <th>設備名稱</th>
-                        <th class="num">mac address</th>
-                        <th>播放次數</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>uhioho1</td>
-                        <td class="num">A123456789</td>
-                        <td>6</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
                 <tr>
-                  <td class="check">
-                    <img src="img/table/close.svg" alt="" class="detailClose" onclick="detail(this)">
+                  <td class="check" onclick="detail(this)">
+                    <img src="img/table/close.svg" alt="" class="detailClose" >
                   </td>
                   <td class="small">A123456789</td>
                   <td class="scroll">刊播名稱</td>
@@ -236,47 +137,17 @@
                     <p class="btnImg">
                       <span class="flex">
                         <i class="edit"><img src="img/table/edit.svg" alt="" class="edit" onClick="edit()">編輯</i>
-                        <i class="replace" onClick="replace()"><img src="img/table/replace.svg" alt="" class="replace"
-                            >替換</i>
-                        <i class="clone" onClick="clone()"><img src="img/table/clone.svg" alt="" class="clone" >複製</i>
-                        <i class="push" onClick="push()"><img src="img/table/push.svg" alt="" class="push" >推播</i>
+                        <i class="replace" onClick="replace()"><img src="img/table/replace.svg" alt=""
+                            class="replace">替換</i>
+                        <i class="clone" onClick="clone()"><img src="img/table/clone.svg" alt="" class="clone">複製</i>
+                        <i class="push" onClick="push()"><img src="img/table/push.svg" alt="" class="push">推播</i>
                       </span>
                       <span class="flex">
-                        <i class="stop" onclick="stop()"><img src="img/table/stop.svg" alt="" class="stop" >停播</i>
+                        <i class="stop" onclick="stop()"><img src="img/table/stop.svg" alt="" class="stop">停播</i>
                         <i class="play"><img src="img/table/play.svg" alt="" class="play">播放</i>
-                        <i class="delet" onclick="delet()"><img src="img/table/delet.svg" alt="" class="delet" >刪除</i>
+                        <i class="delet" onclick="delet()"><img src="img/table/delet.svg" alt="" class="delet">刪除</i>
                       </span>
                     </p>
-                  </td>
-                </tr>
-                <tr class="detail">
-                  <td colspan="10">
-                    <table class="detailContent">
-                      <tr>
-                        <th></th>
-                        <th>設備名稱</th>
-                        <th class="num">mac address</th>
-                        <th>播放次數</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>uhioho1</td>
-                        <td class="num">A123456789</td>
-                        <td>6</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                    </table>
                   </td>
                 </tr>
               </tbody>
@@ -305,37 +176,7 @@
               <p class="close">×</p>
             </div>
             <div class="swalWP">
-              <div class="searchBar" name="searchBar">
-                <div class="filter">
-                  <div class="flex keyWords">
-                    <input type="text" placeholder="輸入關鍵字" class="keyWords">
-                  </div>
-                  <div class="flex type">
-                    <label for="type">格式 :</label>
-                    <select name="type" id="type">
-                      <option value="all">全部</option>
-                      <option value="img">圖片</option>
-                      <option value="video">影片</option>
-                    </select>
-                  </div>
-                  <div class="flex second">
-                    <label for="second">秒數 :</label>
-                    <select name="second" id="second">
-                      <option value="all">全部</option>
-                      <option value="30">30</option>
-                      <option value="25">25</option>
-                      <option value="20">20</option>
-                      <option value="15">15</option>
-                      <option value="10">10</option>
-                    </select>
-                  </div>
-                  <div class="flex mediadate_clone date">
-                    <label for="mediadate_clone">審核 :</label>
-                    <input type="text" class="datepicker" id="mediadate_clone">
-                  </div>
-                </div>
-                <div class="btn search"><input type="submit" value="查詢" /></div>
-              </div>
+              <div class="keywordSearch"></div>
               <div class="textInfo">
                 <img src="img/table/textInfo.svg" alt="">
                 <div class="info">點選紫色字體可進行排序</div>
@@ -453,37 +294,7 @@
               <p class="close">×</p>
             </div>
             <div class="swalWP">
-              <div class="searchBar" name="searchBar">
-                <div class="filter">
-                  <div class="flex keyWords">
-                    <input type="text" placeholder="輸入關鍵字" class="keyWords">
-                  </div>
-                  <div class="flex type">
-                    <label for="type">格式 :</label>
-                    <select name="type" id="replace_type">
-                      <option value="all">全部</option>
-                      <option value="img">圖片</option>
-                      <option value="video">影片</option>
-                    </select>
-                  </div>
-                  <div class="flex second">
-                    <label for="second">秒數 :</label>
-                    <select name="second" id="replace_second">
-                      <option value="all">全部</option>
-                      <option value="30">30</option>
-                      <option value="25">25</option>
-                      <option value="20">20</option>
-                      <option value="15">15</option>
-                      <option value="10">10</option>
-                    </select>
-                  </div>
-                  <div class="flex mediadate_replace date">
-                    <label for="mediadate_replace">審核 :</label>
-                    <input type="text" class="datepicker" id="mediadate_replace">
-                  </div>
-                </div>
-                <div class="btn search"><input type="submit" value="查詢" /></div>
-              </div>
+              <div class="keywordSearch"></div>
               <div class="textInfo">
                 <img src="img/table/textInfo.svg" alt="">
                 <div class="info">點選紫色字體可進行排序</div>
@@ -510,14 +321,14 @@
                           <th class="sort">審核日</th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody class="fbody">
                         <tr>
                           <td class="check">
                             <input type="radio" name="mediaRadio" class="option-input">
                           </td>
                           <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
                           <td class="name">機場宣導</td>
-                          <td>15</td>
+                          <td>25</td>
                           <td>23.06.18</td>
                         </tr>
                         <tr>
@@ -525,54 +336,54 @@
                             <input type="radio" name="mediaRadio" class="option-input">
                           </td>
                           <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
-                          <td class="name">機場宣導</td>
-                          <td>15</td>
-                          <td>23.06.18</td>
+                          <td class="name">八八節活動</td>
+                          <td>30</td>
+                          <td>23.07.18</td>
                         </tr>
                         <tr>
                           <td class="check">
                             <input type="radio" name="mediaRadio" class="option-input">
                           </td>
                           <td class="image"><img src="img/media/mediaImg.svg" alt=""></td>
-                          <td class="name">機場宣導</td>
-                          <td>15</td>
-                          <td>23.06.18</td>
+                          <td class="name">歡慶母親節</td>
+                          <td>25</td>
+                          <td>23.04.20</td>
                         </tr>
                         <tr>
                           <td class="check">
                             <input type="radio" name="mediaRadio" class="option-input">
                           </td>
                           <td class="image"><img src="img/media/mediaImg.svg" alt=""></td>
-                          <td class="name">機場宣導</td>
-                          <td>15</td>
-                          <td>23.06.18</td>
+                          <td class="name">兒童節來啦</td>
+                          <td>20</td>
+                          <td>23.03.20</td>
                         </tr>
                         <tr>
                           <td class="check">
                             <input type="radio" name="mediaRadio" class="option-input">
                           </td>
                           <td class="image"><img src="img/media/mediaImg.svg" alt=""></td>
-                          <td class="name">機場宣導</td>
+                          <td class="name">週年慶買買買</td>
                           <td>15</td>
-                          <td>23.06.18</td>
+                          <td>23.09.17</td>
                         </tr>
                         <tr>
                           <td class="check">
                             <input type="radio" name="mediaRadio" class="option-input">
                           </td>
                           <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
-                          <td class="name">機場宣導</td>
+                          <td class="name">聖誕感恩回饋</td>
                           <td>15</td>
-                          <td>23.06.18</td>
+                          <td>23.12.18</td>
                         </tr>
                         <tr>
                           <td class="check">
                             <input type="radio" name="mediaRadio" class="option-input">
                           </td>
                           <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
-                          <td class="name">機場宣導</td>
+                          <td class="name">龍年大吉好運龍來</td>
                           <td>15</td>
-                          <td>23.06.18</td>
+                          <td>24.01.18</td>
                         </tr>
                       </tbody>
                     </table>
@@ -682,9 +493,9 @@
 
     $('.popupWP table tr').click(function () {
       if ($(window).width() < 600) {
-        if($(this).parents('table.mainTable').hasClass('replace')){
+        if ($(this).parents('table.mainTable').hasClass('replace')) {
           $('.replaceDetail').fadeIn().css({ 'display': 'flex' });
-        }else{
+        } else {
           $('.cloneDetail').fadeIn().css({ 'display': 'flex' });
         }
         $('body').addClass('overflow');
@@ -749,15 +560,64 @@
     });
 
     //detail
+    let data = [{
+      name: 'fbdfge1',
+      macAddress: 'Z4:23:4R6:789',
+      num: '64'
+    },{
+      name: 'AAA2222',
+      macAddress: 'C2:34:567:G89',
+      num: '72'
+    },{
+      name: 'BBCC566',
+      macAddress: 'A1:B3:456:789',
+      num: '220'
+    }]
+
+
+    let newRow = `
+        <table class="detailContent">
+          <tr>
+            <th></th>
+            <th>設備名稱</th>
+            <th class="num">mac address</th>
+            <th>播放次數</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>`;
+
+    // Loop through data array to create table rows
+    data.forEach((item, index) => {
+      newRow += `
+      <tr>
+        <td></td>
+        <td>${item.name}</td>
+        <td class="num">${item.macAddress}</td>
+        <td>${item.num}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>`;
+    });
+
     function detail(obj) {
-      if ($(obj).hasClass('detailClose')) {
-        $(obj).prop({ 'src': 'img/table/open.svg', 'class': 'detailOpen' });
+      if ($(obj).children('img').hasClass('detailClose')) {
+        $(obj).children('img').prop({ 'src': 'img/table/open.svg', 'class': 'detailOpen' });
+        $(obj).parents('tr').after('<tr class="detail"><td colspan="10"></td></tr>');
+        $(obj).parents('tr').next('.detail').children('td').append(newRow);
       } else {
-        $(obj).prop({ 'src': 'img/table/close.svg', 'class': 'detailClose' });
+        $(obj).children('img').prop({ 'src': 'img/table/close.svg', 'class': 'detailClose' });
+        $(obj).parents('tr').next('.detail').remove();
       }
-      $(obj).parents('tr').next('.detail').slideToggle();
     }
-    
+
     //tr & detail bgColor
     $('table.mainTable>tbody>tr:nth-child(4n+1) ').addClass('color');
     $('table.mainTable tr.color ').next('.detail').addClass('color');

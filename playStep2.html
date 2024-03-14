@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +19,6 @@
   <link rel="stylesheet" href="css/playStep2.css">
   <title>媒體刊播</title>
 </head>
-
 <body>
   <header></header>
   <div id="main">
@@ -58,33 +56,7 @@
                 <div class="btn stepBtn stepBtnHasInfo">確認</div>
               </div>
             </div>
-            <div class="searchBar" name="searchBar">
-              <div class="filter">
-                <div class="flex keyWords">
-                  <input type="text" placeholder="輸入關鍵字" class="keyWords">
-                </div>
-                <div class="flex type">
-                  <label for="type">格式 :</label>
-                  <select name="type" id="type">
-                    <option value="all">全部</option>
-                    <option value="img">圖片</option>
-                    <option value="video">影片</option>
-                  </select>
-                </div>
-                <div class="flex second">
-                  <label for="second">秒數 :</label>
-                  <select name="second" id="second">
-                    <option value="all">全部</option>
-                    <option value="30">30</option>
-                    <option value="25">25</option>
-                    <option value="20">20</option>
-                    <option value="15">15</option>
-                    <option value="10">10</option>
-                  </select>
-                </div>
-              </div>
-              <div class="btn search"><input type="submit" value="查詢" /></div>
-            </div>
+            <div class="keywordSearch"></div>
             <div class="textInfo">
               <img src="img/table/textInfo.svg" alt="">
               <div class="info">點選紫色字體可進行排序</div>
@@ -111,7 +83,7 @@
                         <th class="sort">審核日</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="fbody">
                       <tr>
                         <td>
                           <input type="radio" name="mediaCheck" class="option-input radio">

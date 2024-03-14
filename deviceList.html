@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,38 +20,14 @@
   <link rel="stylesheet" href="css/deviceList.css">
   <title>設備控管</title>
 </head>
+
 <body>
   <header></header>
   <div id="main">
     <div class="content">
       <div class="title"></div>
       <div class="contentBG">
-        <form class="searchBar" name="searchBar">
-          <div class="filter">
-            <div class="flex keyWords">
-              <input type="text" placeholder="輸入關鍵字" class="keyWords">
-            </div>
-            <div class="flex screen">
-              <label for="screen">螢幕 :</label>
-              <select name="" id="screen">
-                <option value="all">全部</option>
-                <option value="horizontal">橫式</option>
-                <option value="vertical">直式</option>
-              </select>
-            </div>
-            <div class="flex state">
-              <label for="state1">狀態 :</label>
-              <select name="" id="state1">
-                <option value="all">全部</option>
-                <option value="">出租</option>
-                <option value="">可租</option>
-                <option value="">售出</option>
-                <option value="">報廢</option>
-              </select>
-            </div>
-          </div>
-          <div class="btn search"><input type="submit" value="查詢" /></div>
-        </form>
+        <div class="keywordSearch"></div>
         <div class="textInfo">
           <img src="img/table/textInfo.svg" alt="">
           <div class="info">點選紫色字體可進行排序</div>
@@ -82,175 +59,77 @@
                   <th>操作</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody class="fbody">
                 <tr class="main">
-                  <td class="check">
-                    <img src="img/table/close.svg" alt="" class="detailClose" onclick="detail(this)">
+                  <td class="check" onclick="detail(this)">
+                    <img src="img/table/close.svg" alt="" class="detailClose">
                   </td>
-                  <td class="small">8C:35:92:FB:EC:71</td>
+                  <td class="small">1C:35:2K:FB:EL:71</td>
                   <td>台北市信義區仁愛路四段505號1樓</td>
                   <td>國父紀念館</td>
                   <td class="small">25.0669600000<br>121.5235000000</td>
                   <td>出租</td>
                   <td>
-                     <i class="fa-thin fa-check"></i>
+                    <i class="fa-thin fa-check"></i>
                   </td>
                   <td class="btnWP">
                     <p class="btnImg">
                       <span class="flex">
-                        <i class="edit" onClick="edit()"><img src="img/table/edit.svg" alt="" class="edit" >編輯</i>
-                        <i class="detail" onclick="window.location = 'deviceLog.html'"><img src="img/table/detail.svg" alt="" class="detail"
-                            >歷程</i>
+                        <i class="edit" onClick="edit()"><img src="img/table/edit.svg" alt="" class="edit">編輯</i>
+                        <i class="detail" onclick="window.location = 'deviceLog.html'"><img src="img/table/detail.svg"
+                            alt="" class="detail">歷程</i>
                       </span>
-                      <span><i class="screenshot" onclick="window.open('download.html', '_blank')"><img src="img/table/screenshot.svg" alt="" class="screenshot">截圖</i></span>
+                      <span><i class="screenshot" onclick="window.open('download.html', '_blank')"><img
+                            src="img/table/screenshot.svg" alt="" class="screenshot">截圖</i></span>
                     </p>
                   </td>
                 </tr>
-                <tr class="detail">
-                  <td colspan="8">
-                    <table class="detailContent">
-                      <tr>
-                        <th class="num">刊播編號</th>
-                        <th>刊播名稱</th>
-                        <th class="img">縮圖</th>
-                        <th class="second">秒數</th>
-                        <th class="small">起訖日</th>
-                        <th class="small">時段</th>
-                        <th>狀態</th>
-                      </tr>
-                      <tr>
-                        <td class="num">A123456789</td>
-                        <td>uhioho1</td>
-                        <td class="img">
-                          <img src="img/table/smallPhoto.png" alt="">
-                        </td>
-                        <td class="second">20</td>
-                        <td class="small">2023.09.21<br>|<br>2023.10.31</td>
-                        <td class="small">17:56<br>|<br>17:56</td>
-                        <td class="prepare">準備中</td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
                 <tr class="main">
-                  <td class="check">
-                    <img src="img/table/close.svg" alt="" class="detailClose" onclick="detail(this)">
+                  <td class="check" onclick="detail(this)">
+                    <img src="img/table/close.svg" alt="" class="detailClose">
                   </td>
-                  <td class="small">8C:35:92:FB:EC:71</td>
+                  <td class="small">9A:5I:92:FB:DC:71</td>
                   <td>台北市信義區信義路五段7號89樓</td>
                   <td>101景觀台</td>
                   <td class="small">25.0669600000<br>121.5235000000</td>
                   <td>售出</td>
                   <td>
-                     <i class="fa-thin fa-check"></i>
+                    <i class="fa-thin fa-check"></i>
                   </td>
                   <td class="btnWP">
                     <p class="btnImg">
                       <span class="flex">
-                        <i class="edit" onClick="edit()"><img src="img/table/edit.svg" alt="" class="edit" >編輯</i>
-                        <i class="detail" onclick="window.location = 'deviceLog.html'"><img src="img/table/detail.svg" alt="" class="detail"
-                            >歷程</i>
+                        <i class="edit" onClick="edit()"><img src="img/table/edit.svg" alt="" class="edit">編輯</i>
+                        <i class="detail" onclick="window.location = 'deviceLog.html'"><img src="img/table/detail.svg"
+                            alt="" class="detail">歷程</i>
                       </span>
-                      <span><i class="screenshot" onclick="window.open('download.html', '_blank')"><img src="img/table/screenshot.svg" alt="" class="screenshot">截圖</i></span>
+                      <span><i class="screenshot" onclick="window.open('download.html', '_blank')"><img
+                            src="img/table/screenshot.svg" alt="" class="screenshot">截圖</i></span>
                     </p>
                   </td>
                 </tr>
-                <tr class="detail">
-                  <td colspan="8">
-                    <table class="detailContent">
-                      <tr>
-                        <th class="num">刊播編號</th>
-                        <th>刊播名稱</th>
-                        <th class="img">縮圖</th>
-                        <th class="second">秒數</th>
-                        <th class="small">起訖日</th>
-                        <th class="small">時段</th>
-                        <th>狀態</th>
-                      </tr>
-                      <tr>
-                        <td class="num">A123456789</td>
-                        <td>刊播11111</td>
-                        <td class="img">
-                          <img src="img/table/smallPhoto.png" alt="">
-                        </td>
-                        <td class="second">20</td>
-                        <td class="small">2023.09.21<br>|<br>2023.10.31</td>
-                        <td class="small">17:56<br>|<br>17:56</td>
-                        <td class="endplay">已結束</td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
                 <tr class="main">
-                  <td class="check">
-                    <img src="img/table/close.svg" alt="" class="detailClose" onclick="detail(this)">
+                  <td class="check" onclick="detail(this)">
+                    <img src="img/table/close.svg" alt="" class="detailClose">
                   </td>
-                  <td class="small">8C:35:92:FB:EC:71</td>
+                  <td class="small">8F:35:92:GH:EJ:71</td>
                   <td>新北市板橋區縣民大道二段7號</td>
                   <td>新北耶誕城</td>
                   <td class="small">25.0669600000<br>121.5235000000</td>
                   <td>售出</td>
                   <td>
-                     <!-- <i class="fa-thin fa-check"></i> -->
-                     <i class="fa-thin fa-xmark"></i>
+                    <i class="fa-thin fa-xmark"></i>
                   </td>
                   <td class="btnWP">
                     <p class="btnImg">
                       <span class="flex">
-                        <i class="edit" onClick="edit()"><img src="img/table/edit.svg" alt="" class="edit" >編輯</i>
-                        <i class="detail" onclick="window.location = 'deviceLog.html'"><img src="img/table/detail.svg" alt="" class="detail"
-                            >歷程</i>
+                        <i class="edit" onClick="edit()"><img src="img/table/edit.svg" alt="" class="edit">編輯</i>
+                        <i class="detail" onclick="window.location = 'deviceLog.html'"><img src="img/table/detail.svg"
+                            alt="" class="detail">歷程</i>
                       </span>
-                      <span><i class="screenshot" onclick="window.open('download.html', '_blank')"><img src="img/table/screenshot.svg" alt="" class="screenshot">截圖</i></span>
+                      <span><i class="screenshot" onclick="window.open('download.html', '_blank')"><img
+                            src="img/table/screenshot.svg" alt="" class="screenshot">截圖</i></span>
                     </p>
-                  </td>
-                </tr>
-                <tr class="detail">
-                  <td colspan="8">
-                    <table class="detailContent">
-                      <tr>
-                        <th class="num">刊播編號</th>
-                        <th>刊播名稱</th>
-                        <th class="img">縮圖</th>
-                        <th class="second">秒數</th>
-                        <th class="small">起訖日</th>
-                        <th class="small">時段</th>
-                        <th>狀態</th>
-                      </tr>
-                      <tr>
-                        <td class="num">A123456789</td>
-                        <td>吃飽睡好</td>
-                        <td class="img">
-                          <img src="img/table/smallPhoto.png" alt="">
-                        </td>
-                        <td class="second">20</td>
-                        <td class="small">2023.09.21<br>|<br>2023.10.31</td>
-                        <td class="small">17:56<br>|<br>17:56</td>
-                        <td class="playing">刊播中</td>
-                      </tr>
-                      <tr>
-                        <td class="num">A123456789</td>
-                        <td>吃飽睡飽，人生美好</td>
-                        <td class="img">
-                          <img src="img/table/smallPhoto.png" alt="">
-                        </td>
-                        <td class="second">20</td>
-                        <td class="small">2023.09.01<br>17:56</td>
-                        <td class="small">2023.10.01<br>17:56</td>
-                        <td class="playing">刊播中</td>
-                      </tr>
-                      <tr>
-                        <td class="num">A123456789</td>
-                        <td>我想睡到自然醒</td>
-                        <td class="img">
-                          <img src="img/table/smallPhoto.png" alt="">
-                        </td>
-                        <td class="second">20</td>
-                        <td class="small">2023.09.01<br>17:56</td>
-                        <td class="small">2023.10.01<br>17:56</td>
-                        <td class="playing">刊播中</td>
-                      </tr>
-                    </table>
                   </td>
                 </tr>
               </tbody>
@@ -311,7 +190,7 @@
           </div>
           <div class="flex">
             <p>mac address</p>
-            <span class="mac fontLevel_3">2747326732698629</span>
+            <span class="mac fontLevel_3">204A326B32698629</span>
           </div>
           <div class="flex name">
             <p>設備名稱</p>
@@ -685,7 +564,7 @@
     //tableWp H
     let contentH = $('#main .contentBG').height();
     $('.table-responsive .tableWp').height(contentH - 174);
-    
+
     //online
     $('.online').each(function () {
       if ($(this).text() == 'Y') {
@@ -707,15 +586,59 @@
       $('video').trigger('pause');
     });
 
+
     //detail
+    let data = [{
+      num:'2306260001',
+      name: '吃飽睡好',
+      img:'img/table/smallPhoto.png',
+      second:'10',
+      start:'2023.06.26<br>10:00',
+      end:'2023.09.30<br>13:00',
+      status: '已結束',
+    },
+  ]
+
+
+    let newRow = `
+    <table class="detailContent">
+      <tr>
+        <th class="num">刊播編號</th>
+        <th>刊播名稱</th>
+        <th class="img">縮圖</th>
+        <th class="second">秒數</th>
+        <th class="small">開始</th>
+        <th class="small">結束</th>
+        <th>狀態</th>
+      </tr>`;
+
+    // Loop through data array to create table rows
+    data.forEach((item, index) => {
+      newRow += `
+      <tr>
+        <td class="num">${item.num}</td>
+        <td>${item.name}</td>
+        <td class="img">
+          <img src="${item.img}" alt="">
+        </td>
+        <td class="second">${item.second}</td>
+        <td class="small">${item.start}</td>
+        <td class="small">${item.end}</td>
+        <td class="playing">${item.status}</td>
+      </tr>`;
+    });
+
     function detail(obj) {
-      if ($(obj).hasClass('detailClose')) {
-        $(obj).prop({ 'src': 'img/table/open.svg', 'class': 'detailOpen' });
+      if ($(obj).children('img').hasClass('detailClose')) {
+        $(obj).children('img').prop({ 'src': 'img/table/open.svg', 'class': 'detailOpen' });
+        $(obj).parents('tr').after('<tr class="detail"><td colspan="9"></td></tr>');
+        $(obj).parents('tr').next('.detail').children('td').append(newRow);
       } else {
-        $(obj).prop({ 'src': 'img/table/close.svg', 'class': 'detailClose' });
+        $(obj).children('img').prop({ 'src': 'img/table/close.svg', 'class': 'detailClose' });
+        $(obj).parents('tr').next('.detail').remove();
       }
-      $(obj).parents('tr').next('.detail').slideToggle();
     }
+
 
     //add verify
     function addVerify() {

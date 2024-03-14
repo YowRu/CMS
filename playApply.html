@@ -27,14 +27,7 @@
     <div class="content">
       <div class="title"></div>
       <div class="contentBG">
-        <form class="searchBar" name="searchBar">
-          <div class="filter">
-            <div class="flex keyWords">
-              <input type="text" placeholder="輸入關鍵字" class="keyWords">
-            </div>
-          </div>
-          <!-- <div class="btn search"><input type="submit" value="查詢" /></div> -->
-        </form>
+        <div class="keywordSearch"></div>
         <div class="textInfo">
           <img src="img/table/textInfo.svg" alt="">
           <div class="info">點選紫色字體可進行排序</div>
@@ -151,7 +144,6 @@
   <script src="js/textInfo.js"></script>
   <script src="js/table.js"></script>
   <script src="js/datePicker.js"></script>
-  <script src="js/search.js"></script>
   <script>
     //get date time
     let dayNow = new Date();
@@ -173,15 +165,6 @@
       window.location.replace(location.href);
     });
 
-    //detail
-    // function detail(obj) {
-    //   if ($(obj).hasClass('detailClose')) {
-    //     $(obj).prop({ 'src': 'img/table/open.svg', 'class': 'detailOpen' });
-    //   } else {
-    //     $(obj).prop({ 'src': 'img/table/close.svg', 'class': 'detailClose' });
-    //   }
-    //   $(obj).parents('tr').next('.detail').slideToggle();
-    // }
     //detail
     let data = [{
       name: 'fbdfge1',
@@ -208,7 +191,7 @@
             <th></th>
         </tr>`;
 
-    // Loop through data2 array to create table rows
+    // Loop through data array to create table rows
     data.forEach((item, index) => {
       newRow += `
         <tr>

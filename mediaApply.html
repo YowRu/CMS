@@ -24,41 +24,7 @@
     <div class="content">
       <div class="title"></div>
       <div class="contentBG">
-        <form class="searchBar" name="searchBar">
-          <div class="filter">
-            <div class="flex keyWords">
-              <input type="text" placeholder="輸入關鍵字" class="keyWords">
-            </div>
-            <div class="flex second">
-              <label for="second">秒數 :</label>
-              <select name="second" id="second">
-                <option value="all">全部</option>
-                <option value="30">30</option>
-                <option value="25">25</option>
-                <option value="20">20</option>
-                <option value="15">15</option>
-                <option value="10">10</option>
-              </select>
-            </div>
-            <div class="flex type">
-              <label for="type">格式 :</label>
-              <select name="" id="type">
-                <option value="all">全部</option>
-                <option value="img">圖片</option>
-                <option value="video">影片</option>
-              </select>
-            </div>
-            <div class="flex date">
-              <label for="applyDate_apply">申請日 :</label>
-              <input type="text" id="applyDate_apply" name="applyDate_apply" placeholder="請選擇" class="datepicker">
-            </div>
-            <div class="flex date check">
-              <label for="checkDate_apply">審核日 :</label>
-              <input type="text" id="checkDate_apply" name="checkDate_apply" placeholder="請選擇" class="datepicker">
-            </div>
-          </div>
-          <div class="btn search"><input type="submit" value="查詢" /></div>
-        </form>
+        <div class="keywordSearch"></div>
         <div class="textInfo">
           <img src="img/table/textInfo.svg" alt="">
           <div class="info">點選紫色字體可進行排序</div>
@@ -91,15 +57,29 @@
                   <th>操作</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody class="fbody">
                 <tr>
                   <td>02</td>
                   <td class="name always">機場宣導</td>
                   <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
                   <td>15</td>
-                  <td>23.06.18</td>
+                  <td>24.06.18</td>
                   <td>--</td>
-                  <td class="primaryColor">待審</td>
+                  <td class="primaryColor status">待審</td>
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info" onclick="view('hide')"><img src="img/table/Info.svg" alt="">查看</i>
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>08</td>
+                  <td class="name">機場宣導</td>
+                  <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
+                  <td>15</td>
+                  <td>23.06.18</td>
+                  <td>23.11.26</td>
+                  <td class="red status">退回</td>
                   <td class="btnWP">
                     <p class="btnImg">
                       <i class="info" onclick="view()"><img src="img/table/Info.svg" alt="">查看</i>
@@ -107,13 +87,13 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>11</td>
+                  <td>09</td>
                   <td class="name">機場宣導</td>
                   <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
-                  <td>15</td>
-                  <td>23.06.18</td>
-                  <td>23.06.26</td>
-                  <td class="red">退回</td>
+                  <td>30</td>
+                  <td>23.09.07</td>
+                  <td>24.12.10</td>
+                  <td class="red status">退回</td>
                   <td class="btnWP">
                     <p class="btnImg">
                       <i class="info" onclick="view()"><img src="img/table/Info.svg" alt="">查看</i>
@@ -252,6 +232,10 @@
                 </div>
                 <div class="flex">
                   <p>申請日</p><span>23/06/18</span>
+                </div>
+                <div class="flex column notagree">
+                  <p>不同意原因</p>
+                  <p class="notagree">內容不適合場域</p>
                 </div>
               </div>
             </div>
@@ -468,9 +452,13 @@
     });
 
     //view
-    function view() {
+    function view(Text) {
       $('.popup_bg.view').fadeIn().css({ 'display': 'flex' });
       $('body').addClass('overflow');
+
+      if(Text == "hide"){
+        $('.popup_bg.view').find('.swalWP .flex.column.notagree').hide();
+      }
     };
 
     //check edit
