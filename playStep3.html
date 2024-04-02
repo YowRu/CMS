@@ -47,7 +47,22 @@
               <div class="btn back2 border pre">上一步</div>
               <div class="btn stepBtn stepBtn3">下一步</div>
             </div>
-            <div class="keywordSearch"></div>
+            <div class="searchBar" name="searchBar">
+              <div class="filter">
+                <div class="flex keyWords">
+                  <input type="text" placeholder="輸入關鍵字" class="keyWords">
+                </div>
+                <div class="flex screen">
+                  <label for="screen">螢幕 :</label>
+                  <select name="" id="screen">
+                    <option value="all">全部</option>
+                    <option value="horizontal">橫式</option>
+                    <option value="vertical">直式</option>
+                  </select>
+                </div>
+              </div>
+              <div class="btn search"><input type="submit" value="查詢" /></div>
+            </div>
             <div class="textInfo">
               <img src="img/table/textInfo.svg" alt="">
               <div class="info">點選紫色字體可進行排序</div>
@@ -72,7 +87,7 @@
                         <th class="sort">螢幕</th>
                       </tr>
                     </thead>
-                    <tbody class="fbody">
+                    <tbody>
                       <tr>
                         <td><input type="checkbox"></td>
                         <td>台北市信義路五段7號89樓</td>
@@ -135,11 +150,13 @@
       let W = $(window).width();
 
       $('#main .contentBG').innerHeight($('.stepContent').outerHeight()+$('.stepFlex').outerHeight()+120);
-      //RWD popup tr detail
-      $('.mainTable tr').click(function () {
-        if ($(window).width() < 656) {
-          $('.popup_bg').fadeIn().css({ 'display': 'flex' });
-          $('body').addClass('overflow');
+      
+      $('.mainTable tr').click(function (event) {
+        if ($(event.target).attr('type') !== 'checkbox') {
+          if ($(window).width() < 500) {
+            $('.popup_bg').fadeIn().css({ 'display': 'flex' });
+            $('body').addClass('overflow');
+          }
         }
       });
 
