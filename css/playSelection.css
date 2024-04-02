@@ -908,6 +908,7 @@ section.flex .listWP .list input[type="checkbox"] {
 
 [type="radio"].option-input:checked {
   position: relative;
+  border: 1px solid #6B56EC;
 }
 
 [type="radio"].option-input:checked::before {
