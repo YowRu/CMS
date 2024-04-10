@@ -271,6 +271,40 @@
       $('td.name.always').html('<span class="alwaysText">[常]</span>'+name_always);
     }
 
+//search
+$(".keyWordsInput").keyup(function(event) {
+        // 你的事件處理器代碼
+        let data = event.target.value.split(" ");
+        let jo = $(".fbody").find("tr");
+        if (event.target.value == "") {
+            jo.show();
+            return;
+        }
+        
+        jo.hide();
+
+        // 使用filter方法來過濾結果
+        jo.filter(function(i, v) {
+            let $t = $(this);
+            for (let d = 0; d < data.length; ++d) {
+                if ($t.is(":contains('" + data[d] + "')")) {
+                    return true;
+                }
+            }
+            return false;
+        })
+        // 顯示匹配的行
+        .show();
+    }).focus(function() {
+        this.value = "";
+        $(this).css({
+            "color": "black"
+        });
+        $(this).unbind('focus');
+    }).css({
+        "color": "#C0C0C0"
+    });
+
     //uploadFile
     function uploadFile() {
       let uploadFile = function (event) {
