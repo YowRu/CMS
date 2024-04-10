@@ -27,6 +27,10 @@
             })
             // 顯示匹配的行
             .show();
+           
+            if($(this).val()==''){
+                $(this).parents('.keywordSearch').siblings('.table-responsive').find('.head_bg td input[type="checkbox"]').prop('checked', false);
+            }
         }).on('focus', function() {
             this.value = "";
             $(this).css({
