@@ -1,22 +1,22 @@
 <div class="filter">
     <div class="flex keyWords">
-       <input type="text" placeholder="輸入關鍵字" class="keyWords">
+        <input type="text" placeholder="輸入關鍵字" class="keyWords">
     </div>
-   </div>
-   <script>
-   $(document).ready(function() {
-    $(".keyWords").on('keyup', function(event) {
+</div>
+<script>
+    $(document).ready(function () {
+        $(".keyWords").on('keyup', function (event) {
             let data = event.target.value.split(" ");
             let jo = $(".fbody").find("tr");
             if (event.target.value == "") {
                 jo.show();
                 return;
             }
-            
+
             jo.hide();
 
             // 使用filter方法來過濾結果
-            jo.filter(function(i, v) {
+            jo.filter(function (i, v) {
                 let $t = $(this);
                 for (let d = 0; d < data.length; ++d) {
                     if ($t.is(":contains('" + data[d] + "')")) {
@@ -25,13 +25,19 @@
                 }
                 return false;
             })
-            // 顯示匹配的行
-            .show();
-           
-            if($(this).val()==''){
+                // 顯示匹配的行
+                .show();
+
+            //搜尋空值就取消全選
+            if ($(this).val() == '') {
                 $(this).parents('.keywordSearch').siblings('.table-responsive').find('.head_bg td input[type="checkbox"]').prop('checked', false);
             }
-        }).on('focus', function() {
+            //所有資料都被勾選
+            let num = $(this).parents('.keywordSearch').siblings('.table-responsive').find('.mainTable td input[type="checkbox"]:checked').length;
+            if (num == $(this).parents('.keywordSearch').siblings('.table-responsive').find('.mainTable td input[type="checkbox"]').length) {
+                $(this).parents('.keywordSearch').siblings('.table-responsive').find('input[type="checkbox"]').prop('checked', true);
+            }
+        }).on('focus', function () {
             this.value = "";
             $(this).css({
                 "color": "black"
@@ -41,10 +47,10 @@
             "color": "#C0C0C0"
         });
 
-    
-        $("form").on('submit', function(event) {
-            event.preventDefault(); 
-        });
-});
 
-   </script>
+        $("form").on('submit', function (event) {
+            event.preventDefault();
+        });
+    });
+
+</script>
