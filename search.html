@@ -4,36 +4,44 @@
     </div>
    </div>
    <script>
-    $(".keyWords").keyup(function (event) {
-       // 使用event.target來獲取輸入框的值
-       let data = event.target.value.split(" ");
-       let jo = $(".fbody").find("tr");
-       if (event.target.value == "") {
-           jo.show();
-           return;
-       }
-       
-       jo.hide();
-   
-       // 使用filter方法來過濾結果
-       jo.filter(function (i, v) {
-           let $t = $(this);
-           for (let d = 0; d < data.length; ++d) {
-               if ($t.is(":contains('" + data[d] + "')")) {
-                   return true;
-               }
-           }
-           return false;
-       })
-       // 顯示匹配的行
-       .show();
-   }).focus(function () {
-       this.value = "";
-       $(this).css({
-           "color": "black"
-       });
-       $(this).unbind('focus');
-   }).css({
-       "color": "#C0C0C0"
-   });
+   $(document).ready(function() {
+    $(".keyWords").on('keyup', function(event) {
+            let data = event.target.value.split(" ");
+            let jo = $(".fbody").find("tr");
+            if (event.target.value == "") {
+                jo.show();
+                return;
+            }
+            
+            jo.hide();
+
+            // 使用filter方法來過濾結果
+            jo.filter(function(i, v) {
+                let $t = $(this);
+                for (let d = 0; d < data.length; ++d) {
+                    if ($t.is(":contains('" + data[d] + "')")) {
+                        return true;
+                    }
+                }
+                return false;
+            })
+            // 顯示匹配的行
+            .show();
+        }).on('focus', function() {
+            this.value = "";
+            $(this).css({
+                "color": "black"
+            });
+            $(this).off('focus');
+        }).css({
+            "color": "#C0C0C0"
+        });
+
+    
+        $("form").on('submit', function(event) {
+            event.preventDefault(); 
+           
+        });
+});
+
    </script>
