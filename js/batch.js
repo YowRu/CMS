@@ -26,15 +26,18 @@ $('.table-responsive .head_bg td input[type="checkbox"]').click(function () {
         selectedCount++;
       }
     });
+
+    //超過一列批量亮燈
     if (selectedCount > 1) {
       $('.batch').addClass('able');
     }
   } else {
     let num = $(this).parents('.table-responsive').find('.mainTable td input[type="checkbox"]:checked').length;
-    if (num == $('.mainTable td input[type="checkbox"]').length) {
+   
+    if(num>1){
       $('.mainTable td input[type="checkbox"]').prop('checked', false);
       $('.batch').removeClass('able');
-    } else {
+    }else{
       $('.mainTable td input[type="checkbox"]').prop('checked', true);
       $('.batch').addClass('able');
     }
