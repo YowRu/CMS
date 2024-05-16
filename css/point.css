@@ -34,10 +34,18 @@ header .toggle {
 header .wrapper {
   background: transparent;
 }
+.tab_content.scroll {
+  overflow: scroll;
+}
+
+.tab_content.scroll .wrapper {
+  overflow-y: hidden;
+}
 
 #main,
 .accordionWP {
-  padding-top: 37px;
+  padding-top: 69px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
