@@ -18,19 +18,22 @@
   <link rel="stylesheet" href="css/point.css">
   <title>點數中心</title>
 </head>
+
 <body>
   <header></header>
   <div id="main">
     <div class="accordionWP">
       <div class="accordion">
-        <ul class="tabs">
-          <li><a href="member.html">會員資料</a></li>
-          <li><a href="topUp_admin.html">線下儲值</a></li>
-          <li><a href="topUpLog_admin.html">儲值紀錄</a></li>
-          <li><a href="pointLog_admin.html">使用紀錄</a></li>
-          <li  class="active"><a href="topUp.html">儲值</a></li>
-          <li><a href="pointLog.html" class="lineH">紀錄</a></li>
-        </ul>
+        <div class="tabsWP">
+          <ul class="tabs">
+            <li><a href="member.html">會員資料</a></li>
+            <li><a href="topUp_admin.html">線下儲值</a></li>
+            <li><a href="topUpLog_admin.html">儲值紀錄</a></li>
+            <li><a href="pointLog_admin.html">使用紀錄</a></li>
+            <li class="active"><a href="topUp.html">儲值</a></li>
+            <li><a href="pointLog.html" class="lineH">紀錄</a></li>
+          </ul>
+        </div>
         <ul class="tab_container">
           <li id="tab4" class="tab_content">
             <div class="nowValue">
@@ -64,10 +67,12 @@
                 <input type="text" class="point" placeholder="請輸入購買點數" />
               </div>
               <div class="item flex">
-                <p>贈送</p><span>0</span><p>點</p>
+                <p>贈送</p><span>0</span>
+                <p>點</p>
               </div>
               <div class="item flex">
-                <p>應付(含稅) $</p><span>0</span><p class="per">元</p>
+                <p>應付(含稅) $</p><span>0</span>
+                <p class="per">元</p>
               </div>
               <div class="item">
                 <input type="text" class="taxId" placeholder="請輸入統一編號" />
@@ -85,25 +90,26 @@
       </div>
     </div>
   </div>
+  <script src="js/point.js"></script>
   <script>
-      $('.btn').click(function () {
-        if ($('.point').val() == '') {
-          Swal.fire('請輸入購買點數', '', 'info');
-        } else if (!$('.point').val().match(/[0-9]/)) {
-          Swal.fire('點數請輸入數字', '', 'info');
-        } else if ($('.taxId').val() == '') {
-          Swal.fire('請輸入統一編號', '', 'info');
-        } else if ($('.company').val() !== '' ) {
-          Swal.fire('請輸入發票抬頭', '', 'info');
-        } else if ($('.email').val() == '') {
-          Swal.fire('請輸入email', '', 'info');
-        }else if ($('.email').val().match(/[a-zA-Z]/) && !$('input.account').val().match(/(\w)+[@]{1}(\S)+[.]{1}(\D)+/)) {
-          Swal.fire('請確認email格式', '', 'info');
-        }  else {
-          Swal.fire('已送出', '', 'success');
-        }
+    $('.btn').click(function () {
+      if ($('.point').val() == '') {
+        Swal.fire('請輸入購買點數', '', 'info');
+      } else if (!$('.point').val().match(/[0-9]/)) {
+        Swal.fire('點數請輸入數字', '', 'info');
+      } else if ($('.taxId').val() == '') {
+        Swal.fire('請輸入統一編號', '', 'info');
+      } else if ($('.company').val() !== '') {
+        Swal.fire('請輸入發票抬頭', '', 'info');
+      } else if ($('.email').val() == '') {
+        Swal.fire('請輸入email', '', 'info');
+      } else if ($('.email').val().match(/[a-zA-Z]/) && !$('input.account').val().match(/(\w)+[@]{1}(\S)+[.]{1}(\D)+/)) {
+        Swal.fire('請確認email格式', '', 'info');
+      } else {
+        Swal.fire('已送出', '', 'success');
+      }
 
-      });
+    });
   </script>
 </body>
 
