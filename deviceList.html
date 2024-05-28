@@ -18,9 +18,9 @@
   <link rel="stylesheet" href="css/layout.css" type="text/css">
   <link rel="stylesheet" href="css/switch.css">
   <link rel="stylesheet" href="css/deviceList.css">
+  <link rel="stylesheet" href="css/detailTable.css">
   <title>設備控管</title>
 </head>
-
 <body>
   <header></header>
   <div id="main">
@@ -38,6 +38,7 @@
             <tr>
               <td class="check"></td>
               <td>mac位址</td>
+              <td class="hide">deviceId</td>
               <td>地址</td>
               <td>設備名</td>
               <td class="sort">經緯</td>
@@ -51,6 +52,7 @@
               <thead>
                 <tr>
                   <th>mac address</th>
+                  <th class="hide">deviceId</th>
                   <th>地址</th>
                   <th>設備</th>
                   <th class="sort">經緯</th>
@@ -61,10 +63,11 @@
               </thead>
               <tbody class="fbody">
                 <tr class="main">
-                  <td class="check" onclick="detail(this)">
+                  <td class="check" onclick="detail.call(this)">
                     <img src="img/table/close.svg" alt="" class="detailClose">
                   </td>
                   <td class="small">1C:35:2K:FB:EL:71</td>
+                  <td class="hide deviceId">411</td>
                   <td>台北市信義區仁愛路四段505號1樓</td>
                   <td>國父紀念館</td>
                   <td class="small">25.0669600000<br>121.5235000000</td>
@@ -85,10 +88,11 @@
                   </td>
                 </tr>
                 <tr class="main">
-                  <td class="check" onclick="detail(this)">
+                  <td class="check" onclick="detail.call(this)">
                     <img src="img/table/close.svg" alt="" class="detailClose">
                   </td>
                   <td class="small">9A:5I:92:FB:DC:71</td>
+                  <td class="hide deviceId">412</td>
                   <td>台北市信義區信義路五段7號89樓</td>
                   <td>101景觀台</td>
                   <td class="small">25.0669600000<br>121.5235000000</td>
@@ -109,10 +113,11 @@
                   </td>
                 </tr>
                 <tr class="main">
-                  <td class="check" onclick="detail(this)">
+                  <td class="check" onclick="detail.call(this)">
                     <img src="img/table/close.svg" alt="" class="detailClose">
                   </td>
                   <td class="small">8F:35:92:GH:EJ:71</td>
+                  <td class="hide deviceId">413</td>
                   <td>新北市板橋區縣民大道二段7號</td>
                   <td>新北耶誕城</td>
                   <td class="small">25.0669600000<br>121.5235000000</td>
@@ -588,57 +593,60 @@
 
 
     //detail
-    let data = [{
-      num:'2306260001',
-      name: '吃飽睡好',
-      img:'img/table/smallPhoto.png',
-      second:'10',
-      start:'2023.06.26<br>10:00',
-      end:'2023.09.30<br>13:00',
-      status: '已結束',
-    },
-  ]
+    function detail() {
+      let deviceID = $(this).siblings('td.deviceId').text();
+      let dynamicContent;
+      let newRow = `
+        <tr class="detail">
+          <td colspan="9">
+            <table class="detailContent">
+              <tr class="first">
+                <th class="num">刊播編號</th>
+                <th>刊播名稱</th>
+                <th class="img">縮圖</th>
+                <th class="second">秒數</th>
+                <th class="small">開始</th>
+                <th class="small">結束</th>
+                <th>狀態</th>
+              </tr>
+            </table>
+          </td>
+        </tr>`;
 
+      if ($(this).children('img').hasClass('detailClose')) {
+        $(this).children('img').prop({ 'src': 'img/table/open.svg', 'class': 'detailOpen' });
+        $(this).parents('.main').after(newRow);
+        $.ajax({
+          url: `http://test.drmn.net/api/DevicePlaylist/${deviceID}`,
+          type: "GET",
+          dataType: "json",
+          success: function (d) {
+            console.log(JSON.stringify(d));
+            d.forEach((item, index) => {
+              dynamicContent += `
+            <tr>
+              <td class="num">${item.postId}</td>
+              <td>${item.postName}</td>
+              <td class="img"><img src="${item.filePath}" alt=""></td>
+              <td class="second">${item.playSeconds}</td>
+              <td class="small">${item.beginDate}</td>
+              <td class="small">${item.endDate}</td>
+              <td class="playing">${item.status}</td>
+            </tr>`;
+            });
 
-    let newRow = `
-    <table class="detailContent">
-      <tr>
-        <th class="num">刊播編號</th>
-        <th>刊播名稱</th>
-        <th class="img">縮圖</th>
-        <th class="second">秒數</th>
-        <th class="small">開始</th>
-        <th class="small">結束</th>
-        <th>狀態</th>
-      </tr>`;
-
-    // Loop through data array to create table rows
-    data.forEach((item, index) => {
-      newRow += `
-      <tr>
-        <td class="num">${item.num}</td>
-        <td>${item.name}</td>
-        <td class="img">
-          <img src="${item.img}" alt="">
-        </td>
-        <td class="second">${item.second}</td>
-        <td class="small">${item.start}</td>
-        <td class="small">${item.end}</td>
-        <td class="playing">${item.status}</td>
-      </tr>`;
-    });
-
-    function detail(obj) {
-      if ($(obj).children('img').hasClass('detailClose')) {
-        $(obj).children('img').prop({ 'src': 'img/table/open.svg', 'class': 'detailOpen' });
-        $(obj).parents('tr').after('<tr class="detail"><td colspan="9"></td></tr>');
-        $(obj).parents('tr').next('.detail').children('td').append(newRow);
+          }, complete: (result) => {
+            $(this).parents('.main').next('.detail').find('.detailContent').append(dynamicContent);
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+            console.error("Error:", textStatus, errorThrown);
+          }
+        });
       } else {
-        $(obj).children('img').prop({ 'src': 'img/table/close.svg', 'class': 'detailClose' });
-        $(obj).parents('tr').next('.detail').remove();
+        $(this).children('img').prop({ 'src': 'img/table/close.svg', 'class': 'detailClose' });
+        $(this).parents('.main').next('.detail').remove();
       }
-    }
-
+    };
 
     //add verify
     function addVerify() {
