@@ -19,7 +19,6 @@
   <link rel="stylesheet" href="css/playList.css">
   <title>刊播列表</title>
 </head>
-
 <body>
   <header></header>
   <div id="main">
@@ -63,11 +62,11 @@
                 </tr>
               </thead>
               <tbody class="fbody">
-                <tr>
-                  <td class="check" onclick="detail(this)">
-                    <img src="img/table/close.svg" alt="" class="detailClose" >
+                <tr class="main">
+                  <td class="check" onclick="detail.call(this)">
+                    <img src="img/table/close.svg" alt="" class="detailClose">
                   </td>
-                  <td class="small">B12C456789</td>
+                  <td class="small postId">2405310001</td>
                   <td class="scroll">刊播名稱</td>
                   <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
                   <td class="prepare">準備</td>
@@ -92,11 +91,11 @@
                     </p>
                   </td>
                 </tr>
-                <tr>
-                  <td class="check" onclick="detail(this)">
-                    <img src="img/table/close.svg" alt="" class="detailClose" >
+                <tr class="main">
+                  <td class="check" onclick="detail.call(this)">
+                    <img src="img/table/close.svg" alt="" class="detailClose">
                   </td>
-                  <td class="small">B123456789</td>
+                  <td class="small postId">2405300004</td>
                   <td class="scroll">刊播名稱</td>
                   <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
                   <td class="endplay">結束</td>
@@ -121,11 +120,11 @@
                     </p>
                   </td>
                 </tr>
-                <tr>
-                  <td class="check" onclick="detail(this)">
-                    <img src="img/table/close.svg" alt="" class="detailClose" >
+                <tr class="main">
+                  <td class="check" onclick="detail.call(this)">
+                    <img src="img/table/close.svg" alt="" class="detailClose">
                   </td>
-                  <td class="small">A123456789</td>
+                  <td class="small postId">2405280005</td>
                   <td class="scroll">刊播名稱</td>
                   <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
                   <td class="playing">刊播</td>
@@ -154,7 +153,6 @@
             </table>
           </div>
         </div>
-
         <div class="popup_bg edit">
           <div class="popupWP edit small">
             <div class="titleWP">
@@ -560,63 +558,67 @@
     });
 
     //detail
-    let data = [{
-      name: 'fbdfge1',
-      macAddress: 'Z4:23:4R6:789',
-      num: '64'
-    },{
-      name: 'AAA2222',
-      macAddress: 'C2:34:567:G89',
-      num: '72'
-    },{
-      name: 'BBCC566',
-      macAddress: 'A1:B3:456:789',
-      num: '220'
-    }]
+    function detail() {
+      let postID = $(this).siblings('td.postId').text();
+      let dynamicContent;
+      let newRow = `
+        <tr class="detail">
+          <td colspan="10">
+            <table class="detailContent">
+              <tr class="first">
+                <th></th>
+                <th>設備名稱</th>
+                <th class="num">mac address</th>
+                <th>地址</th>
+                <th>狀態</th>
+                <th>播放次數</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </table>
+          </td>
+        </tr>`;
 
+      if ($(this).children('img').hasClass('detailClose')) {
+        $(this).children('img').prop({ 'src': 'img/table/open.svg', 'class': 'detailOpen' });
+        $(this).parents('.main').after(newRow);
+        $.ajax({
+          url: `http://test.drmn.net/api/postdevice/${postID}`,
+          type: "GET",
+          dataType: "json",
+          success: function (d) {
+            console.log(JSON.stringify(d));
+            d.forEach((item, index) => {
+              dynamicContent += `
+            <tr>
+              <td></td>
+              <td>${item.deviceName}</td>
+              <td class="num">${item.mac}</td>
+              <td>${item.address}</td>
+              <td>${item.deviceStatus}</td>
+              <td>${item.playCount}</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>`;
+            });
 
-    let newRow = `
-        <table class="detailContent">
-          <tr>
-            <th></th>
-            <th>設備名稱</th>
-            <th class="num">mac address</th>
-            <th>播放次數</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>`;
-
-    // Loop through data array to create table rows
-    data.forEach((item, index) => {
-      newRow += `
-      <tr>
-        <td></td>
-        <td>${item.name}</td>
-        <td class="num">${item.macAddress}</td>
-        <td>${item.num}</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>`;
-    });
-
-    function detail(obj) {
-      if ($(obj).children('img').hasClass('detailClose')) {
-        $(obj).children('img').prop({ 'src': 'img/table/open.svg', 'class': 'detailOpen' });
-        $(obj).parents('tr').after('<tr class="detail"><td colspan="10"></td></tr>');
-        $(obj).parents('tr').next('.detail').children('td').append(newRow);
+          }, complete: (result) => {
+            $(this).parents('.main').next('.detail').find('.detailContent').append(dynamicContent);
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+            console.error("Error:", textStatus, errorThrown);
+          }
+        });
       } else {
-        $(obj).children('img').prop({ 'src': 'img/table/close.svg', 'class': 'detailClose' });
-        $(obj).parents('tr').next('.detail').remove();
+        $(this).children('img').prop({ 'src': 'img/table/close.svg', 'class': 'detailClose' });
+        $(this).parents('.main').next('.detail').remove();
       }
-    }
+    };
+
 
     //tr & detail bgColor
     $('table.mainTable>tbody>tr:nth-child(4n+1) ').addClass('color');
