@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/sweetalert2@11.js"></script>
   <script src="js/loading.js"></script>
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
@@ -16,6 +17,7 @@
   <link rel="stylesheet" href="css/login.css" type="text/css">
   <title>登入</title>
 </head>
+
 <body>
   <div id="main">
     <div class="middle">
@@ -69,19 +71,20 @@
         $('body').height(H - 10);
       }
 
-      $('i.fa-eye-slash').click(function(){
+      $('i.fa-eye-slash').click(function () {
         $(this).hide();
         $(this).siblings('i.fa-eye').show();
-        $(this).siblings('input').attr('type','text');
+        $(this).siblings('input').attr('type', 'text');
       });
 
-      $('i.fa-eye').click(function(){
+      $('i.fa-eye').click(function () {
         $(this).hide();
         $(this).siblings('i.fa-eye-slash').show();
-        $(this).siblings('input').attr('type','password');
+        $(this).siblings('input').attr('type', 'password');
       });
-     
-$('input.account').change(function () {
+
+      $('input.account').change(function () {
+        verify();
         if ($('input.account').val() !== '') {
           $('p.account').removeClass('show');
         } else {
@@ -97,7 +100,35 @@ $('input.account').change(function () {
         }
       });
 
+      function isValidMobilePhone(phoneNumber) {
+        const regex = /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]??\d{3}[\s.-]??\d{4}$/;
+        return regex.test(phoneNumber);
+      }
+
+      function isValidEmail(email) {
+        const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return regex.test(email);
+      }
+      function validateAccount(value, type) {
+        switch (type) {
+          case 'email':
+            return isValidEmail(value);
+          case 'mobile':
+            return isValidMobilePhone(value);
+          default:
+            return false;
+        }
+      }
+
       function verify() {
+        validateAccount();
+        let accountValue = $('input.account').val();
+        if (!isValidEmail(accountValue) && !isValidMobilePhone(accountValue)) {
+          Swal.fire('手機號碼或電子郵件錯誤', '', 'info');
+          $('body.swal2-height-auto').css('height','100vh !important');
+          return false;
+        }
+
         if ($('input.account').val() === '') {
           $('p.account').addClass('show');
         } else if ($('input.password').val() === '') {
@@ -120,7 +151,7 @@ $('input.account').change(function () {
         verify();
       });
 
-     
+
 
 
     });
