@@ -744,6 +744,17 @@ td.btnWP {
   box-sizing: border-box;
 }
 
+.btn.addWebsite {
+  position: absolute;
+  width: 56px;
+  right: 87px;
+  margin-top: 20px;
+  border: 1px solid #5861E2;
+  color: #5861E2;
+  background-color: transparent;
+  box-sizing: border-box;
+  width: 78px;
+}
 
 .btn.search {
   background-color: #5861E2;
@@ -1730,6 +1741,10 @@ div:where(.swal2-container).swal2-center>.swal2-popup.width600 .popupWP {
   z-index: 4;
   margin: 0;
   right: auto;
+}
+
+.popupWP.addWebsite {
+  height: 44vh;
 }
 
 .popupWP.small {
