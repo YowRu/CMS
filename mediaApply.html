@@ -30,6 +30,7 @@
           <div class="info">點選紫色字體可進行排序</div>
         </div>
         <div class="btn add" onclick="add()">新增</div>
+        <div class="btn addWebsite" onclick="addWebsite()">新增網址</div>
         <div class="table-responsive">
           <table class="head_bg">
             <tr>
@@ -140,6 +141,32 @@
                 </div>
                 <div class="flex">
                   <p>墊檔</p><input type="checkbox" />
+                </div>
+                <div class="flex"><input type="text" class="fontLevel_1 tag" placeholder="多個標籤,請用逗號分開"></div>
+                <div class=" btnWP">
+                  <div class="btn">送出審核</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup_bg addWebsite">
+          <div class="popupWP addWebsite">
+            <div class="titleWP">
+              <p class="title">新增網址</p>
+              <p class="close">×</p>
+            </div>
+            <div class="swalWP">
+              <div class="addWebsite_popup popup">
+                <div class="flex">
+                  <p>名稱</p><input type="text" class="fontLevel_1 space_around fileName" placeholder="請輸入名稱" />
+                </div>
+                <div class="flex type">
+                  <p>網址</p><span class="fontLevel_3">--</span>
+                </div>
+                <div class="flex second">
+                  <p>秒數</p><span class="fontLevel_3">--</span><input type="text" class="fontLevel_1 space_around"
+                    placeholder="請輸入秒數" />
                 </div>
                 <div class="flex"><input type="text" class="fontLevel_1 tag" placeholder="多個標籤,請用逗號分開"></div>
                 <div class=" btnWP">
@@ -393,6 +420,11 @@ $(".keyWordsInput").keyup(function(event) {
     //add 
     function add() {
       $('.popup_bg.add').fadeIn().css({ 'display': 'flex' });
+      $('body').addClass('overflow');
+    }
+   
+     function addWebsite() {
+      $('.popup_bg.addWebsite').fadeIn().css({ 'display': 'flex' });
       $('body').addClass('overflow');
     }
 
